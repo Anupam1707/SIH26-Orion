@@ -1,0 +1,754 @@
+organization_id,organization_name,alias,organization_type,registration_number,address,city,state,country,industry,status,source_id,confidence_score,created_at,updated_at
+O0001,Mishra Trading,,Retail Business,REG795717,"891, Ben Chowk",Bengaluru,Karnataka,India,Retail,Under Review,SRC019,0.84,2025-05-02 06:42:23,2025-05-08 05:12:58
+O0002,Jain Transport,,Trading Firm,REG260632,"24, Bhatia Street",Jaipur,Rajasthan,India,Transport,Under Review,SRC010,0.95,2025-04-09 11:34:42,2024-08-16 15:17:11
+O0003,Deshmukh Trading,,Retail Business,REG526899,"22
+Sampath Marg",Gurugram,Haryana,India,Retail,Active,SRC012,0.88,2026-01-23 22:25:04,2026-06-11 15:42:05
+O0004,Singh Solutions,,Transport Company,REG165119,"495
+Sarin Circle",Jaipur,Rajasthan,India,Manufacturing,Active,SRC022,0.88,2026-08-05 11:57:05,2024-03-27 21:57:00
+O0005,Malhotra Transport,Org-0005,Retail Business,REG343338,"00/858
+Madan Path",Bengaluru,Karnataka,India,Retail,Inactive,SRC002,0.82,2025-07-13 18:55:24,2025-11-23 16:23:12
+O0006,Yadav Solutions,,Transport Company,REG360126,"H.No. 16
+Ganguly Chowk",Jabalpur,Madhya Pradesh,India,Logistics,Active,SRC027,0.88,2026-07-22 05:40:17,2024-05-19 02:55:14
+O0007,Rathore Logistics,,Construction Company,REG398077,"95/261, Das Chowk",Dewas,Madhya Pradesh,India,Transport,Inactive,SRC028,0.97,2025-05-14 08:45:43,2025-04-02 15:13:04
+O0008,Gupta Industries,Org-0008,Trading Firm,REG236376,"37/20
+Sarkar Zila",Kota,Rajasthan,India,Retail,Active,SRC018,0.93,2024-09-05 09:09:34,2025-09-26 15:36:25
+O0009,Tiwari Industries,,Consultancy,REG665797,"H.No. 71
+Kanda Ganj",Gurugram,Haryana,India,Logistics,Inactive,SRC014,0.81,2024-05-10 10:54:37,2024-11-13 08:09:04
+O0010,Saxena Transport,,Retail Business,REG638548,"96/348, Kari Zila",Ahmedabad,Gujarat,India,Hospitality,Inactive,SRC008,0.87,2024-01-18 15:21:34,2024-02-04 13:00:28
+O0011,Agarwal Logistics,,Logistics Company,REG273274,"25, Contractor Marg",Surat,Gujarat,India,Finance,Inactive,SRC005,0.81,2025-10-12 03:52:49,2024-08-27 02:46:11
+O0012,Bansal Solutions,,Hospitality Business,REG712368,"H.No. 581, Tata Circle",Dewas,Madhya Pradesh,India,Logistics,Inactive,SRC027,0.98,2025-11-05 04:18:19,2024-06-09 19:48:58
+O0013,Chauhan Transport,,Manufacturing Firm,REG651521,"H.No. 466
+Bala Zila",Nagpur,Maharashtra,India,Transport,Active,SRC018,0.9,2026-03-27 16:02:52,2024-02-03 23:34:03
+O0014,Tiwari Enterprises,,Logistics Company,REG444287,"58/16, Wadhwa Zila",Dewas,Madhya Pradesh,India,Finance,Active,SRC008,0.82,2025-08-18 20:01:57,2025-11-27 08:02:46
+O0015,Khan Industries,,NGO,REG582629,"H.No. 36
+Chowdhury Marg",Pune,Maharashtra,India,Retail,Under Review,SRC025,0.96,2024-10-17 20:49:52,2024-01-17 20:43:37
+O0016,Khan Logistics,,Hospitality Business,REG500173,"18/78, Bhandari Path",Mumbai,Maharashtra,India,Hospitality,Inactive,SRC005,0.95,2026-07-23 18:19:44,2026-03-03 12:08:05
+O0017,Tiwari Services,,NGO,REG836544,"36/125
+Mane Zila",Gurugram,Haryana,India,Technology,Active,SRC016,0.83,2024-06-10 13:49:24,2025-10-04 19:04:04
+O0018,Chauhan Logistics,,Construction Company,REG106597,"H.No. 891
+Muni Street",Delhi,Delhi,India,Manufacturing,Inactive,SRC018,0.84,2024-03-02 15:57:03,2026-03-03 12:20:46
+O0019,Yadav Logistics,,Logistics Company,REG526455,"H.No. 219, Kala Ganj",Nagpur,Maharashtra,India,Finance,Under Review,SRC018,0.84,2025-06-15 13:33:45,2024-07-20 05:39:12
+O0020,Malhotra Solutions,,Retail Business,REG603671,"60/328, Sawhney",Pune,Maharashtra,India,Construction,Inactive,SRC029,0.88,2025-08-08 19:41:21,2026-07-27 06:18:23
+O0021,Singh Industries,,Consultancy,REG623979,"37
+Pillai Chowk",Mumbai,Maharashtra,India,Logistics,Active,SRC009,0.86,2025-02-27 21:38:38,2025-12-22 22:52:02
+O0022,Bansal Enterprises,,Consultancy,REG328929,"10/894
+Devi Path",Surat,Gujarat,India,Logistics,Active,SRC025,0.89,2024-01-31 14:59:45,2024-05-02 23:29:48
+O0023,Khan Transport,,Consultancy,REG123745,"40/37
+Lala Marg",Jabalpur,Madhya Pradesh,India,Transport,Under Review,SRC006,0.95,2025-07-22 14:56:32,2025-11-06 09:44:44
+O0024,Singh Enterprises,,Security Agency,REG530487,"098, Nagarajan Road",Bhopal,Madhya Pradesh,India,Construction,Under Review,SRC026,0.89,2024-12-17 06:30:52,2025-11-25 19:33:04
+O0025,Verma Enterprises,,Hospitality Business,REG599831,"H.No. 54, Kumer",Delhi,Delhi,India,Retail,Inactive,SRC026,0.91,2026-02-26 09:21:35,2024-06-13 12:06:25
+O0026,Chauhan Industries,,Transport Company,REG653274,"H.No. 413
+Jain Marg",Ahmedabad,Gujarat,India,Hospitality,Inactive,SRC013,0.92,2024-05-23 21:49:32,2026-05-07 04:43:08
+O0027,Malhotra Transport,,Security Agency,REG882371,"H.No. 333
+Apte Ganj",Ahmedabad,Gujarat,India,Hospitality,Inactive,SRC024,0.84,2024-12-04 09:30:58,2024-04-06 20:26:54
+O0028,Khan Transport,,Construction Company,REG397191,"H.No. 113, Dey Chowk",Dewas,Madhya Pradesh,India,Technology,Inactive,SRC018,0.89,2026-07-05 12:01:56,2025-11-08 17:00:54
+O0029,Sharma Logistics,,Hospitality Business,REG269534,"90
+Gole Circle",Delhi,Delhi,India,Construction,Under Review,SRC020,0.85,2025-12-23 10:02:35,2024-05-01 08:07:57
+O0030,Shah Industries,,Security Agency,REG267415,"52/211, Chawla Zila",Surat,Gujarat,India,Hospitality,Inactive,SRC002,0.89,2025-05-17 14:41:10,2024-01-30 03:43:30
+O0031,Tiwari Transport,,Logistics Company,REG189279,"08/799, Kanda Ganj",Indore,Madhya Pradesh,India,Finance,Under Review,SRC002,0.84,2024-07-20 00:46:16,2025-08-07 20:26:30
+O0032,Shah Transport,Org-0032,Trading Firm,REG353046,"891, Sami",Pune,Maharashtra,India,Manufacturing,Active,SRC028,0.94,2026-03-10 17:48:03,2024-01-21 10:29:28
+O0033,Tiwari Trading,,Hospitality Business,REG676427,"28/96, Dani Circle",Jabalpur,Madhya Pradesh,India,Logistics,Inactive,SRC029,0.97,2025-06-14 20:52:10,2024-09-15 18:51:28
+O0034,Verma Transport,,Trading Firm,REG483752,"H.No. 86, Kothari Street",Ujjain,Madhya Pradesh,India,Construction,Active,SRC015,0.85,2026-05-09 06:19:52,2024-12-25 06:52:32
+O0035,Joshi Services,,Construction Company,REG766776,"H.No. 88, Sunder Chowk",Mumbai,Maharashtra,India,Manufacturing,Inactive,SRC006,0.9,2025-10-03 04:46:05,2026-03-09 01:04:03
+O0036,Mehta Enterprises,,Retail Business,REG737694,"07/68
+Behl Chowk",Delhi,Delhi,India,Hospitality,Under Review,SRC020,0.87,2024-06-22 13:45:17,2024-10-03 01:08:01
+O0037,Agarwal Enterprises,,Retail Business,REG695953,"H.No. 23
+Wagle Path",Hyderabad,Telangana,India,Technology,Under Review,SRC019,0.87,2025-12-03 19:36:42,2025-09-08 14:51:59
+O0038,Sharma Enterprises,,Transport Company,REG821765,"H.No. 84
+Grewal Nagar",Vadodara,Gujarat,India,Hospitality,Active,SRC019,0.93,2025-10-29 20:36:19,2025-04-04 01:26:03
+O0039,Yadav Logistics,,Retail Business,REG980637,"07/54, Dua Street",Ujjain,Madhya Pradesh,India,Transport,Active,SRC018,0.84,2026-06-20 12:16:33,2025-09-15 04:13:06
+O0040,Khan Solutions,,Retail Business,REG250378,"H.No. 476, Johal Circle",Vadodara,Gujarat,India,Logistics,Inactive,SRC029,0.93,2026-03-13 13:38:31,2024-07-04 02:11:11
+O0041,Bansal Trading,,Trading Firm,REG513513,"H.No. 96, Upadhyay Path",Lucknow,Uttar Pradesh,India,Technology,Active,SRC028,0.81,2024-12-31 01:23:43,2025-10-20 20:32:47
+O0042,Mehta Enterprises,,Retail Business,REG615297,"H.No. 03, Yohannan Road",Dewas,Madhya Pradesh,India,Transport,Under Review,SRC010,0.86,2026-04-07 08:20:08,2026-05-13 13:58:06
+O0043,Gupta Logistics,,Construction Company,REG596589,"H.No. 36
+Guha Chowk",Bhopal,Madhya Pradesh,India,Hospitality,Under Review,SRC029,0.85,2025-09-26 07:35:29,2024-06-16 16:53:37
+O0044,Sharma Transport,,NGO,REG248369,"345
+Bhardwaj Chowk",Mumbai,Maharashtra,India,Transport,Active,SRC007,0.96,2025-05-08 02:43:37,2024-03-09 11:07:03
+O0045,Jain Trading,,Trading Firm,REG923943,"H.No. 96
+Chadha Marg",Vadodara,Gujarat,India,Finance,Under Review,SRC010,0.97,2026-07-15 14:38:27,2024-10-10 12:19:27
+O0046,Sharma Solutions,,Manufacturing Firm,REG310003,"58
+Bhargava Road",Ahmedabad,Gujarat,India,Hospitality,Active,SRC010,0.92,2025-05-25 10:52:40,2025-08-13 05:19:16
+O0047,Shah Enterprises,Org-0047,Trading Firm,REG962706,"10
+Bassi Chowk",Indore,Madhya Pradesh,India,Logistics,Inactive,SRC023,0.96,2025-01-08 18:36:02,2024-04-03 07:45:28
+O0048,Saxena Services,,Manufacturing Firm,REG695783,"235, Sahni",Dewas,Madhya Pradesh,India,Logistics,Under Review,SRC001,0.85,2024-01-12 04:37:52,2026-06-15 19:16:56
+O0049,Deshmukh Enterprises,Org-0049,Transport Company,REG261337,"H.No. 22
+Pathak",Gurugram,Haryana,India,Technology,Inactive,SRC014,0.8,2024-01-23 06:30:21,2025-10-15 13:32:54
+O0050,Deshmukh Logistics,,Trading Firm,REG313853,"604
+Varkey Circle",Kanpur,Uttar Pradesh,India,Transport,Under Review,SRC024,0.99,2026-02-28 20:39:21,2024-10-06 22:58:05
+O0051,Bansal Solutions,,Trading Firm,REG311947,"18/174
+Sarraf Path",Nagpur,Maharashtra,India,Construction,Under Review,SRC025,0.93,2025-12-28 18:31:35,2025-03-05 06:38:58
+O0052,Khan Services,,Hospitality Business,REG191419,"36, Arora",Kota,Rajasthan,India,Finance,Inactive,SRC008,0.86,2025-09-10 04:03:47,2026-06-05 17:09:21
+O0053,Patel Industries,,Logistics Company,REG910834,"036
+Banerjee Path",Jabalpur,Madhya Pradesh,India,Finance,Under Review,SRC003,0.97,2025-03-28 14:17:57,2024-09-24 13:04:44
+O0054,Bansal Logistics,,Logistics Company,REG196748,"H.No. 33
+Ahuja Road",Mumbai,Maharashtra,India,Transport,Under Review,SRC028,0.86,2025-07-05 07:54:50,2025-10-25 15:31:26
+O0055,Khan Transport,,Manufacturing Firm,REG153204,"H.No. 55, Choudhary Nagar",Bhopal,Madhya Pradesh,India,Retail,Under Review,SRC013,0.93,2025-11-07 04:26:14,2025-10-15 23:19:46
+O0056,Saxena Trading,,Manufacturing Firm,REG212923,"343, Singhal Zila",Ahmedabad,Gujarat,India,Logistics,Under Review,SRC005,0.81,2025-12-06 13:54:18,2026-08-06 18:57:40
+O0057,Gupta Enterprises,,NGO,REG862377,"49/631
+Toor Circle",Mumbai,Maharashtra,India,Construction,Active,SRC015,0.98,2024-12-12 13:31:46,2025-12-25 21:02:02
+O0058,Mishra Industries,,Consultancy,REG156449,"610, Narula Zila",Pune,Maharashtra,India,Transport,Under Review,SRC029,0.93,2025-12-26 04:37:51,2026-04-01 17:57:46
+O0059,Rathore Logistics,Org-0059,Transport Company,REG824337,"32, Chacko Ganj",Ujjain,Madhya Pradesh,India,Retail,Under Review,SRC004,0.97,2024-02-14 17:50:21,2025-11-14 17:27:59
+O0060,Agarwal Logistics,,Logistics Company,REG217455,"78
+Manda Circle",Gurugram,Haryana,India,Construction,Under Review,SRC007,0.95,2025-02-11 11:47:48,2026-07-29 05:27:01
+O0061,Jain Enterprises,,Security Agency,REG721211,"H.No. 20
+Chana Zila",Indore,Madhya Pradesh,India,Technology,Inactive,SRC001,0.98,2025-05-19 11:26:29,2025-01-16 22:59:34
+O0062,Malhotra Transport,,Hospitality Business,REG461698,"26, Mitter Ganj",Ujjain,Madhya Pradesh,India,Logistics,Under Review,SRC016,0.89,2024-02-14 22:57:10,2026-01-29 09:23:37
+O0063,Saxena Solutions,,Consultancy,REG259408,"H.No. 97, Kunda Chowk",Jabalpur,Madhya Pradesh,India,Construction,Active,SRC027,0.87,2024-04-15 03:42:12,2026-06-05 08:17:55
+O0064,Patel Services,Org-0064,Transport Company,REG794300,"15, Hari Zila",Mumbai,Maharashtra,India,Manufacturing,Under Review,SRC017,0.94,2025-12-30 19:41:26,2025-07-28 00:12:57
+O0065,Verma Enterprises,,Consultancy,REG988023,"88/276, Madan Ganj",Ujjain,Madhya Pradesh,India,Logistics,Active,SRC025,0.96,2024-07-23 06:10:03,2025-08-03 02:07:48
+O0066,Chauhan Industries,,Logistics Company,REG545147,"571
+Wadhwa Circle",Bengaluru,Karnataka,India,Hospitality,Inactive,SRC001,0.8,2025-01-26 01:01:45,2025-06-06 20:41:14
+O0067,Deshmukh Enterprises,,Manufacturing Firm,REG977970,"H.No. 47, Shukla Ganj",Bengaluru,Karnataka,India,Hospitality,Inactive,SRC022,0.91,2024-10-04 20:18:08,2025-03-24 09:47:42
+O0068,Jain Trading,,Logistics Company,REG130700,"72/747
+Jaggi",Jabalpur,Madhya Pradesh,India,Manufacturing,Active,SRC024,0.93,2024-04-30 13:56:42,2025-10-31 11:09:49
+O0069,Sharma Industries,Org-0069,Consultancy,REG168892,"12, Gupta Ganj",Lucknow,Uttar Pradesh,India,Transport,Under Review,SRC002,0.91,2025-02-16 12:15:34,2025-05-13 22:05:17
+O0070,Jain Trading,,Transport Company,REG985396,"15/542, Sarna Ganj",Mumbai,Maharashtra,India,Logistics,Inactive,SRC011,0.97,2024-08-26 13:26:18,2025-10-26 23:02:15
+O0071,Agarwal Enterprises,,NGO,REG827176,"04
+Krishna Zila",Gurugram,Haryana,India,Construction,Under Review,SRC029,0.92,2026-03-20 15:12:41,2024-11-23 03:28:41
+O0072,Yadav Enterprises,,Logistics Company,REG981568,"H.No. 364
+Dora Ganj",Pune,Maharashtra,India,Manufacturing,Active,SRC005,0.9,2024-08-24 23:18:37,2025-07-02 06:23:14
+O0073,Tiwari Industries,,Retail Business,REG677146,"32, Shankar Circle",Surat,Gujarat,India,Technology,Under Review,SRC009,0.87,2025-03-15 13:27:20,2026-01-07 01:08:37
+O0074,Gupta Transport,,Manufacturing Firm,REG541272,"84/004
+Bir Street",Gwalior,Madhya Pradesh,India,Logistics,Active,SRC030,0.86,2026-02-22 14:18:41,2026-08-08 03:52:56
+O0075,Jain Services,,NGO,REG316207,"88/57
+Agrawal Marg",Dewas,Madhya Pradesh,India,Manufacturing,Active,SRC013,0.97,2024-03-08 05:06:46,2025-07-09 21:27:40
+O0076,Singh Trading,,Logistics Company,REG370634,"67/939
+Grover",Mumbai,Maharashtra,India,Construction,Inactive,SRC009,0.88,2025-04-25 02:14:26,2025-06-06 23:18:51
+O0077,Agarwal Services,,Security Agency,REG642387,"07, Venkataraman",Lucknow,Uttar Pradesh,India,Hospitality,Under Review,SRC016,0.98,2025-08-04 04:08:04,2025-11-26 06:48:29
+O0078,Patel Services,,Trading Firm,REG236597,"89/207
+Vaidya",Nagpur,Maharashtra,India,Logistics,Inactive,SRC008,0.82,2026-08-19 07:49:49,2026-07-10 00:07:57
+O0079,Saxena Trading,,Consultancy,REG519048,"10/13, De Marg",Surat,Gujarat,India,Logistics,Active,SRC009,0.87,2024-09-29 21:39:23,2025-05-08 09:48:15
+O0080,Sharma Transport,,Security Agency,REG365354,"H.No. 952, Lal Marg",Ahmedabad,Gujarat,India,Retail,Inactive,SRC015,0.83,2026-01-24 10:28:02,2025-04-13 18:58:48
+O0081,Agarwal Solutions,,Hospitality Business,REG171766,"H.No. 63
+Dhillon Street",Gwalior,Madhya Pradesh,India,Retail,Inactive,SRC018,0.87,2026-06-29 09:26:07,2026-06-09 13:04:12
+O0082,Agarwal Services,,Transport Company,REG493270,"H.No. 546
+Vig Chowk",Gwalior,Madhya Pradesh,India,Retail,Active,SRC017,0.92,2026-04-21 03:45:49,2026-03-18 10:22:01
+O0083,Sharma Industries,,Retail Business,REG843731,"80/59
+Lala Path",Jaipur,Rajasthan,India,Transport,Inactive,SRC012,0.97,2025-04-11 05:06:31,2024-06-25 02:15:41
+O0084,Chauhan Transport,,Hospitality Business,REG631163,"892, Modi Ganj",Dewas,Madhya Pradesh,India,Transport,Active,SRC016,0.89,2026-02-15 11:00:03,2024-08-02 21:58:13
+O0085,Sharma Trading,,Security Agency,REG762577,"H.No. 424
+Thakur Ganj",Nagpur,Maharashtra,India,Technology,Inactive,SRC011,0.96,2025-10-03 15:02:02,2024-02-28 12:22:01
+O0086,Mishra Industries,,Logistics Company,REG342081,"724, Dugar",Vadodara,Gujarat,India,Logistics,Active,SRC003,0.91,2025-06-04 23:35:37,2026-04-23 03:00:46
+O0087,Singh Trading,,Construction Company,REG331259,"96/965, Kapoor Chowk",Kota,Rajasthan,India,Hospitality,Under Review,SRC016,0.97,2025-05-29 14:58:47,2026-05-15 13:09:54
+O0088,Patel Solutions,,Consultancy,REG879872,"75/122, Sundaram Nagar",Jabalpur,Madhya Pradesh,India,Construction,Inactive,SRC026,0.9,2024-05-13 10:31:57,2026-03-13 03:17:25
+O0089,Saxena Solutions,,Logistics Company,REG709149,"80/56
+Goel Nagar",Kanpur,Uttar Pradesh,India,Technology,Under Review,SRC021,0.89,2026-06-08 19:50:38,2024-05-26 01:57:28
+O0090,Gupta Enterprises,Org-0090,Manufacturing Firm,REG701449,"03/213
+Shetty Ganj",Hyderabad,Telangana,India,Retail,Inactive,SRC022,0.97,2025-06-04 01:01:54,2026-05-13 22:45:31
+O0091,Verma Transport,,Transport Company,REG531869,"84, Rege Nagar",Vadodara,Gujarat,India,Transport,Active,SRC008,0.85,2024-09-27 06:13:30,2026-08-29 17:49:02
+O0092,Malhotra Transport,,Consultancy,REG952441,"55/50, Gulati Chowk",Lucknow,Uttar Pradesh,India,Manufacturing,Active,SRC001,0.93,2024-06-19 12:43:42,2026-08-29 13:42:41
+O0093,Rathore Transport,,Manufacturing Firm,REG451675,"H.No. 822, Loke Road",Dewas,Madhya Pradesh,India,Retail,Inactive,SRC026,0.83,2025-10-25 00:16:37,2025-11-30 02:58:09
+O0094,Malhotra Enterprises,,Hospitality Business,REG548524,"061, Vala Nagar",Vadodara,Gujarat,India,Technology,Inactive,SRC005,0.96,2024-12-26 23:27:57,2025-09-30 17:47:49
+O0095,Saxena Industries,,Consultancy,REG459446,"H.No. 419
+Reddy Ganj",Gurugram,Haryana,India,Finance,Under Review,SRC001,0.98,2024-09-04 18:26:04,2026-02-26 21:45:52
+O0096,Mishra Solutions,,Trading Firm,REG779855,"H.No. 15
+Dasgupta Zila",Gwalior,Madhya Pradesh,India,Manufacturing,Active,SRC009,0.86,2025-05-10 12:19:17,2024-06-25 18:09:02
+O0097,Agarwal Solutions,,Manufacturing Firm,REG293068,"H.No. 329
+Bhatia Path",Hyderabad,Telangana,India,Construction,Inactive,SRC022,0.82,2024-03-16 19:25:11,2024-05-03 17:08:51
+O0098,Gupta Transport,,Construction Company,REG543089,"213, Deshpande",Kota,Rajasthan,India,Transport,Under Review,SRC017,0.92,2026-06-20 08:06:38,2025-06-09 15:48:35
+O0099,Verma Logistics,Org-0099,Logistics Company,REG587717,"H.No. 27, Nadig Ganj",Ujjain,Madhya Pradesh,India,Retail,Active,SRC022,0.94,2024-02-05 05:52:15,2024-05-13 18:55:54
+O0100,Joshi Services,,Trading Firm,REG873499,"16/10
+Nori Zila",Ahmedabad,Gujarat,India,Construction,Active,SRC028,0.85,2024-08-05 15:00:36,2024-05-18 02:50:55
+O0101,Agarwal Transport,,Security Agency,REG282169,"H.No. 597, Mishra Circle",Hyderabad,Telangana,India,Construction,Inactive,SRC023,0.87,2026-08-30 23:25:18,2026-02-08 02:32:41
+O0102,Tiwari Trading,,Consultancy,REG277190,"H.No. 35, Modi Zila",Jabalpur,Madhya Pradesh,India,Manufacturing,Under Review,SRC012,0.96,2025-10-31 02:43:55,2024-04-28 20:47:33
+O0103,Shah Transport,,Transport Company,REG150622,"81/76
+Bains Ganj",Gurugram,Haryana,India,Finance,Inactive,SRC029,0.86,2025-10-08 14:59:01,2025-08-01 12:47:33
+O0104,Yadav Solutions,,Trading Firm,REG458247,"H.No. 543, Saran Zila",Nagpur,Maharashtra,India,Finance,Under Review,SRC024,0.99,2025-11-03 04:58:02,2026-08-30 12:06:22
+O0105,Yadav Logistics,,NGO,REG928790,"41/048, Devan Circle",Lucknow,Uttar Pradesh,India,Transport,Active,SRC030,0.94,2026-03-04 03:06:25,2025-01-30 10:59:56
+O0106,Rathore Solutions,,Trading Firm,REG536754,"20
+Guha Nagar",Indore,Madhya Pradesh,India,Retail,Active,SRC010,0.98,2025-09-06 19:35:36,2025-11-17 11:41:37
+O0107,Malhotra Services,,Trading Firm,REG208077,"52, Jayaraman",Nagpur,Maharashtra,India,Construction,Active,SRC025,0.91,2025-08-16 10:24:59,2024-05-07 06:44:28
+O0108,Agarwal Trading,,Security Agency,REG613249,"H.No. 565, Shetty Marg",Vadodara,Gujarat,India,Construction,Under Review,SRC027,0.95,2025-08-25 03:32:04,2024-04-02 00:42:55
+O0109,Tiwari Industries,,Retail Business,REG844959,"12
+Mukhopadhyay Chowk",Lucknow,Uttar Pradesh,India,Finance,Active,SRC016,0.99,2026-02-21 04:44:03,2025-11-17 01:39:15
+O0110,Agarwal Transport,,Consultancy,REG580762,"059, De Chowk",Gurugram,Haryana,India,Logistics,Active,SRC016,0.91,2024-11-08 12:05:26,2024-07-15 16:24:23
+O0111,Singh Enterprises,,Retail Business,REG199412,"H.No. 97, Shanker Nagar",Gwalior,Madhya Pradesh,India,Finance,Active,SRC025,0.92,2025-10-11 14:52:47,2024-01-16 21:42:04
+O0112,Sharma Transport,,Construction Company,REG525909,"87/86
+Goswami Zila",Kanpur,Uttar Pradesh,India,Manufacturing,Under Review,SRC019,0.81,2026-07-05 11:53:11,2026-03-14 02:39:09
+O0113,Chauhan Services,,Construction Company,REG667429,"28/540, Atwal Road",Kota,Rajasthan,India,Hospitality,Inactive,SRC030,0.94,2024-05-17 16:52:58,2025-12-31 00:18:56
+O0114,Tiwari Trading,,Retail Business,REG581688,"84
+Bhat Path",Mumbai,Maharashtra,India,Retail,Inactive,SRC010,0.88,2024-04-07 13:41:13,2026-02-14 04:00:38
+O0115,Singh Logistics,,Logistics Company,REG969383,"584, Contractor Circle",Lucknow,Uttar Pradesh,India,Logistics,Active,SRC022,0.99,2025-08-29 02:12:13,2024-01-18 09:20:35
+O0116,Sharma Industries,,Manufacturing Firm,REG983719,"H.No. 59, Grewal Circle",Gurugram,Haryana,India,Logistics,Inactive,SRC002,0.95,2025-11-18 09:39:32,2025-06-18 10:59:30
+O0117,Bansal Industries,Org-0117,NGO,REG888334,"05
+Mitra Marg",Gurugram,Haryana,India,Hospitality,Under Review,SRC023,0.95,2025-08-19 00:49:43,2025-03-24 14:09:46
+O0118,Jain Trading,Org-0118,Logistics Company,REG698358,"29, Garde Zila",Hyderabad,Telangana,India,Construction,Inactive,SRC017,0.85,2025-01-24 09:44:08,2025-05-14 08:53:59
+O0119,Mishra Services,,NGO,REG561644,"345
+Handa Ganj",Jabalpur,Madhya Pradesh,India,Hospitality,Under Review,SRC006,0.92,2025-06-13 17:33:11,2026-03-07 01:28:28
+O0120,Verma Industries,,Security Agency,REG805898,"26/97, Uppal Circle",Vadodara,Gujarat,India,Transport,Inactive,SRC013,0.86,2025-09-26 04:41:07,2024-07-22 16:57:24
+O0121,Mishra Services,,Security Agency,REG194174,"20/852, Patil Nagar",Jabalpur,Madhya Pradesh,India,Finance,Under Review,SRC004,0.88,2025-01-24 07:02:19,2024-11-24 21:29:10
+O0122,Malhotra Services,,Retail Business,REG103662,"440, Yogi Path",Hyderabad,Telangana,India,Logistics,Active,SRC010,0.86,2026-02-24 20:33:27,2025-03-01 07:30:16
+O0123,Singh Logistics,,Construction Company,REG516496,"H.No. 974
+Pai Ganj",Jabalpur,Madhya Pradesh,India,Construction,Active,SRC007,0.82,2026-07-06 15:25:58,2024-09-01 07:30:42
+O0124,Malhotra Enterprises,,Retail Business,REG564835,"49/209
+Mammen Path",Jaipur,Rajasthan,India,Construction,Active,SRC001,0.92,2024-11-07 12:44:24,2024-09-20 01:49:19
+O0125,Yadav Industries,,Security Agency,REG913233,"831, Sethi Zila",Bhopal,Madhya Pradesh,India,Logistics,Under Review,SRC013,0.84,2026-05-14 18:47:16,2025-07-08 22:15:07
+O0126,Mishra Transport,,Construction Company,REG384964,"44/22
+Khalsa Circle",Ujjain,Madhya Pradesh,India,Manufacturing,Inactive,SRC024,0.89,2024-05-16 20:26:47,2025-09-10 11:08:33
+O0127,Singh Enterprises,,Transport Company,REG605610,"87/427
+Roy",Gwalior,Madhya Pradesh,India,Logistics,Active,SRC024,0.95,2025-12-22 09:41:37,2024-01-04 10:01:02
+O0128,Chauhan Solutions,,Hospitality Business,REG729648,"55/09
+Sathe Road",Mumbai,Maharashtra,India,Construction,Active,SRC005,0.89,2025-06-01 02:39:20,2025-10-17 18:42:02
+O0129,Gupta Enterprises,,NGO,REG472194,"H.No. 638
+Ganguly Circle",Pune,Maharashtra,India,Hospitality,Active,SRC025,0.98,2025-05-07 13:45:09,2026-06-12 07:55:31
+O0130,Jain Services,,Transport Company,REG621448,"59/251, Cheema Street",Lucknow,Uttar Pradesh,India,Finance,Active,SRC011,0.94,2024-04-26 23:30:45,2026-06-04 08:12:36
+O0131,Patel Logistics,,Transport Company,REG852312,"23
+Chacko Zila",Mumbai,Maharashtra,India,Manufacturing,Under Review,SRC023,0.94,2025-02-26 08:18:38,2026-05-18 19:41:00
+O0132,Sharma Transport,,Security Agency,REG249500,"H.No. 63
+Kapadia Marg",Bhopal,Madhya Pradesh,India,Construction,Inactive,SRC030,0.97,2024-01-01 10:41:36,2026-06-28 14:41:24
+O0133,Yadav Logistics,,Transport Company,REG344550,"33/590
+Pall Zila",Mumbai,Maharashtra,India,Construction,Under Review,SRC004,0.92,2025-01-20 17:32:12,2024-10-14 08:17:43
+O0134,Bansal Trading,,Retail Business,REG517987,"55/694
+Lalla Zila",Kanpur,Uttar Pradesh,India,Retail,Active,SRC012,0.92,2026-06-25 13:22:09,2026-08-07 08:52:33
+O0135,Sharma Enterprises,,Consultancy,REG205935,"592
+Hayer Circle",Kanpur,Uttar Pradesh,India,Technology,Under Review,SRC022,0.82,2025-12-03 09:49:15,2026-03-22 12:09:56
+O0136,Shah Solutions,,Logistics Company,REG784246,"577
+Chaudhuri Road",Kota,Rajasthan,India,Hospitality,Inactive,SRC012,0.96,2025-09-30 23:49:59,2024-04-29 05:49:02
+O0137,Agarwal Enterprises,,Construction Company,REG200515,"H.No. 66
+Sheth Path",Vadodara,Gujarat,India,Technology,Inactive,SRC022,0.93,2025-01-26 03:25:06,2024-01-14 06:24:12
+O0138,Yadav Transport,,Hospitality Business,REG403421,"655, Ramanathan Circle",Pune,Maharashtra,India,Logistics,Inactive,SRC007,0.94,2024-04-21 11:13:49,2024-04-22 16:07:41
+O0139,Gupta Solutions,,Manufacturing Firm,REG549499,"96, Ramakrishnan Chowk",Delhi,Delhi,India,Technology,Under Review,SRC007,0.85,2025-08-05 23:54:54,2025-08-22 04:12:02
+O0140,Bansal Transport,,Manufacturing Firm,REG139862,"H.No. 96, Karan Street",Jabalpur,Madhya Pradesh,India,Construction,Under Review,SRC015,0.92,2024-10-29 19:04:51,2024-07-14 10:18:54
+O0141,Yadav Solutions,,Transport Company,REG810640,"51/56, Vyas Street",Bengaluru,Karnataka,India,Construction,Active,SRC023,0.87,2024-07-19 15:13:59,2025-04-28 05:26:44
+O0142,Khan Logistics,,Retail Business,REG894360,"74
+Tata Zila",Pune,Maharashtra,India,Hospitality,Inactive,SRC026,0.87,2025-12-17 23:15:43,2024-08-05 08:31:10
+O0143,Sharma Trading,,Hospitality Business,REG557086,"01, Singhal Nagar",Ujjain,Madhya Pradesh,India,Hospitality,Under Review,SRC021,0.9,2026-07-12 02:38:27,2026-07-06 15:23:48
+O0144,Chauhan Solutions,,Security Agency,REG618219,"05
+Mandal Ganj",Bhopal,Madhya Pradesh,India,Hospitality,Inactive,SRC003,0.97,2025-12-27 08:31:38,2024-11-21 17:55:21
+O0145,Shah Solutions,,Transport Company,REG249239,"H.No. 81, Patil Marg",Hyderabad,Telangana,India,Technology,Under Review,SRC020,0.82,2026-06-14 18:13:17,2025-08-17 11:16:51
+O0146,Jain Transport,,Security Agency,REG253759,"61/846, Tak Road",Indore,Madhya Pradesh,India,Manufacturing,Inactive,SRC006,0.83,2025-01-01 05:39:14,2026-07-28 11:17:12
+O0147,Saxena Transport,,Transport Company,REG809890,"64
+Bal Marg",Surat,Gujarat,India,Manufacturing,Inactive,SRC007,0.91,2024-07-17 05:06:10,2024-12-31 16:25:11
+O0148,Jain Transport,,Manufacturing Firm,REG453178,"24/286, Gokhale Marg",Kota,Rajasthan,India,Transport,Active,SRC007,0.91,2024-05-19 18:23:45,2024-04-05 19:56:12
+O0149,Joshi Industries,,Hospitality Business,REG479892,"H.No. 736, Nayar Marg",Vadodara,Gujarat,India,Hospitality,Under Review,SRC021,0.87,2026-08-11 10:14:07,2025-02-11 11:16:00
+O0150,Rathore Logistics,,Transport Company,REG132832,"06/07, Tank Street",Ujjain,Madhya Pradesh,India,Logistics,Active,SRC024,0.96,2025-10-24 05:27:48,2026-01-07 07:17:23
+O0151,Singh Solutions,,Consultancy,REG313934,"57, Borde Marg",Indore,Madhya Pradesh,India,Hospitality,Under Review,SRC013,0.84,2026-07-06 02:45:53,2025-03-23 03:06:30
+O0152,Saxena Solutions,,Consultancy,REG314840,"57
+Saha Zila",Dewas,Madhya Pradesh,India,Finance,Active,SRC024,0.84,2024-09-05 06:13:37,2026-05-23 16:00:10
+O0153,Yadav Enterprises,,Manufacturing Firm,REG168484,"12, Kumer Ganj",Lucknow,Uttar Pradesh,India,Hospitality,Under Review,SRC013,0.8,2026-04-17 19:06:36,2025-07-20 10:03:13
+O0154,Shah Logistics,Org-0154,Logistics Company,REG417051,"H.No. 72
+Lala Road",Gwalior,Madhya Pradesh,India,Hospitality,Inactive,SRC024,0.98,2025-08-01 14:27:22,2024-03-25 23:37:55
+O0155,Yadav Trading,,Construction Company,REG533429,"H.No. 82
+Char Marg",Indore,Madhya Pradesh,India,Transport,Inactive,SRC030,0.94,2024-10-20 02:51:46,2025-05-26 03:05:46
+O0156,Shah Solutions,,Consultancy,REG639070,"H.No. 995, Varghese Chowk",Kanpur,Uttar Pradesh,India,Technology,Under Review,SRC012,0.92,2026-02-23 21:38:07,2026-07-26 17:38:15
+O0157,Mehta Services,,Logistics Company,REG925116,"807, Kant Nagar",Nagpur,Maharashtra,India,Logistics,Under Review,SRC007,0.89,2025-09-06 22:31:57,2025-12-29 12:12:58
+O0158,Agarwal Industries,,Retail Business,REG769516,"67
+Oak Nagar",Kota,Rajasthan,India,Retail,Active,SRC010,0.87,2024-07-07 01:16:11,2024-08-29 17:42:39
+O0159,Jain Solutions,,Hospitality Business,REG702562,"51/98, Rajan Ganj",Gurugram,Haryana,India,Transport,Inactive,SRC030,0.89,2024-02-25 22:55:04,2025-07-07 07:10:33
+O0160,Jain Transport,,NGO,REG159726,"H.No. 98, Patla",Mumbai,Maharashtra,India,Technology,Active,SRC017,0.98,2025-02-09 10:37:11,2025-07-10 13:22:37
+O0161,Joshi Services,,Trading Firm,REG679994,"H.No. 308, Sastry",Indore,Madhya Pradesh,India,Construction,Inactive,SRC018,0.95,2026-05-01 02:06:58,2025-05-28 15:56:18
+O0162,Yadav Services,Org-0162,NGO,REG890260,"04/04, Chaudhari Road",Ahmedabad,Gujarat,India,Construction,Inactive,SRC009,0.85,2026-06-25 14:18:38,2024-03-13 08:49:54
+O0163,Saxena Logistics,,Hospitality Business,REG632793,"13/063
+Mander Path",Nagpur,Maharashtra,India,Technology,Under Review,SRC007,0.9,2025-05-26 23:10:16,2024-07-07 14:05:22
+O0164,Khan Solutions,,Construction Company,REG351389,"H.No. 048
+Varma Nagar",Jaipur,Rajasthan,India,Logistics,Under Review,SRC028,0.91,2025-06-30 17:37:50,2024-01-06 22:13:11
+O0165,Chauhan Enterprises,,Manufacturing Firm,REG770858,"H.No. 98
+Parsa Chowk",Hyderabad,Telangana,India,Finance,Inactive,SRC030,0.84,2025-05-30 15:20:33,2026-08-25 17:35:24
+O0166,Saxena Enterprises,,Manufacturing Firm,REG446005,"493, Sharaf Circle",Pune,Maharashtra,India,Finance,Active,SRC006,0.96,2024-03-05 20:20:10,2024-07-28 16:28:42
+O0167,Chauhan Logistics,,NGO,REG573823,"93, Manda Path",Vadodara,Gujarat,India,Retail,Active,SRC017,0.9,2026-01-05 22:02:08,2026-03-17 07:20:33
+O0168,Joshi Industries,,Manufacturing Firm,REG404860,"H.No. 89
+Oommen Nagar",Mumbai,Maharashtra,India,Hospitality,Inactive,SRC001,0.97,2026-04-16 08:06:14,2025-03-01 20:04:13
+O0169,Verma Trading,,Security Agency,REG562732,"01/995, Randhawa Street",Hyderabad,Telangana,India,Transport,Inactive,SRC014,0.94,2024-03-13 22:02:55,2024-09-26 18:21:11
+O0170,Patel Solutions,,Trading Firm,REG546724,"78/245
+Samra Marg",Hyderabad,Telangana,India,Retail,Active,SRC006,0.82,2024-08-10 03:37:07,2024-07-27 11:26:00
+O0171,Verma Industries,,Manufacturing Firm,REG955793,"H.No. 281
+Hayre Marg",Surat,Gujarat,India,Hospitality,Under Review,SRC011,0.99,2026-03-19 07:50:17,2025-08-23 15:14:16
+O0172,Mishra Solutions,,Trading Firm,REG769488,"173
+Issac Ganj",Kanpur,Uttar Pradesh,India,Logistics,Active,SRC026,0.96,2026-08-25 00:50:00,2025-06-28 18:21:30
+O0173,Joshi Transport,,Transport Company,REG327200,"83
+Nath Marg",Gwalior,Madhya Pradesh,India,Technology,Active,SRC028,0.9,2025-03-11 07:41:01,2025-12-12 21:13:40
+O0174,Sharma Logistics,,NGO,REG429038,"H.No. 503, Jayaraman Road",Jaipur,Rajasthan,India,Technology,Under Review,SRC001,0.95,2024-04-26 05:52:05,2026-04-05 19:24:26
+O0175,Khan Transport,,Consultancy,REG302399,"23/56, Dasgupta Street",Indore,Madhya Pradesh,India,Logistics,Active,SRC029,0.97,2026-04-09 23:04:26,2024-09-11 19:29:33
+O0176,Khan Industries,,Retail Business,REG997738,"571, Babu Street",Ujjain,Madhya Pradesh,India,Manufacturing,Active,SRC018,0.82,2026-05-15 12:11:23,2024-11-09 23:35:18
+O0177,Tiwari Logistics,,Trading Firm,REG726773,"21/38
+Agate Marg",Vadodara,Gujarat,India,Transport,Under Review,SRC019,0.95,2025-01-04 15:15:55,2024-06-30 21:42:26
+O0178,Gupta Services,,Retail Business,REG137939,"870
+Krishnan Street",Gwalior,Madhya Pradesh,India,Technology,Inactive,SRC004,0.91,2024-12-26 01:20:18,2024-10-28 07:09:09
+O0179,Jain Industries,,Hospitality Business,REG658109,"107
+Bhakta Marg",Hyderabad,Telangana,India,Manufacturing,Active,SRC017,0.88,2025-04-09 17:31:20,2024-01-15 14:35:40
+O0180,Mehta Services,Org-0180,Logistics Company,REG773196,"H.No. 896
+Mohan Chowk",Gurugram,Haryana,India,Transport,Under Review,SRC005,0.91,2024-09-13 18:19:03,2025-09-18 23:16:39
+O0181,Khan Industries,,NGO,REG850139,"34/57
+Ray Zila",Mumbai,Maharashtra,India,Technology,Active,SRC016,0.97,2025-11-13 02:08:11,2024-04-19 22:44:05
+O0182,Deshmukh Services,Org-0182,Manufacturing Firm,REG330690,"63/360
+Bumb Marg",Gwalior,Madhya Pradesh,India,Construction,Active,SRC003,0.94,2024-01-17 19:39:50,2025-11-08 13:18:18
+O0183,Shah Enterprises,,Construction Company,REG144135,"231, Gupta Street",Nagpur,Maharashtra,India,Transport,Active,SRC022,0.81,2024-01-21 22:50:43,2026-05-16 09:49:38
+O0184,Rathore Industries,,Consultancy,REG620121,"684
+Karnik Chowk",Mumbai,Maharashtra,India,Technology,Under Review,SRC018,0.87,2026-08-29 08:59:51,2024-02-08 05:08:08
+O0185,Yadav Enterprises,,Hospitality Business,REG518829,"90, Oommen Ganj",Jabalpur,Madhya Pradesh,India,Retail,Active,SRC023,0.97,2024-01-28 21:00:17,2025-12-05 23:52:50
+O0186,Mishra Industries,,Construction Company,REG855829,"062
+Oza Circle",Dewas,Madhya Pradesh,India,Logistics,Under Review,SRC008,0.97,2025-12-11 15:47:25,2025-12-26 16:31:53
+O0187,Shah Industries,,Trading Firm,REG550181,"485
+Bose Zila",Jaipur,Rajasthan,India,Technology,Inactive,SRC022,0.82,2025-10-03 10:01:37,2025-05-26 05:11:13
+O0188,Patel Transport,,Trading Firm,REG668372,"21/14, Purohit Ganj",Gwalior,Madhya Pradesh,India,Retail,Active,SRC022,0.94,2025-04-27 04:22:10,2024-12-02 19:42:51
+O0189,Deshmukh Industries,,Transport Company,REG305171,"346
+Subramanian Marg",Pune,Maharashtra,India,Logistics,Active,SRC011,0.87,2025-02-20 22:04:33,2025-12-16 17:58:45
+O0190,Rathore Transport,,Construction Company,REG162461,"30/07, Sodhi Ganj",Lucknow,Uttar Pradesh,India,Hospitality,Active,SRC008,0.82,2024-01-15 05:24:44,2026-05-26 07:00:14
+O0191,Joshi Transport,,NGO,REG835171,"46
+Kata Road",Ahmedabad,Gujarat,India,Retail,Active,SRC029,0.91,2025-05-08 20:51:27,2024-11-28 10:30:04
+O0192,Patel Transport,,NGO,REG150753,"H.No. 70, Lata Road",Jaipur,Rajasthan,India,Transport,Inactive,SRC001,0.87,2026-05-25 09:45:11,2026-01-06 02:23:11
+O0193,Mehta Trading,,Transport Company,REG931108,"H.No. 28
+Pillai Ganj",Ujjain,Madhya Pradesh,India,Hospitality,Active,SRC017,0.82,2025-09-08 13:40:32,2025-06-08 18:43:03
+O0194,Patel Solutions,,Logistics Company,REG365470,"42/109
+Kaur Road",Nagpur,Maharashtra,India,Transport,Under Review,SRC026,0.95,2026-04-14 05:54:33,2024-02-13 14:06:51
+O0195,Tiwari Solutions,Org-0195,Manufacturing Firm,REG623829,"79/489
+Kata Circle",Bhopal,Madhya Pradesh,India,Retail,Inactive,SRC002,0.95,2024-01-07 10:01:18,2024-04-26 17:14:01
+O0196,Jain Enterprises,,Retail Business,REG376417,"H.No. 807
+Kannan Path",Kanpur,Uttar Pradesh,India,Transport,Under Review,SRC029,0.87,2026-08-30 18:14:13,2024-08-11 03:28:17
+O0197,Sharma Transport,,Retail Business,REG968886,"76
+Balakrishnan Nagar",Jaipur,Rajasthan,India,Logistics,Inactive,SRC027,0.83,2026-04-18 11:23:32,2025-11-16 04:44:12
+O0198,Malhotra Enterprises,,Manufacturing Firm,REG684583,"09, Khatri Circle",Delhi,Delhi,India,Construction,Under Review,SRC020,0.92,2025-08-09 00:27:16,2025-02-04 02:15:07
+O0199,Shah Solutions,Org-0199,Security Agency,REG248540,"H.No. 89
+Hegde Road",Vadodara,Gujarat,India,Transport,Active,SRC010,0.83,2025-10-25 11:33:08,2024-07-29 08:57:43
+O0200,Sharma Enterprises,,Consultancy,REG782143,"53/634, Buch Chowk",Bengaluru,Karnataka,India,Manufacturing,Inactive,SRC006,0.86,2026-06-29 13:08:15,2025-11-01 03:39:40
+O0201,Tiwari Enterprises,,Hospitality Business,REG734199,"04/78
+Padmanabhan Nagar",Mumbai,Maharashtra,India,Retail,Under Review,SRC026,0.87,2025-09-05 04:14:20,2026-02-19 22:30:45
+O0202,Patel Services,,Security Agency,REG619432,"H.No. 52
+Garg",Bhopal,Madhya Pradesh,India,Finance,Under Review,SRC021,0.88,2024-12-26 15:06:40,2024-06-30 08:27:16
+O0203,Agarwal Solutions,,NGO,REG435721,"14/80
+Sem Circle",Gurugram,Haryana,India,Logistics,Active,SRC026,0.98,2024-09-08 21:45:21,2025-07-10 08:58:26
+O0204,Singh Transport,,Hospitality Business,REG188921,"89/310, Verma Path",Jaipur,Rajasthan,India,Retail,Inactive,SRC013,0.83,2026-05-14 19:40:13,2025-01-13 08:19:58
+O0205,Chauhan Services,Org-0205,Transport Company,REG423424,"46/18
+Butala Road",Kanpur,Uttar Pradesh,India,Finance,Inactive,SRC026,0.98,2025-01-08 19:10:55,2025-12-14 10:03:02
+O0206,Deshmukh Solutions,,Hospitality Business,REG606584,"H.No. 17, Sethi Circle",Kanpur,Uttar Pradesh,India,Logistics,Active,SRC013,0.87,2026-01-12 07:59:42,2026-07-27 19:05:04
+O0207,Rathore Solutions,,Security Agency,REG146981,"H.No. 566, Dayal Ganj",Dewas,Madhya Pradesh,India,Finance,Active,SRC029,0.87,2025-02-04 10:50:18,2024-06-22 10:25:08
+O0208,Singh Trading,Org-0208,Construction Company,REG437944,"30
+Oak Street",Gurugram,Haryana,India,Finance,Inactive,SRC006,0.98,2026-06-01 22:22:09,2025-12-15 14:41:52
+O0209,Singh Enterprises,,Hospitality Business,REG971515,"65/35
+Rajagopal Chowk",Surat,Gujarat,India,Logistics,Active,SRC017,0.86,2025-02-11 18:30:05,2025-03-23 19:19:12
+O0210,Deshmukh Enterprises,,Trading Firm,REG574602,"03, Char Street",Lucknow,Uttar Pradesh,India,Finance,Active,SRC012,0.98,2024-04-18 04:59:35,2025-10-20 01:52:37
+O0211,Joshi Industries,,Retail Business,REG867715,"H.No. 58, Butala Marg",Bhopal,Madhya Pradesh,India,Construction,Inactive,SRC007,0.95,2024-12-14 06:42:32,2024-09-24 07:19:30
+O0212,Patel Transport,,Hospitality Business,REG117467,"H.No. 18
+Bhatti Path",Mumbai,Maharashtra,India,Technology,Under Review,SRC027,0.92,2025-08-04 21:28:52,2025-02-03 23:26:33
+O0213,Singh Trading,,Trading Firm,REG106950,"27/628, Bhardwaj",Ahmedabad,Gujarat,India,Retail,Active,SRC030,0.97,2025-05-12 05:57:30,2026-06-10 04:56:03
+O0214,Malhotra Solutions,,Trading Firm,REG931342,"H.No. 059
+Apte Marg",Nagpur,Maharashtra,India,Transport,Under Review,SRC021,0.95,2026-08-06 05:55:01,2024-07-11 00:04:21
+O0215,Sharma Industries,,Consultancy,REG636864,"H.No. 73, Swaminathan Street",Nagpur,Maharashtra,India,Construction,Inactive,SRC023,0.97,2026-02-04 09:36:43,2024-06-27 12:21:43
+O0216,Yadav Industries,,NGO,REG258471,"758
+Chauhan Zila",Mumbai,Maharashtra,India,Transport,Active,SRC025,0.83,2025-02-18 12:16:15,2024-11-30 15:32:01
+O0217,Mishra Transport,,Trading Firm,REG327552,"97/185
+Dani Zila",Gwalior,Madhya Pradesh,India,Manufacturing,Under Review,SRC019,0.96,2024-09-18 03:49:42,2026-06-01 15:45:42
+O0218,Mehta Transport,,Logistics Company,REG144705,"71
+Jain Marg",Lucknow,Uttar Pradesh,India,Hospitality,Active,SRC028,0.86,2024-04-23 03:51:59,2024-11-03 08:44:36
+O0219,Saxena Services,,Manufacturing Firm,REG891486,"09/62, Vaidya Chowk",Kota,Rajasthan,India,Hospitality,Active,SRC022,0.86,2025-12-31 17:14:35,2026-05-06 17:05:11
+O0220,Rathore Services,,Retail Business,REG233689,"H.No. 891, Gala",Lucknow,Uttar Pradesh,India,Hospitality,Active,SRC025,0.93,2025-06-27 11:15:12,2025-10-29 18:15:03
+O0221,Bansal Transport,,Consultancy,REG963989,"40/260
+Kar Circle",Lucknow,Uttar Pradesh,India,Finance,Inactive,SRC010,0.86,2024-11-19 21:24:43,2025-06-24 05:52:47
+O0222,Singh Solutions,,Retail Business,REG222426,"H.No. 35
+Bhat Road",Dewas,Madhya Pradesh,India,Retail,Inactive,SRC017,0.93,2026-04-08 06:35:01,2026-06-23 04:42:48
+O0223,Tiwari Logistics,,Transport Company,REG363995,"42/04
+Patil",Dewas,Madhya Pradesh,India,Technology,Inactive,SRC008,0.91,2025-09-03 13:27:37,2026-06-17 15:43:02
+O0224,Khan Transport,,Construction Company,REG107460,"76/75, Seth Marg",Lucknow,Uttar Pradesh,India,Transport,Inactive,SRC013,0.89,2024-11-03 07:18:55,2025-12-30 18:59:15
+O0225,Chauhan Solutions,Org-0225,Construction Company,REG666582,"88
+Muni Zila",Jaipur,Rajasthan,India,Manufacturing,Inactive,SRC011,0.93,2026-08-01 06:06:27,2026-08-30 05:16:04
+O0226,Yadav Logistics,,Construction Company,REG158317,"24/13, Suresh Ganj",Lucknow,Uttar Pradesh,India,Manufacturing,Inactive,SRC007,0.81,2024-07-17 05:14:23,2026-02-20 07:01:55
+O0227,Chauhan Transport,,Transport Company,REG207712,"40/819
+Mukherjee Road",Mumbai,Maharashtra,India,Technology,Under Review,SRC005,0.88,2024-10-05 19:30:40,2025-07-09 03:41:39
+O0228,Verma Services,,Trading Firm,REG369404,"084, Sibal Street",Gwalior,Madhya Pradesh,India,Transport,Active,SRC001,0.92,2024-08-15 07:51:55,2025-08-16 17:02:18
+O0229,Sharma Industries,,Security Agency,REG400056,"21/57, Sangha Circle",Gwalior,Madhya Pradesh,India,Technology,Active,SRC019,0.95,2026-03-06 01:29:10,2024-09-07 06:07:41
+O0230,Chauhan Enterprises,,Consultancy,REG427038,"82/961
+Arora Street",Bengaluru,Karnataka,India,Transport,Active,SRC007,0.81,2026-02-07 08:06:27,2024-10-31 16:13:20
+O0231,Rathore Logistics,,Retail Business,REG337797,"H.No. 019
+Puri Nagar",Bengaluru,Karnataka,India,Construction,Active,SRC029,0.85,2024-06-02 13:40:10,2024-10-05 05:58:17
+O0232,Yadav Trading,,Manufacturing Firm,REG590107,"122
+Ravi Path",Hyderabad,Telangana,India,Logistics,Active,SRC001,0.94,2024-05-29 10:22:36,2024-10-09 14:05:25
+O0233,Agarwal Trading,,Manufacturing Firm,REG728778,"29
+Barad Street",Mumbai,Maharashtra,India,Manufacturing,Inactive,SRC024,0.94,2025-02-16 09:33:53,2026-06-17 13:26:53
+O0234,Tiwari Solutions,,Trading Firm,REG869300,"H.No. 66
+Bhagat Chowk",Vadodara,Gujarat,India,Retail,Inactive,SRC017,0.88,2026-06-16 10:12:54,2025-03-04 11:48:40
+O0235,Patel Enterprises,,Construction Company,REG623387,"01, Prasad Nagar",Jabalpur,Madhya Pradesh,India,Transport,Active,SRC015,0.88,2026-08-03 09:55:19,2026-05-05 13:25:01
+O0236,Bansal Trading,,Security Agency,REG711709,"H.No. 38
+Dayal Circle",Pune,Maharashtra,India,Logistics,Active,SRC007,0.82,2026-08-14 18:55:50,2026-01-24 07:05:42
+O0237,Khan Trading,,Retail Business,REG376864,"43/71
+Soman Zila",Dewas,Madhya Pradesh,India,Logistics,Inactive,SRC001,0.86,2025-09-21 13:30:33,2024-03-10 19:33:33
+O0238,Patel Enterprises,,NGO,REG328949,"69/117
+Buch Circle",Mumbai,Maharashtra,India,Hospitality,Under Review,SRC015,0.86,2025-05-02 16:45:18,2025-04-19 12:44:14
+O0239,Rathore Enterprises,Org-0239,Logistics Company,REG331924,"15/89
+Wadhwa Zila",Gurugram,Haryana,India,Hospitality,Inactive,SRC014,0.96,2025-09-05 12:57:17,2025-02-21 17:52:13
+O0240,Chauhan Logistics,Org-0240,Consultancy,REG495968,"37/84, Thakur Nagar",Vadodara,Gujarat,India,Finance,Active,SRC028,0.99,2025-09-22 09:05:17,2024-03-06 20:11:07
+O0241,Patel Industries,,NGO,REG233231,"15
+Goel Marg",Jabalpur,Madhya Pradesh,India,Retail,Under Review,SRC027,0.98,2026-01-11 00:12:33,2024-01-10 07:26:54
+O0242,Mishra Industries,,Construction Company,REG604114,"H.No. 471, Manne",Lucknow,Uttar Pradesh,India,Transport,Inactive,SRC005,0.88,2024-02-13 08:32:38,2025-09-29 22:57:07
+O0243,Deshmukh Trading,,Logistics Company,REG413906,"59/00
+Sawhney Ganj",Mumbai,Maharashtra,India,Technology,Under Review,SRC019,0.99,2026-06-15 13:29:53,2026-05-14 18:21:35
+O0244,Shah Trading,,Logistics Company,REG521838,"H.No. 463
+Butala",Kota,Rajasthan,India,Hospitality,Under Review,SRC013,0.81,2024-02-22 14:45:02,2026-02-07 22:41:13
+O0245,Tiwari Enterprises,,Trading Firm,REG290530,"42/378
+Sehgal Ganj",Nagpur,Maharashtra,India,Construction,Inactive,SRC021,0.97,2026-08-16 19:03:06,2025-02-16 02:47:20
+O0246,Joshi Transport,,Security Agency,REG706368,"H.No. 470, Dhingra Zila",Mumbai,Maharashtra,India,Retail,Active,SRC017,0.92,2025-01-18 03:20:32,2024-01-18 12:25:18
+O0247,Saxena Logistics,,Security Agency,REG290123,"29
+Rau Street",Kota,Rajasthan,India,Retail,Active,SRC028,0.87,2025-01-12 05:40:00,2024-06-06 23:40:27
+O0248,Yadav Transport,,Consultancy,REG893921,"20, Kata Zila",Pune,Maharashtra,India,Logistics,Inactive,SRC018,0.93,2024-10-08 07:09:46,2026-04-25 03:55:38
+O0249,Chauhan Enterprises,,NGO,REG199454,"87/630
+Tella Street",Pune,Maharashtra,India,Retail,Under Review,SRC014,0.94,2025-01-18 08:24:07,2024-05-07 11:13:21
+O0250,Saxena Enterprises,,NGO,REG945666,"H.No. 803, Raman Zila",Hyderabad,Telangana,India,Technology,Under Review,SRC030,0.85,2025-10-31 00:41:12,2025-06-12 13:55:10
+O0251,Deshmukh Trading,,Transport Company,REG209472,"H.No. 91, Palla Ganj",Ujjain,Madhya Pradesh,India,Construction,Inactive,SRC007,0.97,2026-06-20 03:44:31,2024-06-30 15:27:32
+O0252,Joshi Transport,,Consultancy,REG519167,"747
+Virk Circle",Jaipur,Rajasthan,India,Manufacturing,Inactive,SRC017,0.89,2026-04-18 09:29:06,2025-05-30 04:03:42
+O0253,Saxena Transport,,NGO,REG545797,"H.No. 59, Verma Zila",Gurugram,Haryana,India,Retail,Active,SRC027,0.95,2025-04-29 21:46:18,2024-04-19 18:17:56
+O0254,Rathore Enterprises,,Trading Firm,REG713232,"917, Hora Street",Ujjain,Madhya Pradesh,India,Technology,Active,SRC025,0.95,2026-01-11 04:31:44,2025-06-22 16:26:23
+O0255,Sharma Transport,,Security Agency,REG287858,"39/275, Chanda Road",Kanpur,Uttar Pradesh,India,Hospitality,Inactive,SRC028,0.82,2026-01-25 13:14:22,2026-05-07 23:18:21
+O0256,Deshmukh Transport,Org-0256,Consultancy,REG990791,"H.No. 554
+Bala Road",Mumbai,Maharashtra,India,Hospitality,Active,SRC012,0.96,2026-02-14 14:21:45,2024-11-22 09:42:01
+O0257,Patel Logistics,Org-0257,Manufacturing Firm,REG211424,"55
+Goswami Ganj",Bhopal,Madhya Pradesh,India,Technology,Inactive,SRC017,0.98,2024-10-13 23:53:54,2024-04-19 17:46:30
+O0258,Agarwal Trading,,Hospitality Business,REG363312,"90, Banerjee Chowk",Ahmedabad,Gujarat,India,Manufacturing,Under Review,SRC006,0.94,2026-02-14 00:57:34,2024-06-02 21:01:03
+O0259,Shah Transport,Org-0259,Logistics Company,REG861394,"91/41
+Singhal Nagar",Nagpur,Maharashtra,India,Hospitality,Active,SRC026,0.98,2026-04-21 14:25:08,2025-04-04 05:31:27
+O0260,Yadav Solutions,,Security Agency,REG980012,"96/75
+Raja Ganj",Nagpur,Maharashtra,India,Retail,Inactive,SRC029,0.89,2026-06-09 12:13:30,2024-01-01 12:46:01
+O0261,Sharma Services,,Manufacturing Firm,REG499392,"H.No. 57
+Manda",Lucknow,Uttar Pradesh,India,Manufacturing,Under Review,SRC008,0.87,2024-05-15 22:05:34,2026-04-18 06:41:05
+O0262,Verma Transport,,Trading Firm,REG147243,"37, Ganesan Ganj",Dewas,Madhya Pradesh,India,Finance,Active,SRC015,0.83,2026-05-28 09:11:50,2026-04-06 01:17:36
+O0263,Jain Solutions,,Retail Business,REG633638,"724
+Mahal Road",Ahmedabad,Gujarat,India,Hospitality,Under Review,SRC019,0.88,2025-07-08 00:53:49,2025-04-08 10:40:09
+O0264,Malhotra Enterprises,,Consultancy,REG208588,"269, Bora Path",Dewas,Madhya Pradesh,India,Technology,Inactive,SRC030,0.93,2024-10-09 06:30:05,2026-05-13 15:52:06
+O0265,Gupta Trading,,Consultancy,REG589585,"92, Bhasin Nagar",Bengaluru,Karnataka,India,Logistics,Active,SRC004,0.93,2025-07-18 03:17:22,2026-01-25 13:16:46
+O0266,Deshmukh Logistics,,Consultancy,REG808761,"85/340
+Sundaram Street",Ahmedabad,Gujarat,India,Manufacturing,Active,SRC021,0.95,2026-06-05 14:37:09,2025-05-09 06:53:43
+O0267,Sharma Industries,,Hospitality Business,REG632651,"897
+Saran Nagar",Kota,Rajasthan,India,Technology,Inactive,SRC017,0.9,2025-10-07 14:04:30,2024-02-04 04:13:34
+O0268,Tiwari Services,,Logistics Company,REG892920,"48, Ramanathan",Kanpur,Uttar Pradesh,India,Technology,Under Review,SRC020,0.89,2026-03-21 19:24:58,2025-06-25 16:44:55
+O0269,Bansal Services,,Consultancy,REG970269,"37, Date Marg",Vadodara,Gujarat,India,Transport,Active,SRC023,0.97,2024-09-12 19:16:36,2024-03-08 08:59:10
+O0270,Malhotra Enterprises,,Logistics Company,REG276387,"99/318
+Menon Nagar",Kota,Rajasthan,India,Hospitality,Active,SRC005,0.89,2025-10-11 04:47:54,2026-01-25 19:46:12
+O0271,Mishra Industries,,Retail Business,REG723407,"H.No. 505
+Nath Zila",Gurugram,Haryana,India,Hospitality,Inactive,SRC024,0.86,2025-07-23 14:40:34,2025-08-11 17:24:26
+O0272,Chauhan Services,,Manufacturing Firm,REG763762,"H.No. 356
+Shenoy Street",Delhi,Delhi,India,Transport,Inactive,SRC024,0.81,2026-08-09 09:22:22,2026-05-16 22:50:58
+O0273,Jain Enterprises,,Security Agency,REG435246,"H.No. 500, Chaudhary",Vadodara,Gujarat,India,Logistics,Under Review,SRC021,0.82,2025-04-17 08:25:47,2024-04-12 01:33:24
+O0274,Saxena Trading,,Construction Company,REG729686,"728
+Shenoy Zila",Indore,Madhya Pradesh,India,Logistics,Under Review,SRC024,0.85,2025-04-14 21:19:21,2025-12-26 23:01:43
+O0275,Deshmukh Services,,Transport Company,REG772853,"98/84, Sathe Chowk",Lucknow,Uttar Pradesh,India,Transport,Inactive,SRC029,0.81,2024-12-19 16:42:44,2024-07-25 11:34:22
+O0276,Saxena Enterprises,,Logistics Company,REG910394,"H.No. 45, Sama Zila",Delhi,Delhi,India,Manufacturing,Under Review,SRC001,0.87,2024-10-17 21:25:29,2025-12-26 08:16:21
+O0277,Gupta Trading,,Retail Business,REG522485,"83/67, Baria Nagar",Kanpur,Uttar Pradesh,India,Construction,Active,SRC024,0.92,2025-07-31 02:23:31,2024-09-02 08:07:12
+O0278,Mishra Transport,,NGO,REG144983,"86/82, Swaminathan Circle",Pune,Maharashtra,India,Transport,Active,SRC016,0.84,2025-12-11 13:52:03,2025-04-21 07:46:53
+O0279,Verma Industries,,Trading Firm,REG468834,"88/72, Ben Ganj",Mumbai,Maharashtra,India,Logistics,Under Review,SRC029,0.87,2025-10-30 07:21:34,2024-11-27 18:36:12
+O0280,Malhotra Industries,Org-0280,Trading Firm,REG148118,"86
+Raghavan Zila",Dewas,Madhya Pradesh,India,Finance,Inactive,SRC012,0.9,2024-11-04 02:15:32,2025-06-23 06:30:20
+O0281,Yadav Solutions,,Transport Company,REG311907,"30/093, Gala Street",Kanpur,Uttar Pradesh,India,Transport,Inactive,SRC015,0.85,2024-01-22 03:49:08,2024-10-11 09:53:56
+O0282,Malhotra Solutions,,Hospitality Business,REG552862,"H.No. 667, Thaker Street",Kota,Rajasthan,India,Logistics,Active,SRC007,0.96,2024-08-21 21:46:01,2026-01-29 04:17:45
+O0283,Rathore Trading,,Manufacturing Firm,REG749415,"10/282
+Rau",Jabalpur,Madhya Pradesh,India,Manufacturing,Inactive,SRC004,0.86,2024-07-14 19:30:38,2025-12-31 15:50:19
+O0284,Verma Solutions,,Manufacturing Firm,REG397457,"649, Bhagat Street",Jabalpur,Madhya Pradesh,India,Retail,Active,SRC029,0.82,2024-08-12 16:15:18,2024-12-03 03:09:59
+O0285,Rathore Services,Org-0285,NGO,REG215526,"658, Sathe Zila",Dewas,Madhya Pradesh,India,Technology,Active,SRC013,0.86,2025-03-26 05:54:39,2025-07-19 20:43:17
+O0286,Malhotra Transport,,Consultancy,REG693264,"H.No. 78, Samra Ganj",Lucknow,Uttar Pradesh,India,Manufacturing,Active,SRC017,0.84,2024-08-15 18:43:08,2025-02-08 04:19:24
+O0287,Sharma Services,Org-0287,Security Agency,REG325404,"305, Dixit Ganj",Pune,Maharashtra,India,Technology,Inactive,SRC028,0.92,2026-03-30 05:15:16,2024-05-14 15:42:06
+O0288,Rathore Transport,,Retail Business,REG124040,"H.No. 118, Goyal Zila",Nagpur,Maharashtra,India,Technology,Under Review,SRC025,0.95,2026-06-12 01:19:21,2024-08-25 19:58:36
+O0289,Mishra Logistics,,Consultancy,REG130401,"38, Bhat Circle",Dewas,Madhya Pradesh,India,Hospitality,Under Review,SRC016,0.86,2026-06-28 03:11:02,2024-03-15 09:29:33
+O0290,Verma Services,Org-0290,NGO,REG813241,"124, Sagar Ganj",Gurugram,Haryana,India,Retail,Active,SRC020,0.83,2024-12-06 17:08:11,2024-05-04 04:39:42
+O0291,Patel Industries,,Trading Firm,REG233563,"H.No. 107, Natarajan Road",Jaipur,Rajasthan,India,Construction,Inactive,SRC015,0.85,2024-06-22 15:43:53,2026-04-20 06:48:49
+O0292,Shah Transport,,Trading Firm,REG833880,"00/991
+Shenoy Zila",Bengaluru,Karnataka,India,Construction,Active,SRC016,0.88,2024-04-23 14:18:14,2025-05-05 19:53:22
+O0293,Yadav Logistics,,NGO,REG916317,"11/150
+Chhabra Road",Lucknow,Uttar Pradesh,India,Logistics,Inactive,SRC019,0.81,2024-06-10 01:44:21,2024-06-06 05:41:52
+O0294,Chauhan Industries,,Trading Firm,REG131417,"H.No. 112
+Shah Circle",Bhopal,Madhya Pradesh,India,Hospitality,Inactive,SRC002,0.89,2026-01-26 08:59:53,2026-06-26 16:03:12
+O0295,Bansal Trading,,Security Agency,REG562807,"26/70, Bhakta Ganj",Delhi,Delhi,India,Transport,Under Review,SRC007,0.95,2025-07-27 02:56:34,2024-08-27 15:13:58
+O0296,Malhotra Transport,,Retail Business,REG584903,"99, Mane Zila",Pune,Maharashtra,India,Construction,Inactive,SRC030,0.96,2025-08-11 19:25:30,2024-08-22 02:51:08
+O0297,Sharma Industries,,Security Agency,REG750317,"10/45, Mitter Zila",Ahmedabad,Gujarat,India,Finance,Inactive,SRC006,0.9,2024-04-28 23:09:33,2025-01-06 03:20:15
+O0298,Sharma Trading,,Consultancy,REG680996,"56, Basak Zila",Bengaluru,Karnataka,India,Construction,Under Review,SRC026,0.87,2025-07-04 17:43:37,2025-06-24 13:00:17
+O0299,Jain Solutions,,Hospitality Business,REG616369,"35/91
+Sibal Street",Nagpur,Maharashtra,India,Technology,Under Review,SRC020,0.9,2024-11-22 14:57:25,2024-08-09 16:26:38
+O0300,Malhotra Enterprises,,NGO,REG689266,"24/799
+Pandya Nagar",Nagpur,Maharashtra,India,Technology,Under Review,SRC019,0.84,2024-06-27 06:03:42,2024-08-11 08:33:01
+O0301,Khan Solutions,Org-0301,Retail Business,REG556879,"47/509, Sule Zila",Mumbai,Maharashtra,India,Logistics,Under Review,SRC027,0.87,2025-06-19 18:53:07,2024-12-12 10:29:26
+O0302,Deshmukh Transport,,Trading Firm,REG879319,"640
+Wable Path",Kota,Rajasthan,India,Technology,Active,SRC007,0.96,2026-07-03 07:14:20,2025-05-07 07:58:48
+O0303,Singh Transport,,Manufacturing Firm,REG521742,"H.No. 855, Soman Chowk",Bhopal,Madhya Pradesh,India,Hospitality,Active,SRC008,0.8,2024-03-23 13:44:45,2026-08-13 05:43:09
+O0304,Khan Trading,,Hospitality Business,REG469753,"57
+Sant Marg",Bengaluru,Karnataka,India,Transport,Active,SRC008,0.81,2026-06-03 20:09:13,2026-08-17 18:58:34
+O0305,Shah Logistics,,Security Agency,REG944202,"H.No. 061
+Mane Nagar",Bengaluru,Karnataka,India,Logistics,Active,SRC022,0.89,2024-06-16 21:16:03,2026-01-10 18:09:02
+O0306,Sharma Logistics,,Manufacturing Firm,REG474637,"H.No. 735, Ramakrishnan Ganj",Dewas,Madhya Pradesh,India,Construction,Active,SRC018,0.99,2025-05-29 15:36:53,2026-04-16 03:54:43
+O0307,Sharma Logistics,,Transport Company,REG182193,"H.No. 97, Bail Circle",Surat,Gujarat,India,Finance,Under Review,SRC002,0.94,2024-01-10 02:39:38,2025-03-30 07:56:31
+O0308,Bansal Trading,,Logistics Company,REG415575,"H.No. 690
+Verma Nagar",Jaipur,Rajasthan,India,Retail,Under Review,SRC002,0.91,2024-11-05 01:00:32,2024-09-10 13:52:22
+O0309,Saxena Enterprises,,Consultancy,REG328080,"H.No. 50
+Mishra Chowk",Bhopal,Madhya Pradesh,India,Technology,Inactive,SRC025,0.96,2026-07-27 19:32:13,2024-04-06 18:30:04
+O0310,Yadav Trading,,NGO,REG884826,"H.No. 39
+Mand Road",Bengaluru,Karnataka,India,Finance,Inactive,SRC027,0.94,2025-02-03 15:03:17,2025-08-08 21:55:33
+O0311,Jain Transport,,Retail Business,REG999700,"26
+Padmanabhan Ganj",Surat,Gujarat,India,Retail,Under Review,SRC006,0.89,2024-04-03 04:31:03,2026-07-27 11:04:09
+O0312,Bansal Industries,,Security Agency,REG993336,"38/334, Modi",Mumbai,Maharashtra,India,Finance,Under Review,SRC012,0.96,2026-07-12 16:00:23,2024-11-06 05:44:11
+O0313,Bansal Enterprises,,Retail Business,REG482866,"992
+Shenoy Chowk",Gwalior,Madhya Pradesh,India,Manufacturing,Under Review,SRC014,0.95,2025-04-03 06:32:11,2025-10-21 17:01:31
+O0314,Mehta Enterprises,,Manufacturing Firm,REG143011,"589, Sabharwal",Lucknow,Uttar Pradesh,India,Construction,Active,SRC030,0.9,2024-04-24 05:01:12,2026-02-26 16:38:44
+O0315,Mishra Solutions,,Manufacturing Firm,REG444294,"H.No. 131, Kibe Zila",Hyderabad,Telangana,India,Transport,Inactive,SRC024,0.9,2026-03-10 19:40:57,2026-08-18 06:41:08
+O0316,Patel Solutions,,Logistics Company,REG964610,"71/87
+Shenoy",Jaipur,Rajasthan,India,Transport,Under Review,SRC018,0.85,2025-10-09 22:59:35,2025-05-25 07:34:15
+O0317,Joshi Solutions,Org-0317,Manufacturing Firm,REG242847,"30/90, Sodhi Chowk",Gwalior,Madhya Pradesh,India,Transport,Inactive,SRC014,0.94,2024-05-16 23:20:53,2024-11-06 22:07:46
+O0318,Jain Enterprises,Org-0318,Hospitality Business,REG724594,"H.No. 090
+Grover Marg",Bhopal,Madhya Pradesh,India,Technology,Inactive,SRC026,0.87,2025-09-08 07:03:03,2024-01-26 06:00:29
+O0319,Saxena Industries,,NGO,REG181582,"66
+Natt Nagar",Mumbai,Maharashtra,India,Logistics,Under Review,SRC025,0.94,2026-05-09 20:10:56,2026-04-22 02:19:10
+O0320,Yadav Services,,Security Agency,REG568742,"90/25
+Dugar Path",Jabalpur,Madhya Pradesh,India,Manufacturing,Under Review,SRC016,0.98,2026-04-18 09:17:00,2025-05-21 19:43:07
+O0321,Saxena Transport,,Retail Business,REG397661,"784
+Sathe Nagar",Nagpur,Maharashtra,India,Retail,Active,SRC007,0.9,2025-10-03 03:36:39,2024-09-12 23:38:29
+O0322,Agarwal Solutions,,Transport Company,REG605966,"02/41, Chawla Marg",Jabalpur,Madhya Pradesh,India,Manufacturing,Under Review,SRC002,0.8,2025-04-27 10:19:46,2026-08-29 18:56:06
+O0323,Agarwal Industries,,Retail Business,REG728983,"97, Balay Ganj",Bhopal,Madhya Pradesh,India,Transport,Under Review,SRC027,0.86,2025-07-06 20:58:19,2024-01-15 11:42:57
+O0324,Yadav Enterprises,,Trading Firm,REG557574,"019, Narayan Street",Kota,Rajasthan,India,Hospitality,Active,SRC007,0.93,2024-04-30 23:01:31,2026-04-02 02:50:45
+O0325,Mishra Solutions,,Trading Firm,REG261520,"H.No. 70
+Wable Road",Surat,Gujarat,India,Technology,Inactive,SRC019,0.84,2024-12-28 15:36:27,2026-01-25 14:08:13
+O0326,Khan Industries,,Consultancy,REG376307,"313, Memon Chowk",Indore,Madhya Pradesh,India,Logistics,Inactive,SRC010,0.82,2025-11-21 06:03:15,2026-03-27 04:02:56
+O0327,Singh Services,,Consultancy,REG516600,"H.No. 65, Kamdar Nagar",Jabalpur,Madhya Pradesh,India,Technology,Active,SRC026,0.81,2026-03-09 17:59:46,2024-04-06 09:55:51
+O0328,Saxena Logistics,,Transport Company,REG389726,"H.No. 748, Kant Circle",Ahmedabad,Gujarat,India,Retail,Inactive,SRC030,0.98,2026-05-17 00:48:56,2024-05-24 22:35:07
+O0329,Verma Enterprises,,Retail Business,REG452730,"H.No. 120, Chokshi Street",Bhopal,Madhya Pradesh,India,Construction,Inactive,SRC012,0.87,2026-06-04 18:12:33,2026-02-24 07:39:07
+O0330,Saxena Services,,Trading Firm,REG544557,"076
+Patla Chowk",Surat,Gujarat,India,Construction,Active,SRC012,0.95,2025-11-24 00:36:46,2025-04-24 02:17:47
+O0331,Mishra Services,,NGO,REG960222,"H.No. 869
+Dhaliwal Chowk",Gurugram,Haryana,India,Technology,Active,SRC010,0.99,2024-12-23 11:07:17,2026-02-24 04:49:02
+O0332,Mehta Logistics,,Logistics Company,REG407970,"73/65
+Sen Circle",Hyderabad,Telangana,India,Construction,Active,SRC016,0.82,2026-02-20 00:52:47,2025-09-17 23:27:45
+O0333,Rathore Transport,,Construction Company,REG198031,"23/15
+Choudhary Zila",Surat,Gujarat,India,Manufacturing,Under Review,SRC008,0.84,2024-01-08 18:32:47,2026-06-18 05:27:48
+O0334,Chauhan Logistics,,Manufacturing Firm,REG814761,"83, Kari Zila",Kanpur,Uttar Pradesh,India,Construction,Active,SRC022,0.93,2024-11-17 01:26:28,2025-03-22 04:06:58
+O0335,Bansal Transport,,NGO,REG630769,"36/61, Rout Chowk",Bhopal,Madhya Pradesh,India,Technology,Under Review,SRC022,0.8,2024-12-16 18:22:05,2026-08-08 22:03:03
+O0336,Verma Enterprises,,NGO,REG306468,"83/76, Sama Nagar",Ujjain,Madhya Pradesh,India,Retail,Active,SRC004,0.87,2024-03-06 20:51:14,2025-11-14 12:27:17
+O0337,Khan Logistics,,Security Agency,REG150842,"550, Padmanabhan Chowk",Mumbai,Maharashtra,India,Logistics,Under Review,SRC023,0.84,2025-06-10 05:40:50,2025-07-12 04:44:38
+O0338,Gupta Transport,,Consultancy,REG715970,"78/264, Hegde Nagar",Pune,Maharashtra,India,Logistics,Active,SRC030,0.8,2024-09-19 10:26:29,2025-10-05 14:20:31
+O0339,Tiwari Transport,,NGO,REG277796,"402
+Vig Circle",Pune,Maharashtra,India,Retail,Under Review,SRC018,0.92,2024-11-21 20:16:28,2026-08-08 08:54:11
+O0340,Agarwal Enterprises,,Consultancy,REG644979,"91/08
+Sethi Chowk",Lucknow,Uttar Pradesh,India,Retail,Inactive,SRC025,0.89,2024-04-15 08:00:10,2024-11-01 08:04:15
+O0341,Jain Solutions,,Construction Company,REG875053,"35
+Agarwal Chowk",Jaipur,Rajasthan,India,Logistics,Under Review,SRC008,0.86,2026-03-30 23:24:43,2026-03-16 18:43:13
+O0342,Khan Enterprises,,Hospitality Business,REG556093,"68/32, Andra Nagar",Ujjain,Madhya Pradesh,India,Transport,Inactive,SRC009,0.83,2025-03-31 01:28:04,2025-12-11 19:45:45
+O0343,Agarwal Enterprises,,Security Agency,REG585595,"H.No. 43
+Aggarwal Chowk",Kota,Rajasthan,India,Construction,Under Review,SRC025,0.83,2024-04-12 16:42:36,2024-05-08 14:54:44
+O0344,Deshmukh Industries,,Transport Company,REG563830,"92/89
+Deshpande Chowk",Gurugram,Haryana,India,Technology,Under Review,SRC003,0.93,2024-05-09 19:34:12,2025-07-10 15:32:19
+O0345,Rathore Services,,Security Agency,REG385869,"19
+Mukherjee Ganj",Kanpur,Uttar Pradesh,India,Finance,Inactive,SRC013,0.9,2026-03-04 19:57:05,2025-04-26 02:06:54
+O0346,Agarwal Enterprises,,Manufacturing Firm,REG327778,"H.No. 131
+Walla Nagar",Ujjain,Madhya Pradesh,India,Technology,Active,SRC003,0.95,2026-06-16 18:43:04,2024-05-08 01:53:45
+O0347,Mishra Services,,Construction Company,REG305504,"115
+Cherian Chowk",Surat,Gujarat,India,Transport,Active,SRC005,0.92,2025-06-14 06:33:08,2024-05-15 13:16:04
+O0348,Sharma Industries,,Manufacturing Firm,REG944317,"H.No. 22
+Dada Chowk",Hyderabad,Telangana,India,Hospitality,Inactive,SRC025,0.98,2025-11-04 03:51:56,2025-01-26 14:09:06
+O0349,Chauhan Services,,NGO,REG166979,"66
+Sahni Path",Jaipur,Rajasthan,India,Retail,Under Review,SRC018,0.83,2024-12-22 06:56:12,2024-08-31 10:17:51
+O0350,Shah Industries,,Transport Company,REG797291,"910
+Savant Ganj",Jabalpur,Madhya Pradesh,India,Finance,Inactive,SRC013,0.91,2024-09-16 19:38:54,2026-07-04 22:42:02
+O0351,Khan Logistics,,Transport Company,REG341595,"45, Tandon Marg",Jabalpur,Madhya Pradesh,India,Manufacturing,Under Review,SRC018,0.95,2026-08-07 16:42:14,2024-06-04 06:39:10
+O0352,Chauhan Solutions,,Transport Company,REG639682,"24/987, Mitra Marg",Bhopal,Madhya Pradesh,India,Hospitality,Inactive,SRC030,0.86,2024-03-13 18:05:13,2024-12-08 06:19:01
+O0353,Joshi Services,,Logistics Company,REG378392,"H.No. 319, Kota Zila",Lucknow,Uttar Pradesh,India,Technology,Inactive,SRC019,0.87,2025-07-20 22:08:18,2025-01-03 06:45:31
+O0354,Yadav Solutions,,Retail Business,REG965782,"02/82, Seth",Surat,Gujarat,India,Manufacturing,Under Review,SRC013,0.91,2025-02-25 07:54:11,2025-12-06 07:40:43
+O0355,Verma Enterprises,,Construction Company,REG514815,"H.No. 711, Pau Ganj",Indore,Madhya Pradesh,India,Manufacturing,Under Review,SRC014,0.85,2024-01-27 23:08:43,2025-09-16 10:45:16
+O0356,Deshmukh Enterprises,,Hospitality Business,REG335081,"668, Mani",Nagpur,Maharashtra,India,Finance,Inactive,SRC002,0.87,2026-03-08 00:45:15,2024-10-07 05:49:53
+O0357,Malhotra Services,,Security Agency,REG938479,"83, Soni Marg",Gwalior,Madhya Pradesh,India,Transport,Active,SRC002,0.81,2025-04-13 07:10:26,2024-10-15 08:56:54
+O0358,Mehta Solutions,,Consultancy,REG362206,"457, Narayanan Zila",Jabalpur,Madhya Pradesh,India,Manufacturing,Under Review,SRC004,0.96,2026-07-15 12:29:37,2024-12-21 17:19:06
+O0359,Verma Trading,,Manufacturing Firm,REG197190,"47/27
+Basak Marg",Jabalpur,Madhya Pradesh,India,Technology,Under Review,SRC022,0.8,2024-09-10 12:10:05,2026-06-13 22:06:38
+O0360,Mishra Enterprises,,Transport Company,REG334669,"17/71, Chana Chowk",Surat,Gujarat,India,Technology,Under Review,SRC011,0.81,2025-01-09 19:33:04,2025-07-24 02:21:45
+O0361,Malhotra Trading,,Construction Company,REG844040,"H.No. 42
+Guha Circle",Ujjain,Madhya Pradesh,India,Manufacturing,Inactive,SRC014,0.93,2025-07-20 20:03:35,2024-07-26 10:20:51
+O0362,Khan Industries,,Manufacturing Firm,REG825445,"H.No. 70, Mukherjee Nagar",Mumbai,Maharashtra,India,Logistics,Inactive,SRC005,0.84,2024-06-12 00:28:08,2025-10-25 05:32:56
+O0363,Patel Logistics,,NGO,REG745506,"H.No. 47
+Gandhi Zila",Kanpur,Uttar Pradesh,India,Retail,Under Review,SRC027,0.89,2024-02-18 07:24:23,2025-03-05 02:02:35
+O0364,Saxena Trading,,Trading Firm,REG654429,"80, Bassi Circle",Bhopal,Madhya Pradesh,India,Transport,Inactive,SRC015,0.97,2025-01-05 08:44:41,2025-06-29 12:32:27
+O0365,Shah Industries,,Retail Business,REG748161,"399
+Sarma Chowk",Ahmedabad,Gujarat,India,Logistics,Inactive,SRC028,0.83,2025-01-16 04:11:13,2025-04-13 20:43:59
+O0366,Khan Enterprises,,Hospitality Business,REG200330,"299
+Yadav",Indore,Madhya Pradesh,India,Retail,Inactive,SRC007,0.86,2024-08-04 00:41:30,2024-04-08 09:40:24
+O0367,Gupta Logistics,,Logistics Company,REG757993,"59/905
+Wagle Circle",Lucknow,Uttar Pradesh,India,Manufacturing,Inactive,SRC024,0.97,2024-10-19 12:08:45,2024-04-23 22:53:48
+O0368,Patel Trading,Org-0368,Trading Firm,REG111366,"24/64
+Bhavsar Zila",Vadodara,Gujarat,India,Finance,Active,SRC004,0.88,2026-04-23 23:06:06,2025-05-22 19:19:54
+O0369,Yadav Enterprises,,Transport Company,REG963089,"46/700, Chhabra Marg",Hyderabad,Telangana,India,Manufacturing,Active,SRC010,0.99,2025-12-31 20:37:21,2025-08-08 16:48:44
+O0370,Singh Logistics,,Trading Firm,REG739200,"38
+Balan Zila",Pune,Maharashtra,India,Finance,Inactive,SRC010,0.85,2026-01-10 01:00:15,2025-01-20 14:51:08
+O0371,Khan Services,,Retail Business,REG517483,"H.No. 721
+Pradhan Circle",Ujjain,Madhya Pradesh,India,Logistics,Active,SRC008,0.84,2024-02-05 15:07:32,2024-05-04 06:24:39
+O0372,Mishra Enterprises,,Logistics Company,REG538849,"H.No. 634
+Oza Nagar",Ujjain,Madhya Pradesh,India,Finance,Inactive,SRC015,0.86,2024-10-01 07:11:39,2024-10-04 23:01:11
+O0373,Singh Services,,Construction Company,REG156768,"01/75
+More Street",Surat,Gujarat,India,Construction,Inactive,SRC021,0.97,2024-02-29 13:49:34,2026-08-15 00:09:47
+O0374,Singh Services,,Trading Firm,REG108091,"55, Master Nagar",Bhopal,Madhya Pradesh,India,Logistics,Inactive,SRC029,0.94,2025-07-30 01:52:53,2024-08-19 17:19:01
+O0375,Tiwari Services,Org-0375,Manufacturing Firm,REG102873,"14/12
+Sunder Chowk",Kota,Rajasthan,India,Technology,Inactive,SRC003,0.95,2024-01-24 06:06:18,2026-03-27 16:29:38
+O0376,Mehta Solutions,,Hospitality Business,REG575676,"387
+Deshmukh",Dewas,Madhya Pradesh,India,Construction,Active,SRC008,0.87,2025-10-06 00:15:02,2024-08-20 06:37:36
+O0377,Shah Industries,,Transport Company,REG117509,"12/38, Buch Zila",Mumbai,Maharashtra,India,Technology,Inactive,SRC017,0.85,2025-09-30 04:46:55,2026-07-21 06:25:11
+O0378,Joshi Logistics,,Hospitality Business,REG446918,"00/743
+Raju Street",Hyderabad,Telangana,India,Manufacturing,Active,SRC029,0.88,2024-06-09 02:09:47,2026-05-27 17:13:50
+O0379,Gupta Trading,,NGO,REG338238,"237
+Barman Marg",Ahmedabad,Gujarat,India,Logistics,Active,SRC009,0.83,2026-07-20 07:12:47,2025-09-06 04:32:27
+O0380,Mishra Solutions,,Retail Business,REG758589,"H.No. 67, Mallick Street",Nagpur,Maharashtra,India,Technology,Under Review,SRC004,0.91,2024-09-23 01:20:05,2024-05-21 14:10:47
+O0381,Verma Enterprises,Org-0381,Trading Firm,REG438683,"226
+Srinivas Road",Jabalpur,Madhya Pradesh,India,Transport,Under Review,SRC017,0.81,2024-05-25 04:56:41,2026-04-20 23:04:29
+O0382,Patel Logistics,,Transport Company,REG398249,"432, Basu Marg",Surat,Gujarat,India,Hospitality,Inactive,SRC024,0.85,2026-01-22 08:39:40,2026-06-18 03:09:08
+O0383,Gupta Industries,,Retail Business,REG605407,"227, Prashad Path",Kota,Rajasthan,India,Technology,Under Review,SRC010,0.84,2024-04-07 14:15:40,2025-09-24 20:57:12
+O0384,Sharma Transport,,Security Agency,REG225323,"34/41
+Kanda Chowk",Bhopal,Madhya Pradesh,India,Hospitality,Inactive,SRC008,0.89,2024-01-25 15:28:48,2026-03-01 19:12:00
+O0385,Verma Solutions,,Trading Firm,REG924484,"81/924, Mammen Street",Delhi,Delhi,India,Manufacturing,Active,SRC027,0.98,2024-04-16 11:33:05,2026-04-06 16:26:00
+O0386,Yadav Logistics,,Construction Company,REG457573,"597
+Dyal Path",Nagpur,Maharashtra,India,Finance,Under Review,SRC029,0.93,2024-05-13 15:45:01,2025-11-08 05:36:27
+O0387,Gupta Solutions,,Consultancy,REG197029,"093, Suri",Pune,Maharashtra,India,Manufacturing,Under Review,SRC027,0.96,2026-01-17 14:06:48,2025-08-24 03:17:29
+O0388,Chauhan Transport,,Hospitality Business,REG734524,"H.No. 929, Reddy Ganj",Vadodara,Gujarat,India,Manufacturing,Inactive,SRC002,0.87,2025-03-06 18:02:32,2025-06-03 04:42:18
+O0389,Rathore Solutions,,Manufacturing Firm,REG350588,"H.No. 55, Muni Road",Gwalior,Madhya Pradesh,India,Logistics,Under Review,SRC003,0.99,2024-10-03 10:36:32,2025-12-14 09:02:46
+O0390,Saxena Industries,,Hospitality Business,REG736040,"73/72, Guha Marg",Vadodara,Gujarat,India,Construction,Active,SRC023,0.92,2024-06-08 03:53:42,2024-08-12 21:27:32
+O0391,Shah Trading,,Hospitality Business,REG401489,"33/75
+Sem Path",Gurugram,Haryana,India,Manufacturing,Active,SRC017,0.91,2025-09-12 16:28:10,2026-04-06 14:48:15
+O0392,Agarwal Logistics,,Security Agency,REG472184,"85, Kata Zila",Nagpur,Maharashtra,India,Finance,Under Review,SRC011,0.91,2026-07-31 23:00:14,2024-07-09 14:35:27
+O0393,Yadav Logistics,,Hospitality Business,REG486579,"H.No. 653, Dhillon Zila",Vadodara,Gujarat,India,Logistics,Under Review,SRC009,0.87,2026-04-16 19:06:33,2025-02-12 18:27:34
+O0394,Rathore Transport,,Retail Business,REG546041,"96
+Pandey Chowk",Indore,Madhya Pradesh,India,Finance,Under Review,SRC024,0.83,2026-03-27 14:29:25,2024-02-03 23:29:56
+O0395,Shah Solutions,,Hospitality Business,REG127335,"H.No. 715
+Chadha",Gwalior,Madhya Pradesh,India,Finance,Under Review,SRC022,0.87,2025-09-26 14:46:37,2024-08-05 01:52:57
+O0396,Patel Transport,,Logistics Company,REG875425,"356, Prabhu Street",Ujjain,Madhya Pradesh,India,Retail,Active,SRC020,0.97,2024-11-23 16:09:45,2024-04-29 02:08:18
+O0397,Mishra Industries,Org-0397,Trading Firm,REG718206,"41/03
+Chacko Road",Pune,Maharashtra,India,Transport,Under Review,SRC001,0.95,2024-03-16 22:24:20,2024-08-14 17:20:45
+O0398,Yadav Logistics,Org-0398,Transport Company,REG242537,"20/220, Shah Zila",Ujjain,Madhya Pradesh,India,Manufacturing,Under Review,SRC013,0.93,2024-08-10 08:13:50,2026-03-07 22:13:43
+O0399,Sharma Enterprises,,NGO,REG584266,"606, Ramesh Circle",Lucknow,Uttar Pradesh,India,Manufacturing,Inactive,SRC028,0.89,2025-09-04 11:14:27,2026-04-27 17:09:54
+O0400,Mehta Enterprises,,Consultancy,REG240647,"30
+Babu Chowk",Bhopal,Madhya Pradesh,India,Hospitality,Under Review,SRC005,0.97,2025-08-30 18:41:34,2026-08-03 10:15:47
+O0401,Patel Transport,,Manufacturing Firm,REG520722,"86/39
+Upadhyay",Gwalior,Madhya Pradesh,India,Transport,Inactive,SRC001,0.98,2026-04-11 21:42:21,2024-10-31 07:12:30
+O0402,Gupta Solutions,,Manufacturing Firm,REG479602,"19/29
+Narula",Delhi,Delhi,India,Hospitality,Under Review,SRC026,0.91,2025-07-12 15:38:29,2026-07-24 14:28:07
+O0403,Shah Industries,,Logistics Company,REG471301,"H.No. 298, Johal Road",Gwalior,Madhya Pradesh,India,Retail,Active,SRC012,0.88,2025-05-26 19:38:40,2024-07-03 21:45:35
+O0404,Yadav Industries,,NGO,REG920443,"32/75, Dave Ganj",Hyderabad,Telangana,India,Finance,Inactive,SRC002,0.81,2025-08-24 00:20:05,2025-01-13 01:41:10
+O0405,Patel Services,,Security Agency,REG949843,"63/20
+Kibe Zila",Vadodara,Gujarat,India,Hospitality,Under Review,SRC016,0.84,2025-12-07 03:20:47,2026-01-05 10:55:53
+O0406,Patel Transport,,Trading Firm,REG613869,"H.No. 33
+Khalsa Street",Kanpur,Uttar Pradesh,India,Manufacturing,Inactive,SRC017,0.89,2025-08-07 07:29:39,2026-07-14 09:16:29
+O0407,Rathore Services,,Retail Business,REG744055,"H.No. 866, Choudhry Road",Ahmedabad,Gujarat,India,Technology,Under Review,SRC018,0.86,2026-08-12 07:42:04,2024-11-25 19:16:14
+O0408,Jain Enterprises,,Manufacturing Firm,REG718926,"H.No. 46
+Din Path",Kanpur,Uttar Pradesh,India,Manufacturing,Active,SRC006,0.87,2024-07-05 16:40:57,2025-02-08 03:19:03
+O0409,Mehta Transport,,Hospitality Business,REG366519,"78/26
+Bahl",Bhopal,Madhya Pradesh,India,Hospitality,Under Review,SRC019,0.82,2024-02-20 09:11:47,2024-01-15 09:02:31
+O0410,Rathore Logistics,,Manufacturing Firm,REG540641,"03
+Dyal Street",Jaipur,Rajasthan,India,Construction,Active,SRC012,0.85,2025-02-08 23:05:40,2025-12-23 19:18:06
+O0411,Gupta Solutions,Org-0411,NGO,REG601628,"39/134
+Sharaf",Bhopal,Madhya Pradesh,India,Construction,Active,SRC011,0.92,2024-08-26 13:13:17,2026-05-07 05:41:31
+O0412,Singh Transport,,Consultancy,REG492074,"H.No. 38, Wadhwa Circle",Lucknow,Uttar Pradesh,India,Construction,Active,SRC011,0.96,2025-09-19 22:23:41,2025-08-07 05:52:29
+O0413,Mishra Solutions,,Construction Company,REG727282,"904, Edwin Road",Dewas,Madhya Pradesh,India,Transport,Under Review,SRC016,0.85,2025-05-04 07:13:59,2026-03-21 13:20:11
+O0414,Patel Logistics,,Construction Company,REG522818,"616, Chada Nagar",Lucknow,Uttar Pradesh,India,Construction,Inactive,SRC024,0.87,2024-01-21 07:09:09,2026-08-01 06:12:50
+O0415,Jain Transport,,Construction Company,REG244121,"893
+Garg Circle",Delhi,Delhi,India,Construction,Active,SRC015,0.92,2024-03-07 17:17:10,2026-04-03 08:39:56
+O0416,Mishra Enterprises,,Logistics Company,REG931747,"H.No. 151, Sachdeva Nagar",Lucknow,Uttar Pradesh,India,Construction,Under Review,SRC021,0.85,2026-08-04 07:54:58,2026-04-08 08:40:09
+O0417,Saxena Industries,,Logistics Company,REG431628,"49/70
+Dubey Road",Delhi,Delhi,India,Technology,Inactive,SRC023,0.93,2025-11-11 17:58:18,2025-07-19 21:55:23
+O0418,Shah Logistics,,Transport Company,REG177766,"66/310
+Mukherjee Nagar",Gurugram,Haryana,India,Finance,Under Review,SRC010,0.84,2024-11-21 01:18:04,2024-03-15 15:37:12
+O0419,Gupta Enterprises,,Trading Firm,REG172047,"236
+Khare Path",Surat,Gujarat,India,Technology,Inactive,SRC012,0.81,2024-06-08 23:51:20,2024-03-18 08:10:25
+O0420,Singh Services,,Manufacturing Firm,REG384870,"25/076
+Hayre Street",Hyderabad,Telangana,India,Logistics,Under Review,SRC026,0.84,2024-08-10 00:36:20,2024-05-03 22:45:44
+O0421,Saxena Services,,Hospitality Business,REG295510,"H.No. 09
+More Road",Hyderabad,Telangana,India,Transport,Active,SRC007,0.91,2026-03-06 19:12:51,2026-06-14 14:39:21
+O0422,Tiwari Services,,Consultancy,REG104995,"H.No. 749, Sagar Ganj",Kota,Rajasthan,India,Technology,Inactive,SRC001,0.88,2024-01-09 20:07:23,2026-08-20 19:52:56
+O0423,Jain Industries,,Security Agency,REG378944,"H.No. 687
+Kapoor Marg",Nagpur,Maharashtra,India,Retail,Active,SRC026,0.94,2025-12-17 01:14:13,2026-06-20 11:38:51
+O0424,Agarwal Trading,,Manufacturing Firm,REG596965,"22, Srivastava Path",Indore,Madhya Pradesh,India,Transport,Under Review,SRC007,0.87,2024-12-28 03:12:58,2024-09-11 06:53:54
+O0425,Singh Logistics,,Logistics Company,REG211992,"39, Sawhney Zila",Hyderabad,Telangana,India,Retail,Under Review,SRC018,0.97,2026-03-13 01:37:22,2024-04-09 11:49:53
+O0426,Mishra Transport,,Manufacturing Firm,REG772662,"98/81, Dhawan Nagar",Bengaluru,Karnataka,India,Retail,Active,SRC005,0.94,2025-07-07 15:00:00,2026-03-12 09:58:02
+O0427,Jain Enterprises,,Retail Business,REG320344,"335, Sanghvi Circle",Hyderabad,Telangana,India,Transport,Under Review,SRC029,0.92,2024-05-12 14:25:29,2024-09-23 04:20:25
+O0428,Mehta Enterprises,,Logistics Company,REG996628,"23/422, Mittal Marg",Gwalior,Madhya Pradesh,India,Construction,Inactive,SRC015,0.87,2024-03-15 01:57:52,2024-04-28 07:53:29
+O0429,Mehta Industries,,Hospitality Business,REG400199,"305
+Ramakrishnan Marg",Bhopal,Madhya Pradesh,India,Finance,Inactive,SRC006,0.86,2026-02-01 22:12:51,2026-01-04 13:00:19
+O0430,Joshi Enterprises,,Construction Company,REG103404,"06
+Dora Zila",Surat,Gujarat,India,Finance,Active,SRC027,0.84,2024-12-13 12:28:19,2024-04-30 21:51:07
+O0431,Chauhan Transport,,Construction Company,REG251085,"421
+Mukhopadhyay Nagar",Nagpur,Maharashtra,India,Construction,Under Review,SRC010,0.8,2024-08-16 04:08:23,2025-08-23 12:24:36
+O0432,Yadav Trading,,Transport Company,REG389611,"90/316, Sabharwal",Ujjain,Madhya Pradesh,India,Hospitality,Inactive,SRC030,0.81,2024-09-11 05:32:24,2025-02-24 06:40:45
+O0433,Joshi Industries,,Consultancy,REG818463,"687, Pai Road",Bengaluru,Karnataka,India,Logistics,Under Review,SRC022,0.81,2024-04-17 22:44:30,2025-09-01 15:53:24
+O0434,Jain Transport,,Trading Firm,REG153971,"61
+Mand Street",Bhopal,Madhya Pradesh,India,Manufacturing,Under Review,SRC025,0.87,2025-04-23 08:23:44,2026-02-18 19:55:18
+O0435,Gupta Enterprises,,Security Agency,REG763126,"85/976
+Mittal Marg",Jaipur,Rajasthan,India,Retail,Under Review,SRC006,0.8,2026-02-02 14:46:52,2025-07-02 09:09:08
+O0436,Khan Enterprises,,Consultancy,REG454370,"H.No. 90
+Dutta Street",Dewas,Madhya Pradesh,India,Hospitality,Active,SRC013,0.9,2025-04-05 08:37:01,2026-07-04 16:24:19
+O0437,Joshi Services,,Trading Firm,REG654467,"94
+Goswami Circle",Bengaluru,Karnataka,India,Technology,Inactive,SRC004,0.84,2024-11-19 02:03:39,2024-10-10 02:16:44
+O0438,Mishra Services,,Logistics Company,REG247302,"63
+Menon Road",Mumbai,Maharashtra,India,Technology,Under Review,SRC026,0.97,2026-02-28 11:49:33,2025-10-11 23:36:09
+O0439,Mishra Solutions,,Retail Business,REG678735,"H.No. 013, Raju Chowk",Surat,Gujarat,India,Retail,Inactive,SRC021,0.92,2025-05-12 21:33:01,2024-12-18 06:31:37
+O0440,Rathore Transport,,Logistics Company,REG838082,"81/372, Ghose Road",Vadodara,Gujarat,India,Technology,Active,SRC024,0.95,2026-05-03 12:12:25,2024-02-14 23:45:02
+O0441,Khan Trading,Org-0441,Manufacturing Firm,REG221784,"53
+Dutt Path",Hyderabad,Telangana,India,Retail,Under Review,SRC010,0.83,2024-03-05 16:56:58,2025-04-24 04:55:06
+O0442,Deshmukh Enterprises,,Security Agency,REG215509,"H.No. 72, Talwar Marg",Hyderabad,Telangana,India,Transport,Active,SRC025,0.82,2025-03-18 06:41:41,2025-06-19 18:05:38
+O0443,Saxena Solutions,,Manufacturing Firm,REG709307,"H.No. 203, Loyal Nagar",Lucknow,Uttar Pradesh,India,Construction,Under Review,SRC004,0.85,2024-07-04 17:14:14,2024-02-17 10:35:08
+O0444,Mishra Enterprises,,Trading Firm,REG969110,"90
+Chanda Nagar",Dewas,Madhya Pradesh,India,Finance,Under Review,SRC001,0.82,2024-05-06 15:46:36,2024-03-27 13:17:58
+O0445,Verma Trading,Org-0445,NGO,REG778011,"238
+More Circle",Ahmedabad,Gujarat,India,Transport,Under Review,SRC010,0.88,2024-03-01 15:30:45,2025-07-08 15:10:04
+O0446,Bansal Transport,,Retail Business,REG754564,"H.No. 50
+Edwin Marg",Lucknow,Uttar Pradesh,India,Transport,Under Review,SRC003,0.93,2025-04-17 10:07:23,2025-06-26 02:54:49
+O0447,Yadav Trading,,Manufacturing Firm,REG230678,"31, Warrior",Jabalpur,Madhya Pradesh,India,Construction,Under Review,SRC013,0.89,2024-12-22 09:08:24,2024-09-25 06:10:56
+O0448,Deshmukh Logistics,,Security Agency,REG386377,"67, Madan Marg",Surat,Gujarat,India,Retail,Inactive,SRC007,0.95,2025-11-17 23:22:54,2025-02-25 05:32:12
+O0449,Tiwari Solutions,Org-0449,Trading Firm,REG203152,"65/165, Deo Zila",Gwalior,Madhya Pradesh,India,Construction,Active,SRC017,0.86,2026-08-26 19:40:40,2024-11-06 14:18:56
+O0450,Gupta Logistics,,NGO,REG904784,"37
+Mahajan Nagar",Jabalpur,Madhya Pradesh,India,Finance,Active,SRC010,0.83,2024-06-08 20:22:00,2025-09-24 16:39:54
+O0451,Sharma Solutions,,Security Agency,REG513701,"H.No. 523
+Sengupta Circle",Nagpur,Maharashtra,India,Finance,Inactive,SRC016,0.96,2025-03-02 15:59:55,2026-02-18 19:44:09
+O0452,Khan Logistics,,Retail Business,REG358890,"H.No. 009
+Om Circle",Pune,Maharashtra,India,Transport,Active,SRC008,0.9,2024-09-20 18:27:46,2024-12-02 13:09:22
+O0453,Verma Industries,,Hospitality Business,REG131077,"93/576
+Jhaveri Ganj",Delhi,Delhi,India,Transport,Active,SRC020,0.97,2025-05-16 01:17:29,2025-09-29 05:38:16
+O0454,Shah Industries,,Hospitality Business,REG842736,"543, Sani Ganj",Mumbai,Maharashtra,India,Hospitality,Inactive,SRC010,0.81,2024-02-15 10:08:42,2025-01-17 04:57:16
+O0455,Rathore Services,,Trading Firm,REG141646,"760, Barad Street",Kanpur,Uttar Pradesh,India,Manufacturing,Under Review,SRC011,0.83,2025-09-04 22:47:58,2024-02-01 04:40:02
+O0456,Verma Logistics,,Transport Company,REG832910,"36, Yadav Marg",Ahmedabad,Gujarat,India,Logistics,Inactive,SRC028,0.81,2024-02-12 04:20:11,2024-03-29 02:59:44
+O0457,Rathore Trading,,Consultancy,REG943397,"07
+Atwal",Bengaluru,Karnataka,India,Finance,Inactive,SRC009,0.83,2024-09-18 07:23:13,2025-01-09 02:21:04
+O0458,Agarwal Logistics,,NGO,REG721397,"H.No. 055
+Khalsa",Vadodara,Gujarat,India,Construction,Under Review,SRC006,0.89,2025-12-20 11:22:19,2025-07-22 03:42:30
+O0459,Jain Transport,,Construction Company,REG330194,"34/49
+Bir",Kota,Rajasthan,India,Retail,Under Review,SRC006,0.95,2025-09-27 08:51:10,2025-01-13 06:22:00
+O0460,Shah Trading,,Transport Company,REG803193,"02/87
+Doshi",Lucknow,Uttar Pradesh,India,Finance,Inactive,SRC018,0.92,2025-02-09 06:18:13,2024-06-17 04:30:55
+O0461,Sharma Services,,Logistics Company,REG387516,"H.No. 57
+Chhabra Road",Lucknow,Uttar Pradesh,India,Finance,Under Review,SRC029,0.84,2025-08-26 05:32:40,2024-09-10 19:59:07
+O0462,Jain Logistics,,Manufacturing Firm,REG485053,"08/906
+Bakshi Marg",Delhi,Delhi,India,Construction,Active,SRC027,0.82,2024-08-13 20:51:01,2024-08-14 15:35:52
+O0463,Shah Transport,,Trading Firm,REG782413,"16/16, Kamdar",Kota,Rajasthan,India,Construction,Inactive,SRC008,0.86,2024-04-30 00:04:57,2026-06-22 20:35:54
+O0464,Verma Enterprises,Org-0464,Consultancy,REG996190,"634, Gera Path",Delhi,Delhi,India,Logistics,Inactive,SRC016,0.87,2025-06-03 16:06:23,2024-09-18 12:24:14
+O0465,Tiwari Industries,,Manufacturing Firm,REG396277,"264, Loke Road",Kanpur,Uttar Pradesh,India,Hospitality,Active,SRC026,0.87,2026-03-03 11:48:59,2026-02-01 11:44:05
+O0466,Bansal Services,,Hospitality Business,REG231329,"49, Sagar Road",Jaipur,Rajasthan,India,Retail,Active,SRC018,0.98,2026-06-04 21:38:13,2026-02-08 07:33:49
+O0467,Shah Enterprises,Org-0467,Security Agency,REG679280,"86/815, Chopra",Surat,Gujarat,India,Transport,Under Review,SRC012,0.85,2024-12-17 21:05:22,2025-03-29 17:39:55
+O0468,Khan Enterprises,,Retail Business,REG205719,"79/491, Balakrishnan Chowk",Dewas,Madhya Pradesh,India,Construction,Active,SRC023,0.81,2025-02-16 03:32:01,2025-10-13 03:25:28
+O0469,Deshmukh Logistics,,Trading Firm,REG710098,"570, Balasubramanian Marg",Surat,Gujarat,India,Hospitality,Active,SRC022,0.93,2024-05-31 02:49:04,2025-08-23 00:32:30
+O0470,Patel Logistics,,Consultancy,REG423614,"489, Bhavsar Chowk",Gwalior,Madhya Pradesh,India,Technology,Active,SRC022,0.84,2024-10-30 15:38:57,2024-02-20 00:51:47
+O0471,Jain Services,,Manufacturing Firm,REG110293,"59
+Narayan Marg",Kota,Rajasthan,India,Technology,Under Review,SRC001,0.85,2024-02-02 00:44:41,2026-01-31 06:47:12
+O0472,Jain Services,,Construction Company,REG247499,"02/197, Sehgal",Gurugram,Haryana,India,Construction,Inactive,SRC005,0.88,2026-06-12 10:57:44,2026-01-04 08:11:39
+O0473,Bansal Industries,,Logistics Company,REG843828,"H.No. 70
+Rout Road",Gurugram,Haryana,India,Construction,Under Review,SRC006,0.84,2025-10-06 21:05:58,2024-03-20 20:20:26
+O0474,Patel Trading,,Consultancy,REG166194,"12
+Sarin Road",Kanpur,Uttar Pradesh,India,Construction,Inactive,SRC028,0.86,2025-02-04 14:38:45,2024-11-19 06:26:17
+O0475,Joshi Trading,,Trading Firm,REG174035,"H.No. 251
+Deshmukh Marg",Delhi,Delhi,India,Finance,Inactive,SRC024,0.86,2025-05-03 08:23:53,2025-09-04 15:58:23
+O0476,Mishra Trading,,Consultancy,REG956416,"14, Doshi Street",Hyderabad,Telangana,India,Construction,Active,SRC003,0.86,2026-03-02 01:35:00,2026-06-15 08:09:11
+O0477,Jain Logistics,,NGO,REG628344,"46
+Sur",Mumbai,Maharashtra,India,Hospitality,Active,SRC008,0.81,2025-05-22 09:13:40,2026-05-12 04:12:23
+O0478,Joshi Industries,,Security Agency,REG806039,"81, Mahal",Kota,Rajasthan,India,Logistics,Active,SRC008,0.95,2026-05-25 05:33:08,2025-06-09 01:15:18
+O0479,Patel Transport,,Transport Company,REG839229,"H.No. 63
+Barad Path",Kanpur,Uttar Pradesh,India,Hospitality,Inactive,SRC018,0.98,2026-03-07 13:25:52,2025-12-26 00:44:48
+O0480,Verma Logistics,,NGO,REG260501,"29, Sekhon Zila",Ujjain,Madhya Pradesh,India,Transport,Active,SRC023,0.85,2024-04-09 01:10:49,2024-05-01 00:33:43
+O0481,Mehta Services,Org-0481,NGO,REG374507,"H.No. 290, Vig Path",Kanpur,Uttar Pradesh,India,Hospitality,Active,SRC014,0.92,2025-05-03 14:13:05,2025-12-10 15:22:04
+O0482,Tiwari Services,,Transport Company,REG292640,"H.No. 936
+Prashad Street",Gurugram,Haryana,India,Retail,Inactive,SRC019,0.92,2025-09-05 03:41:59,2026-01-17 00:45:48
+O0483,Sharma Trading,,Logistics Company,REG393710,"H.No. 349, Samra Road",Gurugram,Haryana,India,Construction,Under Review,SRC010,0.93,2024-01-27 17:47:23,2025-05-13 07:22:14
+O0484,Gupta Solutions,,Security Agency,REG236010,"52/19, Oommen Ganj",Nagpur,Maharashtra,India,Retail,Active,SRC014,0.87,2024-06-08 07:09:26,2024-06-10 15:19:36
+O0485,Sharma Enterprises,,Logistics Company,REG168824,"H.No. 142, Buch Ganj",Bhopal,Madhya Pradesh,India,Logistics,Under Review,SRC010,0.82,2024-03-18 04:09:08,2026-04-28 21:07:39
+O0486,Jain Enterprises,,Consultancy,REG698972,"97
+Kurian Nagar",Gwalior,Madhya Pradesh,India,Transport,Active,SRC002,0.94,2026-04-27 18:57:38,2025-12-13 10:10:57
+O0487,Singh Solutions,,Retail Business,REG543823,"H.No. 206, Murthy Nagar",Jabalpur,Madhya Pradesh,India,Manufacturing,Active,SRC022,0.82,2026-03-14 09:00:02,2025-07-20 19:35:55
+O0488,Mehta Solutions,,Manufacturing Firm,REG895349,"284
+Bose Path",Jaipur,Rajasthan,India,Manufacturing,Under Review,SRC018,0.97,2026-06-23 05:01:08,2026-03-22 09:33:15
+O0489,Rathore Services,,Consultancy,REG489090,"78/84, Bose Ganj",Delhi,Delhi,India,Retail,Active,SRC017,0.89,2024-01-04 06:21:38,2024-10-11 16:59:36
+O0490,Singh Industries,,NGO,REG188106,"H.No. 87, Mand Marg",Ujjain,Madhya Pradesh,India,Construction,Under Review,SRC015,0.92,2024-06-22 18:27:27,2024-07-30 01:01:00
+O0491,Verma Enterprises,,Transport Company,REG140721,"20/18, Sunder Circle",Dewas,Madhya Pradesh,India,Transport,Inactive,SRC004,0.91,2024-02-29 04:34:38,2026-01-27 01:37:37
+O0492,Joshi Solutions,,NGO,REG947760,"924, Buch Nagar",Surat,Gujarat,India,Retail,Under Review,SRC024,0.95,2024-04-21 23:22:25,2024-06-17 03:27:09
+O0493,Malhotra Logistics,,Logistics Company,REG622852,"H.No. 680, Khurana Chowk",Pune,Maharashtra,India,Hospitality,Inactive,SRC024,0.93,2026-07-25 18:00:14,2026-06-09 19:27:10
+O0494,Patel Enterprises,,Retail Business,REG634772,"75/07, Doctor Chowk",Pune,Maharashtra,India,Technology,Under Review,SRC007,0.97,2024-03-13 04:11:30,2026-06-29 01:56:54
+O0495,Tiwari Solutions,,Hospitality Business,REG855281,"65, Natt Nagar",Gwalior,Madhya Pradesh,India,Finance,Active,SRC012,0.97,2025-02-18 04:35:39,2026-05-10 03:53:14
+O0496,Deshmukh Trading,,Manufacturing Firm,REG291575,"H.No. 00, Saran Street",Ahmedabad,Gujarat,India,Manufacturing,Active,SRC022,0.91,2025-10-26 07:33:33,2025-04-24 18:51:13
+O0497,Sharma Services,,Retail Business,REG988605,"H.No. 727
+Nadkarni Chowk",Nagpur,Maharashtra,India,Hospitality,Inactive,SRC001,0.83,2024-08-15 17:04:36,2025-08-17 04:33:22
+O0498,Yadav Solutions,Org-0498,Retail Business,REG306799,"H.No. 31
+Chandra Marg",Bhopal,Madhya Pradesh,India,Manufacturing,Under Review,SRC022,0.85,2026-03-24 16:25:17,2025-06-09 07:09:36
+O0499,Saxena Enterprises,,Retail Business,REG853914,"H.No. 21, Pingle Circle",Bhopal,Madhya Pradesh,India,Technology,Active,SRC022,0.86,2025-07-14 23:15:40,2025-07-05 06:54:37
+O0500,Verma Services,,NGO,REG842608,"H.No. 044, Dhillon",Ahmedabad,Gujarat,India,Hospitality,Inactive,SRC015,0.93,2024-06-01 12:59:07,2025-07-20 01:59:59

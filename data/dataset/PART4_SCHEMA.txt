@@ -1,0 +1,40 @@
+PART 4 SCHEMA / DATA DICTIONARY
+
+UNSTRUCTURED/documents.csv
+document_id, document_type, document_title, case_id, document_date,
+source_organization, author_role, language, document_format, document_text,
+ocr_required, classification, source_id, confidence_score, created_at
+
+UNSTRUCTURED/observations.csv
+observation_id, observation_type, entity_type, entity_id, location_id,
+observation_timestamp, description, vehicle_id, source_system,
+observer_type, evidence_id, confidence_score, created_at
+
+EVIDENCE/evidence.csv
+evidence_id, evidence_type, source_id, source_document_id, source_record_id,
+description, collection_timestamp, event_timestamp, location_id,
+reliability_score, extraction_confidence, verification_status,
+verified_by, verification_timestamp, hash, created_at
+
+EVIDENCE/sources.csv
+source_id, source_type, source_name, source_system, source_organization,
+collection_method, reliability_score, access_level, data_classification,
+created_at, updated_at
+
+ENTITY_RESOLUTION/aliases.csv
+alias_id, entity_type, entity_id, alias_value, alias_type,
+source_id, confidence_score, created_at
+
+ENTITY_RESOLUTION/entity_resolution.csv
+resolution_id, record_1_type, record_1_id, record_2_type, record_2_id,
+similarity_score, matching_features, resolution_result, resolution_method,
+confidence_score, verified, created_at
+
+ENTITY RESOLUTION LABELS
+SAME_ENTITY      = candidate alias/record matches canonical entity
+DIFFERENT_ENTITY = candidate alias/record does not match canonical entity
+UNCERTAIN        = insufficient/conflicting information; requires review
+
+EVIDENCE PRINCIPLE
+Every evidence row should be traceable to a source and, where applicable,
+to a document or structured source record. Evidence is provenance, not proof of guilt.
