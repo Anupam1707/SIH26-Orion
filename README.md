@@ -50,12 +50,72 @@ SIH26/
     └── 05-system-blueprint.md
 ```
 
+## Module 3 — Criminal Knowledge Graph (Neo4j)  ✅ Implemented
+
+### Quick Start
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Configure Neo4j connection
+cp .env.example .env
+# Edit .env → set NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
+
+# 3. Run the full loader
+python main_graph_loader.py
+
+# 4. Verify the graph
+python verify_graph.py
+```
+
+### Graph Schema
+- **13 node labels**: Person, Location, Organization, Vehicle, PhoneNumber, Account, Case, Crime, Event, Evidence, Document, Source, Alias
+- **15+ edge types**: CALLED, MEMBER_OF, MOVED_TO, TRANSACTED, LINKED_TO, OWNS_PHONE, OWNS_VEHICLE, HOLDS_ACCOUNT, PART_OF_CASE, OCCURRED_AT, RELATES_TO, SOURCED_FROM, REFERENCES, ALIAS_OF, SAME_ENTITY, DIFFERENT_ENTITY, UNCERTAIN_ENTITY
+
+### Repository Structure
+```text
+SIH26/
+├── graph/
+│   ├── config.py                      ← Neo4j connection (.env)
+│   ├── schema.py                      ← Constraints + indexes
+│   ├── utils.py                       ← Batch UNWIND helpers
+│   └── loaders/
+│       ├── load_entities.py           ← Person, Location, Org, Vehicle, Phone, Account
+│       ├── load_cases.py              ← Case, Crime, Event
+│       ├── load_evidence.py           ← Evidence, Source, Document, Observation
+│       ├── load_relationships.py      ← CALLED, MEMBER_OF, MOVED_TO, TRANSACTED, LINKED_TO
+│       └── load_entity_resolution.py  ← Alias nodes + SAME_ENTITY edges
+├── main_graph_loader.py               ← Full-load orchestrator
+├── verify_graph.py                    ← Post-load sanity checks
+├── requirements.txt
+├── .env.example
+└── data/dataset/                      ← 117 K-row synthetic dataset
+```
+
+## Module 4 — Graph Analytics (Centrality & Detection)  🚀 Active
+
+### Run PageRank Analysis (Phone Communications Network)
+```bash
+# Run PageRank and display top 20 influential nodes (with owner resolution)
+python run_pagerank.py --limit 20
+
+# Run PageRank, export to CSV, and write scores back to Neo4j
+python run_pagerank.py --limit 20 --write-back --export pagerank_top20.csv
+```
+
+Once written back, you can also query PageRank directly inside Neo4j Browser:
+```cypher
+MATCH (ph:PhoneNumber)
+WHERE ph.pagerank_score IS NOT NULL
+OPTIONAL MATCH (p:Person)-[:OWNS_PHONE]->(ph)
+RETURN ph.phone_id AS phone, p.full_name AS subscriber, ph.pagerank_score AS score
+ORDER BY score DESC
+LIMIT 20;
+```
+
 ## Next Phase
+- Module 4: Louvain / Community detection, Betweenness centrality, Shortest path analysis
+- Module 5: AI anomaly & link prediction
+- Module 6: Investigator dashboard
 
-After research sign-off, this repository will move into:
-- data schema design,
-- proof-of-concept pipelines,
-- baseline graph and NLP experiments,
-- and incremental prototype development.
-
-See `/home/runner/work/SIH26/SIH26/docs/README.md` for the full research documentation map.
+See `docs/` for the full research documentation map.
