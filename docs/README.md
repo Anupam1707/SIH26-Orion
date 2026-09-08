@@ -1,31 +1,11 @@
-# Research Documentation Index
+# SIH PS 189 — Documentation Index
+### AI-Powered Criminal Network Discovery
 
-This folder contains the non-code documentation baseline for the AI-Powered Criminal Network Analysis System.
-
-## Documents
-
-1. `01-problem-overview.md`  
-   Project background, challenge statement, objectives, and expected impact.
-
-2. `02-module-roadmap.md`  
-   Six-part system roadmap with module scope, expected outputs, and research questions.
-
-3. `03-data-sources-and-governance.md`  
-   Data source categories, quality concerns, privacy constraints, legal/ethical controls, and governance checklist.
-
-4. `04-research-plan.md`  
-   Research execution plan, milestone checkpoints, and evidence-tracking templates.
-
-5. `05-system-blueprint.md`  
-   High-level architecture concept, analytical workflow, and validation strategy (implementation-agnostic).
-
-## Current Scope
-
-- Documentation only
-- No production code
-- No model training pipelines yet
-- No dashboard implementation yet
-
-## Usage
-
-Use these files to align stakeholders, define scope boundaries, and prepare the transition from research to prototyping.
+| File | Contents |
+|------|----------|
+| [01-status.md](01-status.md) | **Master status** — what is done, what is left, per module |
+| [02-architecture.md](02-architecture.md) | Six-module architecture, design decisions, cross-module contracts |
+| [03-dataset.md](03-dataset.md) | Dataset audit findings, repair log, known gaps |
+| [04-infrastructure.md](04-infrastructure.md) | Neo4j Aura setup, known quirks, fix patterns |
+| [05-governance.md](05-governance.md) | Ethics, leads-not-proof framing, data governance |
+| [06-demo-narrative.md](06-demo-narrative.md) | Demo script and prepared judge Q&A |

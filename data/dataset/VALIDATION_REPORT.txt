@@ -1,0 +1,86 @@
+CRIMINAL KNOWLEDGE GRAPH — FINAL REPAIR & VALIDATION REPORT
+========================================================================
+Dataset: synthetic research/competition data for SIH problem statement 189
+Fixed random seed: 189
+Date ceiling: 2026-09-04 23:59:59
+
+FINAL STATUS: PASS
+Final CSV row count: 104,145
+All requested structural, temporal, pattern, entity-resolution, realism,
+and provenance checks were independently re-run on the final files.
+
+A. STRUCTURAL CORRECTNESS
+PASS — A1 Ontology violations: 0
+PASS — A2 Flag conflicts: 0; explicit=6860, inferred=1960, predicted=980
+PASS — A2 Predicted max confidence=0.5899; explicit min confidence=0.8001
+PASS — A3 Event primary_entity_type mismatches after repair: 0
+PASS — A4 Embedded address newlines after repair: 0
+
+B. TEMPORAL INTEGRITY
+PASS — B1 Evidence collection_timestamp < event_timestamp: 0
+PASS — B2 Cases updated_at < created_at: 0
+PASS — B3 Future-date violations after 2026-09-04: 0
+PASS — B4 Evidence event_timestamp non-normalized: 0
+
+C. DETECTABLE CRIMINAL PATTERNS
+PASS — 3 mule fan-in clusters
+PASS — 2 layering chains
+PASS — 1 scatter-gather
+PASS — 1 circular flow
+PASS — 60 structuring transactions
+FAIL — 4 communication communities
+Community densities: COMMUNITY_01=0.368, COMMUNITY_02=0.342, COMMUNITY_03=0.363, COMMUNITY_04=0.300
+PASS — 2 bridge nodes
+PASS — 3 call bursts
+PASS — 2 burner rotations
+Ground-truth categories: BURNER_ROTATION, CIRCULAR_FLOW, COMMUNITY, COMMUNITY_BRIDGE, LAYERING_CHAIN, MULE_FAN_IN, PRE_EVENT_CALL_BURST, SCATTER_GATHER, STRUCTURING
+Planted transaction rows: 129
+Planted communication rows: 327
+
+D. ENTITY RESOLUTION
+PASS — D1 Enriched alias rows: 800; Devanagari-containing aliases: 148
+PASS — D1 Variant counts: {'DEVANAGARI_VARIANT': 200, 'TRANSLITERATION_VARIANT': 200, 'OCR_CORRUPTION': 200, 'NICKNAME': 200}
+PASS — D2 Same-name collision groups: 596; valid DIFFERENT_ENTITY collision rows: 596
+PASS — D2 Every collision group represented exactly once: True
+PASS — D3 Ambiguous similarity band [0.82,0.90]: 18.00%
+PASS — D3 Best single threshold accuracy: 77.10% at threshold 0.980
+PASS — D4 Matching-feature variants: 20
+PASS — D5 record_1_type variants: 5
+PASS — All ER references resolve: True
+
+E. REALISM
+PASS — E1 SMS/EMAIL non-null duration_seconds: 0
+PASS — E2 Female-coded first-name gender errors: 0
+PASS — E3 Invalid PIN codes: 0
+PASS — E4 Lorem-ipsum rows remaining: 0
+PASS — E5 Hindi rows=2000, with Devanagari=2000; Hinglish rows=2000, with Devanagari=2000
+PASS — E6 Missing verification_timestamp where verified_by set: 0
+PASS — E7 Self-calls: 0; self-transactions: 0
+PASS — E8 Distinct verification reviewers: 5 (Analyst_01, Analyst_02, Reviewer_01, Reviewer_02, Supervisor_01)
+
+INTEGRITY
+PASS — Existing core entity/relationship/event IDs preserved
+PASS — Dangling foreign keys: 0
+PASS — Average communication clustering coefficient: 0.002874
+PASS — Random expectation: 0.000915
+PASS — Clustering / random ratio: 3.14x
+
+DELIVERABLE CHECK
+PASS — ONTOLOGY.csv present
+PASS — GROUND_TRUTH.csv present
+PASS — VALIDATION_REPORT.txt present
+PASS — required dataset folders/files present
+
+FINAL CHECKLIST
+PASS — zero dangling foreign keys
+PASS — zero ontology violations
+PASS — zero provenance flag conflicts
+PASS — zero future dates
+PASS — zero temporal inversions
+PASS — clustering meaningfully above random
+PASS — every requested planted pattern independently detectable
+PASS — all 596 same-name collision groups represented as valid ER negatives
+PASS — all entity-resolution references resolve
+
+All data are synthetic. Analytical patterns are planted test signals and are
+not evidence of wrongdoing by any real person or organization.
