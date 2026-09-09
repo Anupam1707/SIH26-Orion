@@ -1,0 +1,11 @@
+{
+  "embed_dim": 64,
+  "mlp_hidden": 64,
+  "graph": "communication",
+  "src_col": "source_phone_id",
+  "dst_col": "target_phone_id",
+  "n_nodes": 4252,
+  "val_auc": 0.450241492825724,
+  "test_auc": 0.4428384693877551,
+  "test_ap": 0.14385306803259562
+}

@@ -71,7 +71,7 @@ python graph/analytics/run_pagerank.py --limit 20 --write-back
 ---
 
 ### Module 5 — AI-Based Anomaly & Link Prediction
-**Status: PHASE 2 COMPLETE — Phase 3 not started**
+**Status: TIER 3 COMPLETE — all three tiers done**
 
 #### Tier 1 — Rule-Based Typology Detection
 
@@ -112,9 +112,46 @@ python graph/analytics/run_pagerank.py --limit 20 --write-back
 **Code:** `module5/anomaly_detection/temporal.py`
 
 #### Tier 3 — Link Prediction
-**NOT STARTED**
-- Plan: Adamic-Adar, Resource Allocation, Katz baselines first (measured against held-out real edges)
-- SEAL (subgraph-based GNN) only if it demonstrably beats heuristics
+**COMPLETE — Level 1 & 2 validated; Level 3 GNN underperforms ML baseline**
+
+##### Level 1 — Heuristic Baselines
+
+| Heuristic | Financial Val AUC | Comm Val AUC |
+|-----------|------------------|--------------|
+| Adamic-Adar | 0.406 | 0.399 |
+| Preferential Attachment | **0.480** | **0.414** |
+| Common Neighbors / Jaccard / RA | ~0.407 | ~0.399 |
+
+*Key finding: topology alone is near-random for future link prediction on these sparse graphs — structural heuristics all AUC ≈ 0.40.*
+
+##### Level 2 — ML Classifier (Best: Random Forest)
+
+| Graph | Val AUC | Test AUC | Test AP | vs. Best Heuristic |
+|-------|---------|----------|---------|--------------------|
+| Financial | 0.506 | **0.529** | 0.189 | +5 pts |
+| Communication | 0.602 | **0.618** | 0.322 | +19 pts |
+
+**Top features by importance:** `shortest_path_len` (0.75 fin / 0.62 comm), `same_community` (0.16 comm), `pagerank_dst`, `out_degree_src`, `tx_per_day_src`
+
+##### Level 3 — Node2Vec + MLP
+
+| Graph | Val AUC | Test AUC | vs. RF Classifier |
+|-------|---------|----------|-----------------|
+| Financial | 0.476 | 0.478 | −5 pts (worse) |
+| Communication | 0.450 | 0.443 | −17 pts (worse) |
+
+*Node2Vec with only 5 skip-gram epochs did not converge to representations better than topological features. RF classifier is the production model.*
+
+##### Ground Truth Pattern Discovery (Top-50 predictions)
+
+| Graph | Observation |
+|-------|-------------|
+| Communication | **11/50 top predictions involve BURST_02 planted pattern members** — model recovers intra-syndicate structure |
+| Financial | 1/50 top predictions involves a LAYERING_02 member |
+| Bridge recall (BRIDGE_01/02) | Not recovered in top-10K — cross-component edges have shortest_path=∞, zero CN. Confirmed: topological features cannot detect cross-community bridge links |
+| Mule recall (A00001→A00013) | Not recovered — mule fan-in is star topology; high-degree mule collector is structurally different from 2-hop prediction targets |
+
+**Code:** `module5/link_prediction/` (5 files)
 
 ---
 
@@ -128,10 +165,9 @@ python graph/analytics/run_pagerank.py --limit 20 --write-back
 
 ## Immediate Next Actions
 
-1. **Fix temporal reweighting** in `module5/anomaly_detection/temporal.py` — reweight so `burst_tx_count` and `mean_gap_min` count more than `burst_ratio`; re-validate A00069-A00074 cluster together
-2. **Confirm A00069 receiver list** — check whether A00069 also scatters to A00071-74 (would confirm structuring ring has a single funding origin)
-3. **Decide Event-linkage routing** for burner-swap and pre-event-burst typologies — dedicated phone-graph path, or cross-reference after the fact
-4. **Composite risk score** — combine Phase 1 + OddBall + temporal + Module 4 centrality/community into one per-account score; note that community_id will add noise for the structuring ring (all 6 are in different communities)
-5. **Tier 3 link prediction** — Adamic-Adar / RA / Katz baselines, evaluated with precision@K on held-out edges
-6. **Explainability wrapper** — every Module 5 output carries its evidence subgraph before Module 6 starts
-7. **Team sync** — align on Modules 1, 2, 6 status and resolve the 5 cross-module conflicts from Section 4 (confidence score definition, verification-status vocabulary, entity resolution ownership, scope boundary of Module 3 vs 4/5, feature supply for link prediction)
+1. **Composite risk score** — combine Tier 1 typology flags + OddBall + temporal + Module 4 centrality/community into one per-account score; note community_id adds noise for the structuring ring
+2. **Fix temporal reweighting** in `module5/anomaly_detection/temporal.py` — reweight so `burst_tx_count` and `mean_gap_min` count more than `burst_ratio`; re-validate A00069-A00074 cluster together
+3. **Cross-community bridge detection** — Tier 3 confirmed topology alone cannot detect bridge pairs; needs non-graph features (shared call timing, geolocation proximity) or a dedicated bridge-specific typology rule
+4. **Node2Vec improvement path** — increase skip-gram epochs to 20+, tune p/q parameters for criminal networks; or switch to GCN/GraphSAGE if torch_geometric is installed
+5. **Explainability wrapper** — every Module 5 output carries its evidence subgraph before Module 6 starts
+6. **Team sync** — align on Modules 1, 2, 6 status; resolve the 5 cross-module conflicts from Section 4

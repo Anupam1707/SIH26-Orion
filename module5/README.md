@@ -14,7 +14,7 @@
 | 1 | `cypher_queries/` | ✅ 7/9 typologies clean | Rule-based Cypher pattern matching |
 | 2a | `anomaly_detection/oddball.py` | ✅ Validated | OddBall structural scoring (Akoglu et al. 2010) |
 | 2b | `anomaly_detection/temporal.py` | ✅ Validated | 48h burst window, z-scored composite |
-| 3 | `link_prediction/` | 🔲 Not started | Adamic-Adar / RA / Katz → SEAL GNN |
+| 3 | `link_prediction/` | ✅ Complete | Heuristics → RF classifier → Node2Vec+MLP |
 
 ---
 
@@ -29,12 +29,26 @@ module5/
 │   └── aura_exports.cypher # Aura export + validation Cypher
 ├── data/
 │   ├── inputs/
-│   │   ├── egonet_data.csv     # Egonet features exported from Aura
-│   │   └── temporal_data.csv   # Transaction timestamps per account from Aura
-│   └── results/
-│       ├── oddball_results.csv  # OddBall output (all accounts scored)
-│       └── temporal_results.csv # Temporal scorer output
-└── link_prediction/        # Tier 3 — not yet started
+│   │   ├── egonet_data.csv
+│   │   └── temporal_data.csv
+│   ├── results/
+│   │   ├── oddball_results.csv
+│   │   └── temporal_results.csv
+│   └── link_prediction/    # Tier 3 outputs
+│       ├── *_pos/neg_{financial,communication}.csv  # Edge splits
+│       ├── features_{train,val,test}_{graph}.parquet
+│       ├── heuristics_{val,test}_{graph}.csv
+│       ├── best_model_{graph}.pkl
+│       ├── node_embeddings_{graph}.npy + node_index_{graph}.json
+│       ├── predictions_{graph}.csv
+│       └── evidence_subgraphs_{graph}.json
+└── link_prediction/        # Tier 3 code
+    ├── dataset_builder.py    # Temporal train/val/test splits + neg sampling
+    ├── heuristics.py         # Level 1: AA, RA, Jaccard, PA, CN baselines
+    ├── feature_pipeline.py   # Level 2: Edge feature engineering
+    ├── train_classifier.py   # Level 2: LR / RF / GBM training + evaluation
+    ├── gnn_embedder.py       # Level 3: Node2Vec + MLP link prediction head
+    └── predict_and_explain.py # Inference + evidence subgraphs + GT recall
 ```
 
 ---
@@ -61,7 +75,47 @@ to `data/inputs/`.
 
 ---
 
-## Validated Results (Phase 2 summary)
+## Validated Results — Tier 3 (Link Prediction)
+
+Training graphs: 70% temporal split. Evaluated against held-out 15% val / 15% test.
+
+### Level 1 — Heuristic Baselines
+
+| Heuristic | Financial Val AUC | Comm Val AUC |
+|-----------|------------------|--------------|
+| Adamic-Adar | 0.406 | 0.399 |
+| Preferential Attachment | **0.480** | **0.414** |
+
+*Near-random: topology alone insufficient. Every Level 2+ model must beat this.*
+
+### Level 2 — ML Classifier (Winner: Random Forest, n=300)
+
+| Graph | Val AUC | Test AUC | Test AP |
+|-------|---------|----------|---------|
+| Financial | 0.506 | **0.529** | 0.189 |
+| Communication | 0.602 | **0.618** | 0.322 |
+
+**Feature importance leaders (communication):** `shortest_path_len` (62%), `same_community` (16%), `pagerank_dst` (3%), `out_degree_src` (3%)
+
+### Level 3 — Node2Vec + MLP
+
+| Graph | Val AUC | Test AUC | Decision |
+|-------|---------|----------|----------|
+| Financial | 0.476 | 0.478 | ❌ Below RF — not used in production |
+| Communication | 0.450 | 0.443 | ❌ Below RF — not used in production |
+
+### Ground Truth Pattern Discovery (Top-50 predictions)
+
+| Pattern | Recovered? | Detail |
+|---------|------------|--------|
+| BURST_02 intra-cluster links | **✅ 11/50 in top-50** | Model discovers BURST_02 members as most likely to link |
+| LAYERING_02 | Partial (rank 15) | 1 member pair appears in top-50 |
+| BRIDGE_01 / BRIDGE_02 | ❌ Not recovered | Cross-component: no shared neighbors, shortest path = ∞ |
+| MULE_01 chain | ❌ Not recovered | Star-topology mule chains not captured by 2-hop heuristics |
+
+---
+
+## Validated Results (Tiers 2a & 2b summary)
 
 ### OddBall Structural Scoring
 
@@ -92,8 +146,8 @@ planted burst as A00070 (13 total tx). Fix outstanding: reweight so
 
 - [ ] Fix burst_ratio/total_tx reweighting; re-validate A00069–74 cluster together
 - [ ] Narrow pre-event call burst typology to event-linked entities
-- [ ] Confirm A00069 scatter receivers include A00071–74 (full ring structure)
 - [ ] Decide Event-linkage routing for burner-swap typologies
-- [ ] Tier 3: Adamic-Adar / Resource Allocation / Katz heuristic baselines
-- [ ] Composite risk score combining Phase 1 + OddBall + temporal + Module 4 centrality
+- [ ] Composite risk score combining Tier 1 + OddBall + temporal + Module 4 centrality
+- [ ] Cross-community bridge detection (needs non-topological features)
+- [ ] Node2Vec improvement: more epochs / p,q tuning / torch_geometric GCN option
 - [ ] Explainability wrapper (every output ships with its evidence subgraph)

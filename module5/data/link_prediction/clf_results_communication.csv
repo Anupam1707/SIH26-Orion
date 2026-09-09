@@ -1,0 +1,7 @@
+graph,model,split,auc,ap,p@10,p@50
+communication,LogisticRegression,val,0.4898687973284297,0.24544015490797672,1.0,1.0
+communication,LogisticRegression,test,0.500930612244898,0.2712182773228386,1.0,1.0
+communication,RandomForest,val,0.60215920592724,0.29338453958535815,0.8,0.96
+communication,RandomForest,test,0.6182746938775511,0.32160048696414095,1.0,0.92
+communication,HistGradientBoosting,val,0.5463187991422446,0.2426949985920679,1.0,0.96
+communication,HistGradientBoosting,test,0.5567857142857143,0.2584415584415584,0.9,0.96

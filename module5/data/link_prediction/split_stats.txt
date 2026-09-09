@@ -1,0 +1,14 @@
+=== Split Statistics ===
+
+Financial graph (Account→Account via transactions)
+  Training graph : 1298 nodes, 4980 edges
+  Neg ratio      : 5:1   Hard neg frac: 0.3
+
+Communication graph (Phone→Phone via CDR)
+  Training graph : 4252 nodes, 6515 edges
+  Neg ratio      : 5:1   Hard neg frac: 0.3
+
+Temporal split   : 70% train | 15% val | 15% test
+Random seed      : 42
+
+Output files written to: /Users/anupamkanoongo/Documents/Developer's Drive/SIH26/module5/data/link_prediction

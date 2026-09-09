@@ -1,0 +1,11 @@
+{
+  "embed_dim": 64,
+  "mlp_hidden": 64,
+  "graph": "financial",
+  "src_col": "source_account_id",
+  "dst_col": "target_account_id",
+  "n_nodes": 1298,
+  "val_auc": 0.4759236620780723,
+  "test_auc": 0.47754790811424574,
+  "test_ap": 0.16164215753449687
+}

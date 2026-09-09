@@ -1,0 +1,1308 @@
+[
+  {
+    "src": "PH02327",
+    "dst": "PH03850",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH02327",
+        "PH02390",
+        "PH04267",
+        "PH03850"
+      ],
+      [
+        "PH02327",
+        "PH03850"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 1,
+    "score": 0.6880502004093594
+  },
+  {
+    "src": "PH01476",
+    "dst": "PH04198",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH01476",
+        "PH04198"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 2,
+    "score": 0.6384258186817169
+  },
+  {
+    "src": "PH01308",
+    "dst": "PH01602",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH01308",
+        "PH01602"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 3,
+    "score": 0.6104410835107168
+  },
+  {
+    "src": "PH03254",
+    "dst": "PH04223",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH03254",
+        "PH01450",
+        "PH00890",
+        "PH04223"
+      ],
+      [
+        "PH03254",
+        "PH04223"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 4,
+    "score": 0.5948237959543864
+  },
+  {
+    "src": "PH03254",
+    "dst": "PH01450",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH03254",
+        "PH01450"
+      ],
+      [
+        "PH03254",
+        "PH04223",
+        "PH00890",
+        "PH01450"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 5,
+    "score": 0.5810542289415995
+  },
+  {
+    "src": "PH03807",
+    "dst": "PH03174",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH03807",
+        "PH03174"
+      ],
+      [
+        "PH03807",
+        "PH01674",
+        "PH00206",
+        "PH03174"
+      ],
+      [
+        "PH03807",
+        "PH00202",
+        "PH00225",
+        "PH03174"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 6,
+    "score": 0.5729372982184092
+  },
+  {
+    "src": "PH00206",
+    "dst": "PH03174",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH00206",
+        "PH01674",
+        "PH03807",
+        "PH03174"
+      ],
+      [
+        "PH00206",
+        "PH03174"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 7,
+    "score": 0.5573072318236033
+  },
+  {
+    "src": "PH01910",
+    "dst": "PH01388",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH01910",
+        "PH04450",
+        "PH03895",
+        "PH01388"
+      ],
+      [
+        "PH01910",
+        "PH01388"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 8,
+    "score": 0.5546366802851359
+  },
+  {
+    "src": "PH04450",
+    "dst": "PH01910",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH04450",
+        "PH01910"
+      ],
+      [
+        "PH04450",
+        "PH03895",
+        "PH01388",
+        "PH01910"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 9,
+    "score": 0.551895606915156
+  },
+  {
+    "src": "PH03807",
+    "dst": "PH01674",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH03807",
+        "PH03174",
+        "PH00206",
+        "PH01674"
+      ],
+      [
+        "PH03807",
+        "PH01674"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 10,
+    "score": 0.5509099845091502
+  },
+  {
+    "src": "PH02895",
+    "dst": "PH03483",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH02895",
+        "PH03483"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 11,
+    "score": 0.548944700161616
+  },
+  {
+    "src": "PH02633",
+    "dst": "PH02980",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0,
+    "resource_allocation": 0,
+    "jaccard": 0.0,
+    "common_neighbors_count": 0,
+    "shared_neighbors": [],
+    "shared_neighbor_labels": [],
+    "connecting_paths": [
+      [
+        "PH02633",
+        "PH02980"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 12,
+    "score": 0.542855638662974
+  },
+  {
+    "src": "PH03547",
+    "dst": "PH03811",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH04008"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH04008, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03547",
+        "PH04008",
+        "PH03811"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 13,
+    "score": 0.5035894412843008
+  },
+  {
+    "src": "PH02603",
+    "dst": "PH01462",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00041"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00041, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02603",
+        "PH00041",
+        "PH01462"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 14,
+    "score": 0.5033742685166617
+  },
+  {
+    "src": "PH04256",
+    "dst": "PH01551",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03600"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03600, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH04256",
+        "PH03600",
+        "PH01551"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 15,
+    "score": 0.503295500978591
+  },
+  {
+    "src": "PH02197",
+    "dst": "PH04272",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01169"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01169, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02197",
+        "PH01169",
+        "PH04272"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 16,
+    "score": 0.503241767391326
+  },
+  {
+    "src": "PH03923",
+    "dst": "PH03170",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01921"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01921, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03923",
+        "PH01921",
+        "PH03170"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 17,
+    "score": 0.5024899144021292
+  },
+  {
+    "src": "PH02528",
+    "dst": "PH00604",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02410"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02410, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02528",
+        "PH00378",
+        "PH02410",
+        "PH00604"
+      ],
+      [
+        "PH02528",
+        "PH02410",
+        "PH00604"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 18,
+    "score": 0.5024014997361886
+  },
+  {
+    "src": "PH02845",
+    "dst": "PH03080",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03438"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03438, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02845",
+        "PH03438",
+        "PH03080"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 19,
+    "score": 0.5023999113885184
+  },
+  {
+    "src": "PH03944",
+    "dst": "PH01529",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03804"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03804, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03944",
+        "PH03804",
+        "PH01529"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 20,
+    "score": 0.501897844366869
+  },
+  {
+    "src": "PH03842",
+    "dst": "PH01740",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00720"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00720, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03842",
+        "PH00720",
+        "PH01740"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 21,
+    "score": 0.5017444689122458
+  },
+  {
+    "src": "PH03893",
+    "dst": "PH03080",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03438"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03438, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03893",
+        "PH03438",
+        "PH03080"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 22,
+    "score": 0.5017299849835654
+  },
+  {
+    "src": "PH03804",
+    "dst": "PH02657",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01529"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01529, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03804",
+        "PH01529",
+        "PH02657"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 23,
+    "score": 0.5014308121727314
+  },
+  {
+    "src": "PH03444",
+    "dst": "PH00458",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01678"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01678, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03444",
+        "PH01678",
+        "PH00458"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 24,
+    "score": 0.5012439687100668
+  },
+  {
+    "src": "PH02825",
+    "dst": "PH04098",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03471"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03471, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02825",
+        "PH03471",
+        "PH04098"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 25,
+    "score": 0.5012091893998404
+  },
+  {
+    "src": "PH02802",
+    "dst": "PH00604",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02410"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02410, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02802",
+        "PH02410",
+        "PH00604"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 26,
+    "score": 0.5010212222735088
+  },
+  {
+    "src": "PH03227",
+    "dst": "PH01136",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00971"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00971, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03227",
+        "PH00971",
+        "PH01136"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 27,
+    "score": 0.5009938637415569
+  },
+  {
+    "src": "PH03227",
+    "dst": "PH00816",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00971"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00971, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03227",
+        "PH00971",
+        "PH00816"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 28,
+    "score": 0.5009715716044109
+  },
+  {
+    "src": "PH02232",
+    "dst": "PH04421",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00826"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00826, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02232",
+        "PH00826",
+        "PH04421"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 29,
+    "score": 0.5009480741546956
+  },
+  {
+    "src": "PH04401",
+    "dst": "PH03647",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03747"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03747, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH04401",
+        "PH03747",
+        "PH03647"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 30,
+    "score": 0.5006991524544974
+  },
+  {
+    "src": "PH03701",
+    "dst": "PH03066",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.6213,
+    "resource_allocation": 0.2,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02854"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02854, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03701",
+        "PH02854",
+        "PH03066"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 31,
+    "score": 0.5005195299784343
+  },
+  {
+    "src": "PH02845",
+    "dst": "PH03893",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03438"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03438, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02845",
+        "PH03438",
+        "PH03893"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 32,
+    "score": 0.5001675982323904
+  },
+  {
+    "src": "PH03218",
+    "dst": "PH03881",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.6213,
+    "resource_allocation": 0.2,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00809"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00809, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03218",
+        "PH00809",
+        "PH03881"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 33,
+    "score": 0.49997209111849467
+  },
+  {
+    "src": "PH02528",
+    "dst": "PH02802",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02410"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02410, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02528",
+        "PH00378",
+        "PH02410",
+        "PH02802"
+      ],
+      [
+        "PH02528",
+        "PH02410",
+        "PH02802"
+      ]
+    ],
+    "path_count": 2,
+    "rank": 34,
+    "score": 0.49971273421037077
+  },
+  {
+    "src": "PH03989",
+    "dst": "PH00954",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01258"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01258, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03989",
+        "PH01258",
+        "PH00954"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 35,
+    "score": 0.49963262556779264
+  },
+  {
+    "src": "PH03837",
+    "dst": "PH01534",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.5581,
+    "resource_allocation": 0.1667,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02335"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02335, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03837",
+        "PH02335",
+        "PH01534"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 36,
+    "score": 0.4995459604142892
+  },
+  {
+    "src": "PH03226",
+    "dst": "PH01865",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00314"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00314, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03226",
+        "PH00314",
+        "PH01865"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 37,
+    "score": 0.4994290668813009
+  },
+  {
+    "src": "PH02206",
+    "dst": "PH00698",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02422"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02422, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02206",
+        "PH02422",
+        "PH00698"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 38,
+    "score": 0.4992299536863963
+  },
+  {
+    "src": "PH03565",
+    "dst": "PH02589",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.5581,
+    "resource_allocation": 0.1667,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01687"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01687, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03565",
+        "PH01687",
+        "PH02589"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 39,
+    "score": 0.498777703444163
+  },
+  {
+    "src": "PH04244",
+    "dst": "PH02263",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.25,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03567"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03567, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH04244",
+        "PH03567",
+        "PH02263"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 40,
+    "score": 0.49834341078265576
+  },
+  {
+    "src": "PH03024",
+    "dst": "PH00488",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02297"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02297, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03024",
+        "PH02297",
+        "PH00488"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 41,
+    "score": 0.4979402620641012
+  },
+  {
+    "src": "PH03227",
+    "dst": "PH03021",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00971"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00971, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03227",
+        "PH00971",
+        "PH03021"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 42,
+    "score": 0.4978393773237864
+  },
+  {
+    "src": "PH02198",
+    "dst": "PH02036",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00919"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00919, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02198",
+        "PH00919",
+        "PH02036"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 43,
+    "score": 0.49748151103655497
+  },
+  {
+    "src": "PH04284",
+    "dst": "PH00205",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00716"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00716, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH04284",
+        "PH00716",
+        "PH00205"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 44,
+    "score": 0.49704109619534204
+  },
+  {
+    "src": "PH04464",
+    "dst": "PH03066",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.6213,
+    "resource_allocation": 0.2,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02854"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02854, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH04464",
+        "PH02854",
+        "PH03066"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 45,
+    "score": 0.4969641427199046
+  },
+  {
+    "src": "PH02926",
+    "dst": "PH04211",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 1.0,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03028"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03028, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02926",
+        "PH03028",
+        "PH04211"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 46,
+    "score": 0.4967827696648855
+  },
+  {
+    "src": "PH02126",
+    "dst": "PH03052",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.4427,
+    "resource_allocation": 0.5,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH03094"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH03094, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02126",
+        "PH03094",
+        "PH03052"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 47,
+    "score": 0.49616013954556176
+  },
+  {
+    "src": "PH03209",
+    "dst": "PH03481",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH02677"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH02677, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03209",
+        "PH02677",
+        "PH03481"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 48,
+    "score": 0.49592330048954675
+  },
+  {
+    "src": "PH02666",
+    "dst": "PH00205",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9102,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.3333,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH00716"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH00716, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH02666",
+        "PH00716",
+        "PH00205"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 49,
+    "score": 0.49528372555240063
+  },
+  {
+    "src": "PH03641",
+    "dst": "PH00856",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.7213,
+    "resource_allocation": 0.25,
+    "jaccard": 0.5,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "PH01846"
+    ],
+    "shared_neighbor_labels": [
+      "Phone(PH01846, owner=?)"
+    ],
+    "connecting_paths": [
+      [
+        "PH03641",
+        "PH01846",
+        "PH00856"
+      ]
+    ],
+    "path_count": 1,
+    "rank": 50,
+    "score": 0.49492026964823405
+  }
+]
