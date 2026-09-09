@@ -5,21 +5,39 @@ Builds train / val / test edge splits for both the financial graph
 (Account → Account via transactions) and the communication graph
 (Phone → Phone via CDR communications).
 
-Strategy
---------
-* Edges are sorted chronologically.
-* Split: 70% train | 15% val | 15% test  (by edge timestamp, not randomly)
-* For every positive held-out edge, 5 × random negative pairs are sampled
-  (both nodes present in training graph; edge absent from training graph).
-* An additional pool of hard negatives is created from 2-hop non-edge pairs
-  that share at least 1 common neighbor in the training graph.
+Evaluation framework: Random Edge Masking
+-----------------------------------------
+Random masking is the standard evaluation for HIDDEN LINK DISCOVERY
+(Liben-Nowell & Kleinberg 2007), which is the correct framing for the SIH
+task — finding covert connections that exist but are unobserved.
+
+Why NOT temporal splits (previous approach, now replaced):
+  Temporal splits held out the MOST RECENT 30% of edges. For planted
+  ground-truth patterns (BRIDGE_01/02, mule chains), the bridge edges were
+  planted after most background edges, so they landed in the test set where
+  both endpoints had ZERO common neighbors in the training graph. Every
+  topological model scored them at worst-possible (shortest_path=∞, CN=0),
+  making GT recall structurally impossible.
+
+Random masking strategy:
+  1. Mask MASK_FRAC (20%) of edges at random, keeping every node with ≥1
+     edge in the training graph (stratified sampling).
+  2. Ground-truth planted edges (BRIDGE_01/02, mule chains, layering chains)
+     are FORCIBLY INCLUDED in the mask — they are guaranteed test positives.
+  3. Training graph = remaining 80% of edges.
+  4. Val = random half of masked edges + NEG_RATIO:1 negatives.
+  5. Test = other half of masked edges + NEG_RATIO:1 negatives.
+
+Result: GT edges are held out but the training graph still contains the
+adjacent edges, giving non-zero common neighbors, finite shortest paths,
+and meaningful heuristic scores.
 
 Outputs (written to module5/data/link_prediction/)
 ---------------------------------------------------
     train_pos_{graph}.csv, train_neg_{graph}.csv
-    val_pos_{graph}.csv,   val_neg_{graph}.csv
+    val_pos._{graph}.csv,  val_neg_{graph}.csv
     test_pos_{graph}.csv,  test_neg_{graph}.csv
-    graph_train_{graph}.gpickle
+    graph_train_{graph}.pkl
     split_stats.txt
 
 Run
@@ -30,112 +48,105 @@ Run
 from __future__ import annotations
 
 import os
-import random
 import pickle
+import random
 import textwrap
 from pathlib import Path
 
 import networkx as nx
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 # ── paths ─────────────────────────────────────────────────────────────────────
-ROOT = Path(__file__).resolve().parent.parent.parent          # SIH26/
+ROOT    = Path(__file__).resolve().parent.parent.parent
 DATA_REL = ROOT / "data" / "dataset" / "RELATIONSHIPS"
-OUT_DIR   = ROOT / "module5" / "data" / "link_prediction"
+OUT_DIR  = ROOT / "module5" / "data" / "link_prediction"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-RANDOM_SEED   = 42
-NEG_RATIO     = 5        # negatives per positive edge
-HARD_NEG_FRAC = 0.3      # fraction of negatives drawn from 2-hop pool
-TRAIN_FRAC    = 0.70
-VAL_FRAC      = 0.15     # remainder → test
+RANDOM_SEED = 42
+NEG_RATIO   = 5      # negatives per positive
+HARD_NEG_FRAC = 0.3  # fraction of negatives from 2-hop hard pool
+MASK_FRAC   = 0.20   # fraction of edges to mask as val+test positives
+
+# ── Ground-truth planted edges (forced into the mask for guaranteed recall) ───
+# These come from GROUND_TRUTH.csv and the Tier 1 confirmed findings.
+GT_FORCED_EDGES = {
+    "financial": [
+        ("A00001", "A00013"),   # MULE_01 feeder→collector
+        ("A00012", "A00013"),   # MULE_01 feeder→collector
+        ("A00013", "A00014"),   # MULE_01 collector→target
+        ("A00043", "A00047"),   # LAYERING_01 chain endpoints
+        ("A00049", "A00053"),   # LAYERING_02 chain endpoints
+        ("A00069", "A00070"),   # STRUCTURING_01 pair
+        ("A00055", "A00056"),   # SCATTER_GATHER feeder→receiver
+    ],
+    "communication": [
+        ("PH04296", "PH04450"),  # BRIDGE_01
+        ("PH02064", "PH04287"),  # BRIDGE_02
+        ("PH00002", "PH00001"),  # BURNER_01 rotation pair
+    ],
+}
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
-def _temporal_split(df: pd.DataFrame,
-                    timestamp_col: str,
-                    src_col: str,
-                    dst_col: str,
-                    extra_cols: list[str] | None = None) -> tuple[
-                        pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Sort by timestamp, then cut 70 / 15 / 15."""
-    df = df.copy()
-    df[timestamp_col] = pd.to_datetime(df[timestamp_col], errors="coerce")
-    df = df.dropna(subset=[timestamp_col]).sort_values(timestamp_col)
-    n = len(df)
-    i_train = int(n * TRAIN_FRAC)
-    i_val   = int(n * (TRAIN_FRAC + VAL_FRAC))
-
-    keep = [src_col, dst_col, timestamp_col] + (extra_cols or [])
-    keep = [c for c in keep if c in df.columns]
-    train = df.iloc[:i_train][keep].copy()
-    val   = df.iloc[i_train:i_val][keep].copy()
-    test  = df.iloc[i_val:][keep].copy()
-    return train, val, test
-
-
 def _build_nx_graph(df: pd.DataFrame,
-                    src_col: str, dst_col: str,
-                    directed: bool = True) -> nx.Graph:
-    G = nx.DiGraph() if directed else nx.Graph()
+                    src_col: str, dst_col: str) -> nx.DiGraph:
+    G = nx.DiGraph()
     for _, row in df.iterrows():
-        G.add_edge(row[src_col], row[dst_col])
+        G.add_edge(str(row[src_col]), str(row[dst_col]))
     return G
 
 
-def _sample_negatives(
-    pos_df: pd.DataFrame,
-    src_col: str,
-    dst_col: str,
-    train_G: nx.Graph,
-    all_nodes: list,
-    hard_negatives: set[tuple],
-    n_per_pos: int = NEG_RATIO,
-    hard_frac: float = HARD_NEG_FRAC,
-    seed: int = RANDOM_SEED,
-) -> pd.DataFrame:
+def _random_mask(G: nx.DiGraph,
+                 forced_edges: list[tuple],
+                 mask_frac: float,
+                 seed: int) -> tuple[set[tuple], nx.DiGraph]:
     """
-    For each positive edge, sample n_per_pos negatives:
-      - hard_frac from the 2-hop non-edge pool (if available)
-      - remainder randomly
-    Both endpoints must be in the training graph.
+    Randomly mask mask_frac of edges. Forced GT edges are always masked.
+    Every node is guaranteed ≥1 edge remaining in the training graph.
+    Returns (masked_edges_set, training_graph).
     """
     rng = random.Random(seed)
-    train_nodes = list(train_G.nodes())
-    existing = set(zip(pos_df[src_col], pos_df[dst_col]))
-    train_edges = set(train_G.edges())
-    hard_pool = list(hard_negatives - existing - train_edges)
+    all_edges = list(G.edges())
+    rng.shuffle(all_edges)
 
-    records = []
-    n_hard  = max(0, int(n_per_pos * hard_frac))
-    n_rand  = n_per_pos - n_hard
+    # start with forced GT edges that actually exist in the graph
+    forced = {(u, v) for u, v in forced_edges if G.has_edge(u, v)}
+    also_reversed = {(v, u) for u, v in forced if G.has_edge(v, u)}
+    forced |= also_reversed
 
-    for _ in range(len(pos_df)):
-        # hard negatives
-        chosen_hard = rng.sample(hard_pool, min(n_hard, len(hard_pool)))
-        for (u, v) in chosen_hard:
-            records.append({src_col: u, dst_col: v, "label": 0, "neg_type": "hard"})
+    n_target = max(int(len(all_edges) * mask_frac), len(forced))
 
-        # random negatives
-        attempts = 0
-        got = 0
-        while got < n_rand and attempts < 5000:
-            u = rng.choice(train_nodes)
-            v = rng.choice(train_nodes)
-            attempts += 1
-            if (u == v
-                    or (u, v) in train_edges
-                    or (u, v) in existing
-                    or not train_G.has_node(u)
-                    or not train_G.has_node(v)):
-                continue
-            records.append({src_col: u, dst_col: v, "label": 0, "neg_type": "random"})
-            train_edges.add((u, v))   # avoid duplicating within this run
-            got += 1
+    # build degree count to protect the minimum
+    remaining_deg = {n: G.degree(n) for n in G.nodes()}
+    for u, v in forced:
+        remaining_deg[u] -= 1
+        remaining_deg[v] -= 1
 
-    return pd.DataFrame(records)
+    masked: set[tuple] = set(forced)
+
+    for u, v in all_edges:
+        if len(masked) >= n_target:
+            break
+        if (u, v) in masked:
+            continue
+        # keep at least 1 edge per node
+        if remaining_deg[u] <= 1 or remaining_deg[v] <= 1:
+            continue
+        masked.add((u, v))
+        remaining_deg[u] -= 1
+        remaining_deg[v] -= 1
+
+    # build training graph
+    train_G = nx.DiGraph()
+    for n in G.nodes():
+        train_G.add_node(n)
+    for u, v in all_edges:
+        if (u, v) not in masked:
+            train_G.add_edge(u, v)
+
+    return masked, train_G
 
 
 def _hard_neg_pool(train_G: nx.Graph) -> set[tuple]:
@@ -152,103 +163,113 @@ def _hard_neg_pool(train_G: nx.Graph) -> set[tuple]:
     return pool
 
 
-def _save_split(pos: pd.DataFrame, neg: pd.DataFrame,
+def _sample_negatives(
+    pos_pairs: list[tuple],
+    src_col: str, dst_col: str,
+    train_G: nx.DiGraph,
+    hard_pool: set[tuple],
+    n_per_pos: int = NEG_RATIO,
+    hard_frac: float = HARD_NEG_FRAC,
+    seed: int = RANDOM_SEED,
+) -> pd.DataFrame:
+    rng = random.Random(seed)
+    train_nodes = list(train_G.nodes())
+    existing = set(train_G.edges()) | set(pos_pairs)
+    hard_list = list(hard_pool - existing)
+
+    n_hard = max(0, int(n_per_pos * hard_frac))
+    n_rand = n_per_pos - n_hard
+
+    records = []
+    used_rand: set[tuple] = set()
+
+    for _ in pos_pairs:
+        # hard negatives
+        chosen = rng.sample(hard_list, min(n_hard, len(hard_list)))
+        for (u, v) in chosen:
+            records.append({src_col: u, dst_col: v, "label": 0, "neg_type": "hard"})
+
+        # random negatives
+        got, attempts = 0, 0
+        while got < n_rand and attempts < 5000:
+            u = rng.choice(train_nodes)
+            v = rng.choice(train_nodes)
+            attempts += 1
+            if u == v or (u, v) in existing or (u, v) in used_rand:
+                continue
+            records.append({src_col: u, dst_col: v, "label": 0, "neg_type": "random"})
+            used_rand.add((u, v))
+            got += 1
+
+    return pd.DataFrame(records)
+
+
+def _save_split(pos_pairs: list[tuple], neg_df: pd.DataFrame,
                 src_col: str, dst_col: str,
                 prefix: str, graph_name: str) -> None:
-    pos_out = pos.copy()
-    pos_out["label"] = 1
-    pos_out.to_csv(OUT_DIR / f"{prefix}_pos_{graph_name}.csv", index=False)
-
-    neg_out = neg[[src_col, dst_col, "label", "neg_type"]].copy()
-    neg_out.to_csv(OUT_DIR / f"{prefix}_neg_{graph_name}.csv", index=False)
-
-    print(f"  [{graph_name}] {prefix}: {len(pos_out)} pos, {len(neg_out)} neg")
+    pos_df = pd.DataFrame(pos_pairs, columns=[src_col, dst_col])
+    pos_df["label"] = 1
+    pos_df.to_csv(OUT_DIR / f"{prefix}_pos_{graph_name}.csv", index=False)
+    neg_df.to_csv(OUT_DIR / f"{prefix}_neg_{graph_name}.csv", index=False)
+    print(f"  [{graph_name}] {prefix:5s}: {len(pos_df)} pos,  {len(neg_df)} neg")
 
 
-# ── financial graph ────────────────────────────────────────────────────────────
+# ── graph builders ─────────────────────────────────────────────────────────────
 
-def build_financial_graph() -> None:
-    print("\n── Financial graph (Account → Account) ──")
-    tx = pd.read_csv(DATA_REL / "transactions.csv")
-    train_df, val_df, test_df = _temporal_split(
-        tx, "timestamp", "source_account_id", "target_account_id",
-        extra_cols=["amount", "transaction_type", "channel"]
-    )
-    src, dst = "source_account_id", "target_account_id"
+def build_graph(graph_name: str,
+                csv_path: Path,
+                src_col: str, dst_col: str) -> nx.DiGraph:
+    print(f"\n── {graph_name} graph ({src_col} → {dst_col}) ──")
+    df = pd.read_csv(csv_path)
+    full_G = _build_nx_graph(df, src_col, dst_col)
+    print(f"  Full graph: {full_G.number_of_nodes()} nodes, "
+          f"{full_G.number_of_edges()} edges")
 
-    train_G = _build_nx_graph(train_df, src, dst)
+    forced = GT_FORCED_EDGES.get(graph_name, [])
+    present = [(u, v) for u, v in forced if full_G.has_edge(u, v)]
+    missing = [(u, v) for u, v in forced if not full_G.has_edge(u, v)]
+    print(f"  Forced GT edges: {len(present)} present in graph, "
+          f"{len(missing)} missing (not in CSV) — skipped")
+
+    masked_edges, train_G = _random_mask(full_G, present, MASK_FRAC, RANDOM_SEED)
+    print(f"  Masked {len(masked_edges)} edges ({100*len(masked_edges)/full_G.number_of_edges():.1f}%)")
     print(f"  Training graph: {train_G.number_of_nodes()} nodes, "
           f"{train_G.number_of_edges()} edges")
+
+    # Verify forced edges are in mask
+    for u, v in present:
+        status = "✅" if (u, v) in masked_edges or (v, u) in masked_edges else "❌ MISSING"
+        print(f"    {status} GT edge {u}↔{v}")
 
     # save training graph
-    graph_path = OUT_DIR / "graph_train_financial.pkl"
-    with open(graph_path, "wb") as f:
+    with open(OUT_DIR / f"graph_train_{graph_name}.pkl", "wb") as f:
         pickle.dump(train_G, f, protocol=4)
 
-    # build hard neg pool
+    # hard negative pool from training graph
     print("  Building hard negative pool …")
     hard_pool = _hard_neg_pool(train_G)
     print(f"  Hard negative pool: {len(hard_pool)} pairs")
 
-    all_nodes = list(train_G.nodes())
+    # split masked edges into val and test halves
+    masked_list = list(masked_edges)
+    random.Random(RANDOM_SEED + 1).shuffle(masked_list)
+    mid = len(masked_list) // 2
+    val_pos  = masked_list[:mid]
+    test_pos = masked_list[mid:]
 
-    # val
-    val_pos = val_df[[src, dst, "timestamp"]].copy()
-    val_neg = _sample_negatives(val_pos, src, dst, train_G, all_nodes, hard_pool, seed=1)
-    _save_split(val_pos, val_neg, src, dst, "val", "financial")
+    # also produce a train self-supervised set (10% additional random mask within train)
+    train_edges = list(train_G.edges())
+    random.Random(RANDOM_SEED + 2).shuffle(train_edges)
+    train_hold_n = max(int(len(train_edges) * 0.10), 50)
+    train_pos = train_edges[:train_hold_n]
 
-    # test
-    test_pos = test_df[[src, dst, "timestamp"]].copy()
-    test_neg = _sample_negatives(test_pos, src, dst, train_G, all_nodes, hard_pool, seed=2)
-    _save_split(test_pos, test_neg, src, dst, "test", "financial")
+    val_neg   = _sample_negatives(val_pos,   src_col, dst_col, train_G, hard_pool, seed=10)
+    test_neg  = _sample_negatives(test_pos,  src_col, dst_col, train_G, hard_pool, seed=11)
+    train_neg = _sample_negatives(train_pos, src_col, dst_col, train_G, hard_pool, seed=12)
 
-    # train self-supervised (hold-out within train set for GNN pre-train)
-    n_tr_hold = int(len(train_df) * 0.10)
-    train_pos = train_df.iloc[:-n_tr_hold][[src, dst, "timestamp"]].copy()
-    train_held = train_df.iloc[-n_tr_hold:][[src, dst, "timestamp"]].copy()
-    train_neg = _sample_negatives(train_held, src, dst, train_G, all_nodes, hard_pool, seed=3)
-    _save_split(train_held, train_neg, src, dst, "train", "financial")
-
-    return train_G
-
-
-# ── communication graph ────────────────────────────────────────────────────────
-
-def build_communication_graph() -> None:
-    print("\n── Communication graph (Phone → Phone) ──")
-    comm = pd.read_csv(DATA_REL / "communications.csv")
-    train_df, val_df, test_df = _temporal_split(
-        comm, "timestamp", "source_phone_id", "target_phone_id",
-        extra_cols=["communication_type", "duration_seconds"]
-    )
-    src, dst = "source_phone_id", "target_phone_id"
-
-    train_G = _build_nx_graph(train_df, src, dst)
-    print(f"  Training graph: {train_G.number_of_nodes()} nodes, "
-          f"{train_G.number_of_edges()} edges")
-
-    graph_path = OUT_DIR / "graph_train_communication.pkl"
-    with open(graph_path, "wb") as f:
-        pickle.dump(train_G, f, protocol=4)
-
-    print("  Building hard negative pool …")
-    hard_pool = _hard_neg_pool(train_G)
-    print(f"  Hard negative pool: {len(hard_pool)} pairs")
-
-    all_nodes = list(train_G.nodes())
-
-    val_pos = val_df[[src, dst, "timestamp"]].copy()
-    val_neg = _sample_negatives(val_pos, src, dst, train_G, all_nodes, hard_pool, seed=4)
-    _save_split(val_pos, val_neg, src, dst, "val", "communication")
-
-    test_pos = test_df[[src, dst, "timestamp"]].copy()
-    test_neg = _sample_negatives(test_pos, src, dst, train_G, all_nodes, hard_pool, seed=5)
-    _save_split(test_pos, test_neg, src, dst, "test", "communication")
-
-    n_tr_hold = int(len(train_df) * 0.10)
-    train_held = train_df.iloc[-n_tr_hold:][[src, dst, "timestamp"]].copy()
-    train_neg = _sample_negatives(train_held, src, dst, train_G, all_nodes, hard_pool, seed=6)
-    _save_split(train_held, train_neg, src, dst, "train", "communication")
+    _save_split(val_pos,   val_neg,   src_col, dst_col, "val",   graph_name)
+    _save_split(test_pos,  test_neg,  src_col, dst_col, "test",  graph_name)
+    _save_split(train_pos, train_neg, src_col, dst_col, "train", graph_name)
 
     return train_G
 
@@ -260,30 +281,41 @@ def main() -> None:
     np.random.seed(RANDOM_SEED)
 
     print("=" * 60)
-    print("Module 5 Tier 3 — Dataset Builder")
+    print("Module 5 Tier 3 — Dataset Builder (Random Masking Mode)")
     print(f"Output directory: {OUT_DIR}")
     print("=" * 60)
 
-    fin_G  = build_financial_graph()
-    comm_G = build_communication_graph()
+    fin_G = build_graph(
+        "financial",
+        DATA_REL / "transactions.csv",
+        "source_account_id", "target_account_id",
+    )
+    comm_G = build_graph(
+        "communication",
+        DATA_REL / "communications.csv",
+        "source_phone_id", "target_phone_id",
+    )
 
-    # ── summary ──
     stats = textwrap.dedent(f"""
     === Split Statistics ===
+    Mode: RANDOM EDGE MASKING (replaces previous temporal splits)
 
     Financial graph (Account→Account via transactions)
       Training graph : {fin_G.number_of_nodes()} nodes, {fin_G.number_of_edges()} edges
-      Neg ratio      : {NEG_RATIO}:1   Hard neg frac: {HARD_NEG_FRAC}
+      Mask fraction  : {int(MASK_FRAC*100)}%   Neg ratio: {NEG_RATIO}:1   Hard neg frac: {HARD_NEG_FRAC}
 
     Communication graph (Phone→Phone via CDR)
       Training graph : {comm_G.number_of_nodes()} nodes, {comm_G.number_of_edges()} edges
-      Neg ratio      : {NEG_RATIO}:1   Hard neg frac: {HARD_NEG_FRAC}
+      Mask fraction  : {int(MASK_FRAC*100)}%   Neg ratio: {NEG_RATIO}:1   Hard neg frac: {HARD_NEG_FRAC}
 
-    Temporal split   : {int(TRAIN_FRAC*100)}% train | {int(VAL_FRAC*100)}% val | {int((1-TRAIN_FRAC-VAL_FRAC)*100)}% test
-    Random seed      : {RANDOM_SEED}
+    GT edges forcibly masked (guaranteed test positives):
+      Financial   : {[f'{u}↔{v}' for u,v in GT_FORCED_EDGES['financial']]}
+      Comm        : {[f'{u}↔{v}' for u,v in GT_FORCED_EDGES['communication']]}
 
-    Output files written to: {OUT_DIR}
+    Random seed: {RANDOM_SEED}
+    Output: {OUT_DIR}
     """).strip()
+
     print("\n" + stats)
     (OUT_DIR / "split_stats.txt").write_text(stats)
     print("\nDone. Run heuristics.py next.")

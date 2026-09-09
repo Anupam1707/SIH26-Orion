@@ -56,10 +56,10 @@ WALKS_PER_NODE = 10
 WINDOW_SIZE   = 5
 P             = 1.0    # return parameter (breadth-first bias)
 Q             = 1.0    # in-out parameter (depth-first bias); 1 = unbiased
-SKIPGRAM_EPOCHS = 5
-SKIPGRAM_LR   = 0.025
+SKIPGRAM_EPOCHS = 20
+SKIPGRAM_LR   = 0.01
 MLP_HIDDEN    = 64
-MLP_EPOCHS    = 50
+MLP_EPOCHS    = 80
 MLP_LR        = 1e-3
 BATCH_SIZE    = 256
 PATIENCE      = 5       # early stopping patience on val AUC

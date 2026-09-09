@@ -1,7 +1,7 @@
 [
   {
-    "src": "A00283",
-    "dst": "A00492",
+    "src": "A00777",
+    "dst": "A00203",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -12,31 +12,31 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00283",
-        "A00175",
-        "A00593",
-        "A00189",
-        "A00492"
+        "A00777",
+        "A00161",
+        "A01219",
+        "A00910",
+        "A00203"
       ],
       [
-        "A00283",
-        "A00492"
+        "A00777",
+        "A00203"
       ],
       [
-        "A00283",
-        "A00377",
-        "A00277",
-        "A01074",
-        "A00492"
+        "A00777",
+        "A01095",
+        "A00630",
+        "A00018",
+        "A00203"
       ]
     ],
     "path_count": 3,
     "rank": 1,
-    "score": 0.6107037815243117
+    "score": 0.7278325195527209
   },
   {
-    "src": "A00549",
-    "dst": "A00151",
+    "src": "A00492",
+    "dst": "A00283",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -47,31 +47,33 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00549",
-        "A00151"
+        "A00492",
+        "A00189",
+        "A00353",
+        "A00283"
       ],
       [
-        "A00549",
-        "A01205",
-        "A00762",
-        "A00076",
-        "A00151"
+        "A00492",
+        "A00189",
+        "A00593",
+        "A00175",
+        "A00283"
       ],
       [
-        "A00549",
-        "A00851",
-        "A00655",
-        "A00517",
-        "A00151"
+        "A00492",
+        "A00896",
+        "A00716",
+        "A00341",
+        "A00283"
       ]
     ],
     "path_count": 3,
     "rank": 2,
-    "score": 0.6055088304555243
+    "score": 0.7278325195527209
   },
   {
-    "src": "A00319",
-    "dst": "A00802",
+    "src": "A00882",
+    "dst": "A00727",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -82,24 +84,31 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00319",
-        "A00802"
+        "A00882",
+        "A01223",
+        "A01127",
+        "A01296",
+        "A00727"
       ],
       [
-        "A00319",
-        "A00411",
-        "A00332",
-        "A00979",
-        "A00802"
+        "A00882",
+        "A00727"
+      ],
+      [
+        "A00882",
+        "A01227",
+        "A00107",
+        "A01296",
+        "A00727"
       ]
     ],
-    "path_count": 2,
+    "path_count": 3,
     "rank": 3,
-    "score": 0.6054451227594574
+    "score": 0.7250547417749431
   },
   {
-    "src": "A00440",
-    "dst": "A01076",
+    "src": "A00602",
+    "dst": "A01253",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -110,31 +119,31 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00440",
-        "A00272",
-        "A00565",
-        "A00093",
-        "A01076"
+        "A00602",
+        "A01253"
       ],
       [
-        "A00440",
-        "A01076"
+        "A00602",
+        "A00680",
+        "A00470",
+        "A00884",
+        "A01253"
       ],
       [
-        "A00440",
-        "A01186",
-        "A00953",
-        "A00552",
-        "A01076"
+        "A00602",
+        "A00680",
+        "A00949",
+        "A00129",
+        "A01253"
       ]
     ],
     "path_count": 3,
     "rank": 4,
-    "score": 0.6038844261310987
+    "score": 0.7239824113276127
   },
   {
-    "src": "A00641",
-    "dst": "A00881",
+    "src": "A00051",
+    "dst": "A01136",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -145,34 +154,31 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00641",
-        "A00657",
-        "A00491",
-        "A00297",
-        "A00881"
+        "A00051",
+        "A01136"
       ],
       [
-        "A00641",
-        "A00657",
-        "A00783",
-        "A00100",
-        "A00881"
+        "A00051",
+        "A01247",
+        "A00064",
+        "A00103",
+        "A01136"
       ],
       [
-        "A00641",
-        "A01018",
-        "A00928",
-        "A00441",
-        "A00881"
+        "A00051",
+        "A00230",
+        "A01183",
+        "A00517",
+        "A01136"
       ]
     ],
     "path_count": 3,
     "rank": 5,
-    "score": 0.6029460702083997
+    "score": 0.7239824113276127
   },
   {
-    "src": "A00487",
-    "dst": "A00146",
+    "src": "A00155",
+    "dst": "A00824",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -183,24 +189,32 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00487",
-        "A00146"
+        "A00155",
+        "A01191",
+        "A01173",
+        "A00824"
       ],
       [
-        "A00487",
-        "A00064",
-        "A00594",
-        "A00976",
-        "A00146"
+        "A00155",
+        "A01278",
+        "A00229",
+        "A00824"
+      ],
+      [
+        "A00155",
+        "A01200",
+        "A01206",
+        "A01173",
+        "A00824"
       ]
     ],
-    "path_count": 2,
+    "path_count": 3,
     "rank": 6,
-    "score": 0.6028590056091658
+    "score": 0.7239824113276127
   },
   {
-    "src": "A00379",
-    "dst": "A00478",
+    "src": "A01152",
+    "dst": "A01071",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -211,27 +225,27 @@
     "shared_neighbor_labels": [],
     "connecting_paths": [
       [
-        "A00379",
-        "A01178",
-        "A01088",
-        "A00640",
-        "A00478"
+        "A01152",
+        "A01071"
       ],
       [
-        "A00379",
-        "A01164",
-        "A00515",
-        "A01095",
-        "A00478"
+        "A01152",
+        "A00959",
+        "A01052",
+        "A00162",
+        "A01071"
       ],
       [
-        "A00379",
-        "A00478"
+        "A01152",
+        "A00959",
+        "A01052",
+        "A00985",
+        "A01071"
       ]
     ],
     "path_count": 3,
     "rank": 7,
-    "score": 0.6018808745419806
+    "score": 0.7235902544648676
   },
   {
     "src": "A01211",
@@ -248,102 +262,32 @@
       [
         "A01211",
         "A01231",
-        "A00590",
-        "A01012",
-        "A00362"
-      ],
-      [
-        "A01211",
-        "A01231",
         "A00114",
         "A00029",
         "A00362"
       ],
       [
         "A01211",
+        "A01231",
+        "A00590",
+        "A01012",
+        "A00362"
+      ],
+      [
+        "A01211",
+        "A00947",
+        "A00627",
+        "A01012",
         "A00362"
       ]
     ],
     "path_count": 3,
     "rank": 8,
-    "score": 0.6016593337465485
-  },
-  {
-    "src": "A01149",
-    "dst": "A00953",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A01149",
-        "A00390",
-        "A00511",
-        "A00682",
-        "A00953"
-      ],
-      [
-        "A01149",
-        "A00390",
-        "A00733",
-        "A00962",
-        "A00953"
-      ],
-      [
-        "A01149",
-        "A00013",
-        "A00375",
-        "A01186",
-        "A00953"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 9,
-    "score": 0.601323749927265
-  },
-  {
-    "src": "A00798",
-    "dst": "A00111",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A00798",
-        "A00111"
-      ],
-      [
-        "A00798",
-        "A00714",
-        "A01052",
-        "A00196",
-        "A00111"
-      ],
-      [
-        "A00798",
-        "A00714",
-        "A00872",
-        "A00461",
-        "A00111"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 10,
-    "score": 0.5982493206271688
+    "score": 0.721363363708565
   },
   {
     "src": "A01071",
-    "dst": "A01152",
+    "dst": "A00586",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
     "adamic_adar": 0,
@@ -355,1590 +299,1802 @@
     "connecting_paths": [
       [
         "A01071",
-        "A00162",
-        "A00437",
-        "A00388",
-        "A01152"
+        "A00520",
+        "A00470",
+        "A01276",
+        "A00586"
       ],
       [
         "A01071",
         "A00520",
-        "A00109",
-        "A00221",
-        "A01152"
-      ],
-      [
-        "A01071",
-        "A00520",
-        "A00333",
-        "A00388",
-        "A01152"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 11,
-    "score": 0.5972878608845167
-  },
-  {
-    "src": "A01253",
-    "dst": "A00602",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A01253",
-        "A00013",
-        "A00925",
-        "A01175",
-        "A00602"
-      ],
-      [
-        "A01253",
-        "A00602"
-      ],
-      [
-        "A01253",
-        "A01038",
-        "A00267",
-        "A01175",
-        "A00602"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 12,
-    "score": 0.5971473515440185
-  },
-  {
-    "src": "A00794",
-    "dst": "A01235",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A00794",
-        "A01235"
-      ],
-      [
-        "A00794",
-        "A00928",
-        "A00688",
-        "A00071",
-        "A01235"
-      ],
-      [
-        "A00794",
-        "A00928",
-        "A01074",
-        "A00986",
-        "A01235"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 13,
-    "score": 0.5958371636298713
-  },
-  {
-    "src": "A00207",
-    "dst": "A00391",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A00207",
-        "A01121",
-        "A00143",
-        "A01246",
-        "A00391"
-      ],
-      [
-        "A00207",
-        "A00486",
-        "A00628",
-        "A00252",
-        "A00391"
-      ],
-      [
-        "A00207",
-        "A00821",
-        "A01168",
-        "A00252",
-        "A00391"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 14,
-    "score": 0.5945926878593855
-  },
-  {
-    "src": "A01136",
-    "dst": "A00051",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A01136",
-        "A00051"
-      ],
-      [
-        "A01136",
-        "A00384",
-        "A00910",
-        "A00051"
-      ],
-      [
-        "A01136",
-        "A00425",
-        "A00517",
-        "A00789",
-        "A00051"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 15,
-    "score": 0.5880345931724534
-  },
-  {
-    "src": "A00882",
-    "dst": "A00727",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0,
-    "resource_allocation": 0,
-    "jaccard": 0.0,
-    "common_neighbors_count": 0,
-    "shared_neighbors": [],
-    "shared_neighbor_labels": [],
-    "connecting_paths": [
-      [
-        "A00882",
-        "A00465",
-        "A00403",
-        "A00727"
-      ],
-      [
-        "A00882",
-        "A00727"
-      ]
-    ],
-    "path_count": 2,
-    "rank": 16,
-    "score": 0.5876975566555221
-  },
-  {
-    "src": "A01122",
-    "dst": "A01117",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00899"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00899)"
-    ],
-    "connecting_paths": [
-      [
-        "A01122",
-        "A00729",
-        "A00031",
-        "A01234",
-        "A01117"
-      ],
-      [
-        "A01122",
-        "A00729",
-        "A00627",
-        "A00740",
-        "A01117"
-      ],
-      [
-        "A01122",
-        "A00899",
-        "A01266",
-        "A00358",
-        "A01117"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 17,
-    "score": 0.3163131024999192
-  },
-  {
-    "src": "A01252",
-    "dst": "A00397",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5139,
-    "resource_allocation": 0.1429,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00565"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00565)"
-    ],
-    "connecting_paths": [
-      [
-        "A01252",
-        "A00436",
-        "A00775",
-        "A01157",
-        "A00397"
-      ],
-      [
-        "A01252",
-        "A00565",
-        "A01104",
-        "A00890",
-        "A00397"
-      ],
-      [
-        "A01252",
-        "A00565",
-        "A00397"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 18,
-    "score": 0.31391164990558595
-  },
-  {
-    "src": "A01071",
-    "dst": "A00332",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.417,
-    "resource_allocation": 0.0909,
-    "jaccard": 0.0312,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00520"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00520)"
-    ],
-    "connecting_paths": [
-      [
-        "A01071",
-        "A00519",
-        "A00275",
-        "A01233",
-        "A00332"
-      ],
-      [
-        "A01071",
-        "A00519",
-        "A01132",
-        "A00411",
-        "A00332"
-      ],
-      [
-        "A01071",
-        "A00519",
-        "A01132",
-        "A00051",
-        "A00332"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 19,
-    "score": 0.31334892033498524
-  },
-  {
-    "src": "A01164",
-    "dst": "A00339",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00827"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00827)"
-    ],
-    "connecting_paths": [
-      [
-        "A01164",
-        "A00515",
-        "A00531",
-        "A00776",
-        "A00339"
-      ],
-      [
-        "A01164",
-        "A00515",
-        "A00642",
-        "A00339"
-      ],
-      [
-        "A01164",
-        "A00895",
-        "A00952",
-        "A01150",
-        "A00339"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 20,
-    "score": 0.31131915713973546
-  },
-  {
-    "src": "A01175",
-    "dst": "A00785",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00211"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00211)"
-    ],
-    "connecting_paths": [
-      [
-        "A01175",
-        "A00713",
-        "A00891",
-        "A00211",
-        "A00785"
-      ],
-      [
-        "A01175",
-        "A00713",
-        "A00583",
-        "A01298",
-        "A00785"
-      ],
-      [
-        "A01175",
-        "A00713",
-        "A01117",
-        "A01298",
-        "A00785"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 21,
-    "score": 0.3112600277426611
-  },
-  {
-    "src": "A01039",
-    "dst": "A00594",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00064"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00064)"
-    ],
-    "connecting_paths": [
-      [
-        "A01039",
-        "A00064",
-        "A00594"
-      ],
-      [
-        "A01039",
-        "A00064",
-        "A01250",
-        "A00036",
-        "A00594"
-      ],
-      [
-        "A01039",
-        "A01273",
-        "A01018",
-        "A01014",
-        "A00594"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 22,
-    "score": 0.31044630513218746
-  },
-  {
-    "src": "A01256",
-    "dst": "A00116",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5139,
-    "resource_allocation": 0.1429,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A01075"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A01075)"
-    ],
-    "connecting_paths": [
-      [
-        "A01256",
-        "A00138",
-        "A01109",
-        "A00116"
-      ],
-      [
-        "A01256",
-        "A01245",
-        "A00127",
-        "A00116"
-      ],
-      [
-        "A01256",
-        "A00793",
-        "A00167",
-        "A00116"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 23,
-    "score": 0.310192288679822
-  },
-  {
-    "src": "A01074",
-    "dst": "A00116",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00246"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00246)"
-    ],
-    "connecting_paths": [
-      [
-        "A01074",
-        "A00246",
-        "A00116"
-      ],
-      [
-        "A01074",
-        "A00277",
-        "A00949",
-        "A01070",
-        "A00116"
-      ],
-      [
-        "A01074",
-        "A00335",
-        "A00205",
-        "A00695",
-        "A00116"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 24,
-    "score": 0.3101218786401322
-  },
-  {
-    "src": "A01074",
-    "dst": "A00234",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5139,
-    "resource_allocation": 0.1429,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00778"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00778)"
-    ],
-    "connecting_paths": [
-      [
-        "A01074",
-        "A01009",
-        "A00264",
-        "A00234"
-      ],
-      [
-        "A01074",
-        "A01009",
-        "A00344",
-        "A00860",
-        "A00234"
-      ],
-      [
-        "A01074",
-        "A01009",
-        "A00344",
-        "A01153",
-        "A00234"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 25,
-    "score": 0.3098643439242678
-  },
-  {
-    "src": "A01256",
-    "dst": "A00637",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.417,
-    "resource_allocation": 0.0909,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00677"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00677)"
-    ],
-    "connecting_paths": [
-      [
-        "A01256",
-        "A00138",
-        "A01176",
-        "A00766",
-        "A00637"
-      ],
-      [
-        "A01256",
-        "A00704",
-        "A01244",
-        "A00211",
-        "A00637"
-      ],
-      [
-        "A01256",
-        "A00757",
-        "A00836",
-        "A00184",
-        "A00637"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 26,
-    "score": 0.309855335543166
-  },
-  {
-    "src": "A01071",
-    "dst": "A00199",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5581,
-    "resource_allocation": 0.1667,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A01044"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A01044)"
-    ],
-    "connecting_paths": [
-      [
-        "A01071",
-        "A00813",
-        "A00156",
-        "A01044",
-        "A00199"
-      ],
-      [
-        "A01071",
-        "A00813",
-        "A00715",
-        "A00698",
-        "A00199"
-      ],
-      [
-        "A01071",
-        "A00162",
-        "A00341",
-        "A00881",
-        "A00199"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 27,
-    "score": 0.309841516934776
-  },
-  {
-    "src": "A01038",
-    "dst": "A01071",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.417,
-    "resource_allocation": 0.0909,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00520"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00520)"
-    ],
-    "connecting_paths": [
-      [
-        "A01038",
-        "A00062",
-        "A00241",
-        "A01172",
-        "A01071"
-      ],
-      [
-        "A01038",
-        "A00760",
-        "A00489",
-        "A00162",
-        "A01071"
-      ],
-      [
-        "A01038",
-        "A00520",
-        "A01071"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 28,
-    "score": 0.3095860715603932
-  },
-  {
-    "src": "A00994",
-    "dst": "A01059",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5139,
-    "resource_allocation": 0.1429,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A01070"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A01070)"
-    ],
-    "connecting_paths": [
-      [
-        "A00994",
-        "A00558",
-        "A00057",
-        "A00315",
-        "A01059"
-      ],
-      [
-        "A00994",
-        "A00712",
-        "A00724",
-        "A00108",
-        "A01059"
-      ],
-      [
-        "A00994",
-        "A00712",
-        "A00419",
-        "A00671",
-        "A01059"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 29,
-    "score": 0.30946174435113244
-  },
-  {
-    "src": "A01255",
-    "dst": "A00681",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4024,
-    "resource_allocation": 0.0833,
-    "jaccard": 0.0357,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00694"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00694)"
-    ],
-    "connecting_paths": [
-      [
-        "A01255",
-        "A00694",
-        "A00339",
-        "A00776",
-        "A00681"
-      ],
-      [
-        "A01255",
-        "A00694",
-        "A01041",
-        "A00776",
-        "A00681"
-      ],
-      [
-        "A01255",
-        "A00694",
-        "A00306",
-        "A00776",
-        "A00681"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 30,
-    "score": 0.30935934145213206
-  },
-  {
-    "src": "A01246",
-    "dst": "A01164",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.037,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00159"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00159)"
-    ],
-    "connecting_paths": [
-      [
-        "A01246",
-        "A01088",
-        "A01178",
-        "A00379",
-        "A01164"
-      ],
-      [
-        "A01246",
-        "A00209",
-        "A01113",
-        "A00159",
-        "A01164"
-      ],
-      [
-        "A01246",
-        "A00187",
-        "A00799",
-        "A01164"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 31,
-    "score": 0.3093265500230363
-  },
-  {
-    "src": "A01175",
-    "dst": "A01216",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4024,
-    "resource_allocation": 0.0833,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00730"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00730)"
-    ],
-    "connecting_paths": [
-      [
-        "A01175",
-        "A00713",
-        "A00350",
-        "A00730",
-        "A01216"
-      ],
-      [
-        "A01175",
-        "A00713",
-        "A01117",
-        "A00677",
-        "A01216"
-      ],
-      [
-        "A01175",
-        "A00211",
-        "A00637",
-        "A00174",
-        "A01216"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 32,
-    "score": 0.30930655398926177
-  },
-  {
-    "src": "A01071",
-    "dst": "A01003",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.037,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00109"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00109)"
-    ],
-    "connecting_paths": [
-      [
-        "A01071",
-        "A00519",
-        "A00275",
-        "A00919",
-        "A01003"
-      ],
-      [
-        "A01071",
-        "A00813",
-        "A01031",
-        "A01003"
-      ],
-      [
-        "A01071",
-        "A00813",
-        "A00919",
-        "A01003"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 33,
-    "score": 0.30875383879371193
-  },
-  {
-    "src": "A01164",
-    "dst": "A00896",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.0345,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00558"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00558)"
-    ],
-    "connecting_paths": [
-      [
-        "A01164",
-        "A00558",
-        "A00896"
-      ],
-      [
-        "A01164",
-        "A00515",
-        "A00889",
-        "A01257",
-        "A00896"
-      ],
-      [
-        "A01164",
-        "A00989",
-        "A00296",
-        "A00327",
-        "A00896"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 34,
-    "score": 0.3086522128743699
-  },
-  {
-    "src": "A01266",
-    "dst": "A01002",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.0417,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00233"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00233)"
-    ],
-    "connecting_paths": [
-      [
-        "A01266",
-        "A00358",
-        "A00768",
-        "A00998",
-        "A01002"
-      ],
-      [
-        "A01266",
-        "A00358",
-        "A00585",
-        "A00998",
-        "A01002"
-      ],
-      [
-        "A01266",
-        "A00863",
-        "A01217",
-        "A00233",
-        "A01002"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 35,
-    "score": 0.30862108177780934
-  },
-  {
-    "src": "A01071",
-    "dst": "A01132",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.6213,
-    "resource_allocation": 0.2,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00519"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00519)"
-    ],
-    "connecting_paths": [
-      [
-        "A01071",
-        "A00519",
-        "A01132"
-      ],
-      [
-        "A01071",
-        "A00813",
-        "A00051",
-        "A01132"
-      ],
-      [
-        "A01071",
-        "A00813",
-        "A00319",
-        "A00411",
-        "A01132"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 36,
-    "score": 0.30859011134888015
-  },
-  {
-    "src": "A01164",
-    "dst": "A00187",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.037,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00799"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00799)"
-    ],
-    "connecting_paths": [
-      [
-        "A01164",
-        "A00558",
-        "A00994",
-        "A00088",
-        "A00187"
-      ],
-      [
-        "A01164",
-        "A00558",
-        "A01110",
-        "A00263",
-        "A00187"
-      ],
-      [
-        "A01164",
-        "A00558",
-        "A00896",
-        "A01257",
-        "A00187"
-      ]
-    ],
-    "path_count": 3,
-    "rank": 37,
-    "score": 0.308439752118068
-  },
-  {
-    "src": "A01071",
-    "dst": "A00851",
-    "is_predicted": true,
-    "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.3789,
-    "resource_allocation": 0.0714,
-    "jaccard": 0.0345,
-    "common_neighbors_count": 1,
-    "shared_neighbors": [
-      "A00985"
-    ],
-    "shared_neighbor_labels": [
-      "Account(A00985)"
-    ],
-    "connecting_paths": [
-      [
-        "A01071",
-        "A00813",
-        "A00709",
-        "A00580",
-        "A00851"
-      ],
-      [
-        "A01071",
-        "A00520",
-        "A00502",
-        "A00420",
-        "A00851"
+        "A00649",
+        "A01096",
+        "A00586"
       ],
       [
         "A01071",
         "A00125",
         "A01143",
-        "A00193",
-        "A00851"
+        "A00411",
+        "A00586"
       ]
     ],
     "path_count": 3,
-    "rank": 38,
-    "score": 0.30833014964025257
+    "rank": 9,
+    "score": 0.7202569211315342
   },
   {
-    "src": "A01266",
-    "dst": "A00588",
+    "src": "A00064",
+    "dst": "A00055",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4024,
-    "resource_allocation": 0.0833,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.3208,
+    "resource_allocation": 0.3107,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00288"
+      "A00058",
+      "A00059",
+      "A00063"
     ],
     "shared_neighbor_labels": [
-      "Account(A00288)"
+      "Account(A00058)",
+      "Account(A00059)",
+      "Account(A00063)"
     ],
     "connecting_paths": [
       [
-        "A01266",
-        "A00863",
-        "A00641",
-        "A00881",
-        "A00588"
+        "A00064",
+        "A00059",
+        "A00055"
       ],
       [
-        "A01266",
-        "A00863",
-        "A01105",
-        "A01039",
-        "A00588"
+        "A00064",
+        "A00059",
+        "A00968",
+        "A00262",
+        "A00055"
       ],
       [
-        "A01266",
-        "A00288",
-        "A00588"
+        "A00064",
+        "A00396",
+        "A00116",
+        "A01070",
+        "A00055"
       ]
     ],
     "path_count": 3,
-    "rank": 39,
-    "score": 0.30818467536529937
+    "rank": 10,
+    "score": 0.11778565192752834
   },
   {
-    "src": "A01065",
-    "dst": "A00384",
+    "src": "A00006",
+    "dst": "A00551",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5139,
-    "resource_allocation": 0.1429,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.4169,
+    "resource_allocation": 0.3611,
+    "jaccard": 0.1034,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00723"
+      "A00464",
+      "A00532",
+      "A01124"
     ],
     "shared_neighbor_labels": [
-      "Account(A00723)"
+      "Account(A00464)",
+      "Account(A00532)",
+      "Account(A01124)"
     ],
     "connecting_paths": [
       [
-        "A01065",
-        "A00742",
-        "A00732",
-        "A01067",
-        "A00384"
+        "A00006",
+        "A00704",
+        "A00688",
+        "A00396",
+        "A00551"
       ],
       [
-        "A01065",
-        "A00723",
-        "A00384"
+        "A00006",
+        "A00013",
+        "A00002",
+        "A00825",
+        "A00551"
       ],
       [
-        "A01065",
-        "A00404",
-        "A00473",
-        "A00890",
-        "A00384"
+        "A00006",
+        "A00502",
+        "A00002",
+        "A00825",
+        "A00551"
       ]
     ],
     "path_count": 3,
-    "rank": 40,
-    "score": 0.3080462234446841
+    "rank": 11,
+    "score": 0.11778565192752834
   },
   {
-    "src": "A01266",
-    "dst": "A01059",
+    "src": "A00681",
+    "dst": "A00339",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.3899,
-    "resource_allocation": 0.0769,
-    "jaccard": 0.0417,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.24,
+    "resource_allocation": 0.2686,
+    "jaccard": 0.1071,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00669"
+      "A00694",
+      "A00776",
+      "A00070"
     ],
     "shared_neighbor_labels": [
-      "Account(A00669)"
+      "Account(A00694)",
+      "Account(A00776)",
+      "Account(A00070)"
     ],
     "connecting_paths": [
       [
-        "A01266",
-        "A00288",
-        "A00520",
-        "A00671",
-        "A01059"
+        "A00681",
+        "A00787",
+        "A00705",
+        "A00339"
       ],
       [
-        "A01266",
-        "A00669",
-        "A00195",
-        "A00671",
-        "A01059"
+        "A00681",
+        "A00787",
+        "A01096",
+        "A00070",
+        "A00339"
       ],
       [
-        "A01266",
-        "A00669",
-        "A00852",
-        "A00359",
-        "A01059"
+        "A00681",
+        "A00787",
+        "A00689",
+        "A01026",
+        "A00339"
       ]
     ],
     "path_count": 3,
-    "rank": 41,
-    "score": 0.30802888870411277
+    "rank": 12,
+    "score": 0.11778565192752834
   },
   {
-    "src": "A01117",
-    "dst": "A00782",
+    "src": "A00830",
+    "dst": "A00860",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.417,
-    "resource_allocation": 0.0909,
-    "jaccard": 0.0385,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.4935,
+    "resource_allocation": 0.402,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00358"
+      "A00087",
+      "A00758",
+      "A01292"
     ],
     "shared_neighbor_labels": [
-      "Account(A00358)"
+      "Account(A00087)",
+      "Account(A00758)",
+      "Account(A01292)"
     ],
     "connecting_paths": [
       [
-        "A01117",
-        "A00358",
-        "A00782"
+        "A00830",
+        "A00704",
+        "A01256",
+        "A00410",
+        "A00860"
       ],
       [
-        "A01117",
-        "A00358",
-        "A00243",
-        "A01150",
-        "A00782"
+        "A00830",
+        "A00704",
+        "A00076",
+        "A00905",
+        "A00860"
       ],
       [
-        "A01117",
-        "A00686",
-        "A00317",
-        "A00627",
-        "A00782"
+        "A00830",
+        "A01245",
+        "A01256",
+        "A00410",
+        "A00860"
       ]
     ],
     "path_count": 3,
-    "rank": 42,
-    "score": 0.3078322644925221
+    "rank": 13,
+    "score": 0.11778565192752834
   },
   {
-    "src": "A01030",
-    "dst": "A01117",
+    "src": "A00122",
+    "dst": "A00218",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4809,
-    "resource_allocation": 0.125,
-    "jaccard": 0.037,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.2892,
+    "resource_allocation": 0.2929,
+    "jaccard": 0.1154,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00385"
+      "A00754",
+      "A00581",
+      "A00163"
     ],
     "shared_neighbor_labels": [
-      "Account(A00385)"
+      "Account(A00754)",
+      "Account(A00581)",
+      "Account(A00163)"
     ],
     "connecting_paths": [
       [
-        "A01030",
-        "A00652",
-        "A00693",
-        "A00291",
-        "A01117"
+        "A00122",
+        "A00395",
+        "A01255",
+        "A00530",
+        "A00218"
       ],
       [
-        "A01030",
-        "A00652",
-        "A00987",
-        "A00358",
-        "A01117"
+        "A00122",
+        "A00395",
+        "A01281",
+        "A00509",
+        "A00218"
       ],
       [
-        "A01030",
-        "A00489",
-        "A00597",
-        "A00713",
-        "A01117"
+        "A00122",
+        "A00395",
+        "A00170",
+        "A00357",
+        "A00218"
       ]
     ],
     "path_count": 3,
-    "rank": 43,
-    "score": 0.3078240546812055
+    "rank": 14,
+    "score": 0.11778565192752834
+  },
+  {
+    "src": "A01002",
+    "dst": "A00006",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.5063,
+    "resource_allocation": 0.4095,
+    "jaccard": 0.1034,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00066",
+      "A00233",
+      "A00750"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00066)",
+      "Account(A00233)",
+      "Account(A00750)"
+    ],
+    "connecting_paths": [
+      [
+        "A01002",
+        "A00876",
+        "A00645",
+        "A01157",
+        "A00006"
+      ],
+      [
+        "A01002",
+        "A01135",
+        "A00765",
+        "A00295",
+        "A00006"
+      ],
+      [
+        "A01002",
+        "A00374",
+        "A00107",
+        "A00295",
+        "A00006"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 15,
+    "score": 0.11778565192752834
+  },
+  {
+    "src": "A01024",
+    "dst": "A00480",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.3051,
+    "resource_allocation": 0.3019,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00392",
+      "A01224",
+      "A00024"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00392)",
+      "Account(A01224)",
+      "Account(A00024)"
+    ],
+    "connecting_paths": [
+      [
+        "A01024",
+        "A00392",
+        "A00480"
+      ],
+      [
+        "A01024",
+        "A00751",
+        "A00817",
+        "A00614",
+        "A00480"
+      ],
+      [
+        "A01024",
+        "A00184",
+        "A00637",
+        "A00812",
+        "A00480"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 16,
+    "score": 0.11778565192752834
   },
   {
     "src": "A01071",
-    "dst": "A00288",
+    "dst": "A00156",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.417,
-    "resource_allocation": 0.0909,
-    "jaccard": 0.0357,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.3825,
+    "resource_allocation": 0.3429,
+    "jaccard": 0.1154,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00520"
+      "A01044",
+      "A00080",
+      "A00813"
     ],
     "shared_neighbor_labels": [
-      "Account(A00520)"
+      "Account(A01044)",
+      "Account(A00080)",
+      "Account(A00813)"
     ],
     "connecting_paths": [
       [
         "A01071",
         "A00813",
-        "A01102",
-        "A00134",
-        "A00288"
+        "A00156"
+      ],
+      [
+        "A01071",
+        "A00813",
+        "A00715",
+        "A00080",
+        "A00156"
       ],
       [
         "A01071",
         "A00162",
-        "A00181",
-        "A01239",
-        "A00288"
+        "A00341",
+        "A00080",
+        "A00156"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 17,
+    "score": 0.11778565192752834
+  },
+  {
+    "src": "A00081",
+    "dst": "A00767",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.2474,
+    "resource_allocation": 0.2714,
+    "jaccard": 0.125,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00156",
+      "A00249",
+      "A00282"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00156)",
+      "Account(A00249)",
+      "Account(A00282)"
+    ],
+    "connecting_paths": [
+      [
+        "A00081",
+        "A01288",
+        "A00649",
+        "A01182",
+        "A00767"
       ],
       [
-        "A01071",
-        "A00520",
-        "A00288"
+        "A00081",
+        "A01288",
+        "A00188",
+        "A00290",
+        "A00767"
+      ],
+      [
+        "A00081",
+        "A00481",
+        "A00188",
+        "A00290",
+        "A00767"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 18,
+    "score": 0.11778565192752834
+  },
+  {
+    "src": "A00630",
+    "dst": "A01156",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.1556,
+    "resource_allocation": 0.35,
+    "jaccard": 0.0741,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00424",
+      "A01213"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00424)",
+      "Account(A01213)"
+    ],
+    "connecting_paths": [
+      [
+        "A00630",
+        "A01088",
+        "A00041",
+        "A00029",
+        "A01156"
+      ],
+      [
+        "A00630",
+        "A00620",
+        "A00953",
+        "A00614",
+        "A01156"
+      ],
+      [
+        "A00630",
+        "A00620",
+        "A01214",
+        "A01213",
+        "A01156"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 19,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A00697",
+    "dst": "A00382",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.072,
+    "resource_allocation": 0.3095,
+    "jaccard": 0.08,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00918",
+      "A01228"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00918)",
+      "Account(A01228)"
+    ],
+    "connecting_paths": [
+      [
+        "A00697",
+        "A00918",
+        "A00382"
+      ],
+      [
+        "A00697",
+        "A00326",
+        "A00505",
+        "A00382"
+      ],
+      [
+        "A00697",
+        "A00326",
+        "A00902",
+        "A00382"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 20,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A00220",
+    "dst": "A00406",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0765,
+    "resource_allocation": 0.3111,
+    "jaccard": 0.0833,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00257",
+      "A00758"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00257)",
+      "Account(A00758)"
+    ],
+    "connecting_paths": [
+      [
+        "A00220",
+        "A00257",
+        "A00406"
+      ],
+      [
+        "A00220",
+        "A00815",
+        "A00531",
+        "A00324",
+        "A00406"
+      ],
+      [
+        "A00220",
+        "A00815",
+        "A01193",
+        "A01153",
+        "A00406"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 21,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A01253",
+    "dst": "A00077",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9948,
+    "resource_allocation": 0.2679,
+    "jaccard": 0.0769,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00831",
+      "A00602"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00831)",
+      "Account(A00602)"
+    ],
+    "connecting_paths": [
+      [
+        "A01253",
+        "A00269",
+        "A00179",
+        "A00397",
+        "A00077"
+      ],
+      [
+        "A01253",
+        "A00884",
+        "A01057",
+        "A00521",
+        "A00077"
+      ],
+      [
+        "A01253",
+        "A00884",
+        "A00529",
+        "A00686",
+        "A00077"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 22,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A01282",
+    "dst": "A00735",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9948,
+    "resource_allocation": 0.2679,
+    "jaccard": 0.0769,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00559",
+      "A00804"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00559)",
+      "Account(A00804)"
+    ],
+    "connecting_paths": [
+      [
+        "A01282",
+        "A00581",
+        "A00229",
+        "A00824",
+        "A00735"
+      ],
+      [
+        "A01282",
+        "A00324",
+        "A00423",
+        "A00019",
+        "A00735"
+      ],
+      [
+        "A01282",
+        "A00324",
+        "A00406",
+        "A01153",
+        "A00735"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 23,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A01300",
+    "dst": "A00517",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.1162,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.08,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00135",
+      "A00151"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00135)",
+      "Account(A00151)"
+    ],
+    "connecting_paths": [
+      [
+        "A01300",
+        "A01276",
+        "A00696",
+        "A00135",
+        "A00517"
+      ],
+      [
+        "A01300",
+        "A01276",
+        "A00586",
+        "A01183",
+        "A00517"
+      ],
+      [
+        "A01300",
+        "A01254",
+        "A00939",
+        "A01183",
+        "A00517"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 24,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A01279",
+    "dst": "A00896",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0556,
+    "resource_allocation": 0.3,
+    "jaccard": 0.0833,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00662",
+      "A01105"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00662)",
+      "Account(A01105)"
+    ],
+    "connecting_paths": [
+      [
+        "A01279",
+        "A00356",
+        "A00467",
+        "A00866",
+        "A00896"
+      ],
+      [
+        "A01279",
+        "A00356",
+        "A00115",
+        "A00089",
+        "A00896"
+      ],
+      [
+        "A01279",
+        "A01153",
+        "A01193",
+        "A00969",
+        "A00896"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 25,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A00380",
+    "dst": "A00952",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0112,
+    "resource_allocation": 0.2769,
+    "jaccard": 0.0741,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00095",
+      "A00440"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00095)",
+      "Account(A00440)"
+    ],
+    "connecting_paths": [
+      [
+        "A00380",
+        "A00499",
+        "A00838",
+        "A00163",
+        "A00952"
+      ],
+      [
+        "A00380",
+        "A00499",
+        "A01130",
+        "A01190",
+        "A00952"
+      ],
+      [
+        "A00380",
+        "A01240",
+        "A00237",
+        "A00759",
+        "A00952"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 26,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A00838",
+    "dst": "A00218",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0384,
+    "resource_allocation": 0.2909,
+    "jaccard": 0.0714,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00822",
+      "A00163"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00822)",
+      "Account(A00163)"
+    ],
+    "connecting_paths": [
+      [
+        "A00838",
+        "A01278",
+        "A00143",
+        "A00770",
+        "A00218"
+      ],
+      [
+        "A00838",
+        "A01278",
+        "A00229",
+        "A00581",
+        "A00218"
+      ],
+      [
+        "A00838",
+        "A00499",
+        "A00143",
+        "A00770",
+        "A00218"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 27,
+    "score": 0.11500787414975056
+  },
+  {
+    "src": "A00570",
+    "dst": "A00938",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.2526,
+    "resource_allocation": 0.275,
+    "jaccard": 0.1364,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00787",
+      "A00861",
+      "A01048"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00787)",
+      "Account(A00861)",
+      "Account(A01048)"
+    ],
+    "connecting_paths": [
+      [
+        "A00570",
+        "A01276",
+        "A01300",
+        "A00938"
+      ],
+      [
+        "A00570",
+        "A01276",
+        "A00584",
+        "A00867",
+        "A00938"
+      ],
+      [
+        "A00570",
+        "A01276",
+        "A00240",
+        "A00861",
+        "A00938"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 28,
+    "score": 0.11427749341936981
+  },
+  {
+    "src": "A00953",
+    "dst": "A00900",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.3273,
+    "resource_allocation": 0.3131,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A01186",
+      "A00987",
+      "A01030"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A01186)",
+      "Account(A00987)",
+      "Account(A01030)"
+    ],
+    "connecting_paths": [
+      [
+        "A00953",
+        "A01186",
+        "A00475",
+        "A00987",
+        "A00900"
+      ],
+      [
+        "A00953",
+        "A01186",
+        "A00900"
+      ],
+      [
+        "A00953",
+        "A00987",
+        "A00652",
+        "A01030",
+        "A00900"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 29,
+    "score": 0.11427749341936981
+  },
+  {
+    "src": "A00953",
+    "dst": "A00652",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.2892,
+    "resource_allocation": 0.2929,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00987",
+      "A00614",
+      "A01030"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00987)",
+      "Account(A00614)",
+      "Account(A01030)"
+    ],
+    "connecting_paths": [
+      [
+        "A00953",
+        "A01186",
+        "A00475",
+        "A00987",
+        "A00652"
+      ],
+      [
+        "A00953",
+        "A01186",
+        "A00900",
+        "A01030",
+        "A00652"
+      ],
+      [
+        "A00953",
+        "A01186",
+        "A00900",
+        "A00987",
+        "A00652"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 30,
+    "score": 0.11427749341936981
+  },
+  {
+    "src": "A00742",
+    "dst": "A00219",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.3208,
+    "resource_allocation": 0.3107,
+    "jaccard": 0.1364,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00422",
+      "A01065",
+      "A00207"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00422)",
+      "Account(A01065)",
+      "Account(A00207)"
+    ],
+    "connecting_paths": [
+      [
+        "A00742",
+        "A01005",
+        "A01256",
+        "A01245",
+        "A00219"
+      ],
+      [
+        "A00742",
+        "A01090",
+        "A00954",
+        "A00306",
+        "A00219"
+      ],
+      [
+        "A00742",
+        "A00179",
+        "A00659",
+        "A01141",
+        "A00219"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 31,
+    "score": 0.11427749341936981
+  },
+  {
+    "src": "A00681",
+    "dst": "A01041",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.273,
+    "resource_allocation": 0.2864,
+    "jaccard": 0.1304,
+    "common_neighbors_count": 3,
+    "shared_neighbors": [
+      "A00694",
+      "A00776",
+      "A00137"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00694)",
+      "Account(A00776)",
+      "Account(A00137)"
+    ],
+    "connecting_paths": [
+      [
+        "A00681",
+        "A00787",
+        "A00422",
+        "A01041"
+      ],
+      [
+        "A00681",
+        "A00879",
+        "A00336",
+        "A00422",
+        "A01041"
+      ],
+      [
+        "A00681",
+        "A00879",
+        "A00980",
+        "A00909",
+        "A01041"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 32,
+    "score": 0.11427749341936981
+  },
+  {
+    "src": "A00927",
+    "dst": "A00116",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0132,
+    "resource_allocation": 0.2778,
+    "jaccard": 0.0667,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00803",
+      "A00393"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00803)",
+      "Account(A00393)"
+    ],
+    "connecting_paths": [
+      [
+        "A00927",
+        "A00177",
+        "A00142",
+        "A01112",
+        "A00116"
+      ],
+      [
+        "A00927",
+        "A00177",
+        "A00393",
+        "A00116"
+      ],
+      [
+        "A00927",
+        "A00298",
+        "A01007",
+        "A01070",
+        "A00116"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 33,
+    "score": 0.11223009637197277
+  },
+  {
+    "src": "A00039",
+    "dst": "A00812",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0132,
+    "resource_allocation": 0.2778,
+    "jaccard": 0.087,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00724",
+      "A00484"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00724)",
+      "Account(A00484)"
+    ],
+    "connecting_paths": [
+      [
+        "A00039",
+        "A00484",
+        "A00812"
+      ],
+      [
+        "A00039",
+        "A00738",
+        "A00500",
+        "A00823",
+        "A00812"
+      ],
+      [
+        "A00039",
+        "A00738",
+        "A00259",
+        "A00335",
+        "A00812"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 34,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A00055",
+    "dst": "A00968",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.9948,
+    "resource_allocation": 0.2679,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00262",
+      "A00059"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00262)",
+      "Account(A00059)"
+    ],
+    "connecting_paths": [
+      [
+        "A00055",
+        "A00824",
+        "A00488",
+        "A00881",
+        "A00968"
+      ],
+      [
+        "A00055",
+        "A00059",
+        "A00968"
+      ],
+      [
+        "A00055",
+        "A00058",
+        "A00134",
+        "A00288",
+        "A00968"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 35,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A00952",
+    "dst": "A00949",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0278,
+    "resource_allocation": 0.2857,
+    "jaccard": 0.0833,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00592",
+      "A01180"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00592)",
+      "Account(A01180)"
+    ],
+    "connecting_paths": [
+      [
+        "A00952",
+        "A00540",
+        "A00884",
+        "A00507",
+        "A00949"
+      ],
+      [
+        "A00952",
+        "A00540",
+        "A00026",
+        "A01070",
+        "A00949"
+      ],
+      [
+        "A00952",
+        "A01180",
+        "A00949"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 36,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A00346",
+    "dst": "A00220",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0278,
+    "resource_allocation": 0.2857,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00320",
+      "A00708"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00320)",
+      "Account(A00708)"
+    ],
+    "connecting_paths": [
+      [
+        "A00346",
+        "A00708",
+        "A00220"
+      ],
+      [
+        "A00346",
+        "A00708",
+        "A00379",
+        "A00595",
+        "A00220"
+      ],
+      [
+        "A00346",
+        "A00230",
+        "A01183",
+        "A00586",
+        "A00220"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 37,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A00679",
+    "dst": "A00895",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.2022,
+    "resource_allocation": 0.375,
+    "jaccard": 0.087,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00238",
+      "A01091"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00238)",
+      "Account(A01091)"
+    ],
+    "connecting_paths": [
+      [
+        "A00679",
+        "A01250",
+        "A00541",
+        "A00453",
+        "A00895"
+      ],
+      [
+        "A00679",
+        "A01091",
+        "A00895"
+      ],
+      [
+        "A00679",
+        "A01091",
+        "A01150",
+        "A00952",
+        "A00895"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 38,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A01002",
+    "dst": "A00983",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0132,
+    "resource_allocation": 0.2778,
+    "jaccard": 0.087,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00703",
+      "A01100"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00703)",
+      "Account(A01100)"
+    ],
+    "connecting_paths": [
+      [
+        "A01002",
+        "A01135",
+        "A00524",
+        "A01100",
+        "A00983"
+      ],
+      [
+        "A01002",
+        "A00374",
+        "A01010",
+        "A00873",
+        "A00983"
+      ],
+      [
+        "A01002",
+        "A00703",
+        "A00983"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 39,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A00909",
+    "dst": "A01097",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0238,
+    "resource_allocation": 0.2833,
+    "jaccard": 0.087,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00337",
+      "A00997"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00337)",
+      "Account(A00997)"
+    ],
+    "connecting_paths": [
+      [
+        "A00909",
+        "A00997",
+        "A01097"
+      ],
+      [
+        "A00909",
+        "A00044",
+        "A01226",
+        "A00885",
+        "A01097"
+      ],
+      [
+        "A00909",
+        "A00532",
+        "A00177",
+        "A00747",
+        "A01097"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 40,
+    "score": 0.11149971564159201
+  },
+  {
+    "src": "A01164",
+    "dst": "A01227",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 0.3607,
+    "resource_allocation": 0.0625,
+    "jaccard": 0.0345,
+    "common_neighbors_count": 1,
+    "shared_neighbors": [
+      "A00698"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00698)"
+    ],
+    "connecting_paths": [
+      [
+        "A01164",
+        "A01242",
+        "A00970",
+        "A00143",
+        "A01227"
+      ],
+      [
+        "A01164",
+        "A01242",
+        "A00306",
+        "A00219",
+        "A01227"
+      ],
+      [
+        "A01164",
+        "A01242",
+        "A00306",
+        "A01179",
+        "A01227"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 41,
+    "score": 0.10916231916231915
+  },
+  {
+    "src": "A00627",
+    "dst": "A00234",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.2427,
+    "resource_allocation": 0.4,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00947",
+      "A00778"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00947)",
+      "Account(A00778)"
+    ],
+    "connecting_paths": [
+      [
+        "A00627",
+        "A00317",
+        "A00847",
+        "A00234"
+      ],
+      [
+        "A00627",
+        "A00317",
+        "A00669",
+        "A01266",
+        "A00234"
+      ],
+      [
+        "A00627",
+        "A00515",
+        "A00155",
+        "A00234"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 42,
+    "score": 0.10872193786381426
+  },
+  {
+    "src": "A00485",
+    "dst": "A00031",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.072,
+    "resource_allocation": 0.3095,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00032",
+      "A01142"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00032)",
+      "Account(A01142)"
+    ],
+    "connecting_paths": [
+      [
+        "A00485",
+        "A00322",
+        "A01292",
+        "A00031"
+      ],
+      [
+        "A00485",
+        "A00032",
+        "A00031"
+      ],
+      [
+        "A00485",
+        "A00118",
+        "A00872",
+        "A01073",
+        "A00031"
+      ]
+    ],
+    "path_count": 3,
+    "rank": 43,
+    "score": 0.10872193786381426
+  },
+  {
+    "src": "A00031",
+    "dst": "A00115",
+    "is_predicted": true,
+    "confidence_tier": "PREDICTED",
+    "adamic_adar": 1.0278,
+    "resource_allocation": 0.2857,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
+    "shared_neighbors": [
+      "A00831",
+      "A01142"
+    ],
+    "shared_neighbor_labels": [
+      "Account(A00831)",
+      "Account(A01142)"
+    ],
+    "connecting_paths": [
+      [
+        "A00031",
+        "A00831",
+        "A00115"
+      ],
+      [
+        "A00031",
+        "A00032",
+        "A00485",
+        "A01142",
+        "A00115"
+      ],
+      [
+        "A00031",
+        "A00863",
+        "A01217",
+        "A00462",
+        "A00115"
       ]
     ],
     "path_count": 3,
     "rank": 44,
-    "score": 0.3077989514565571
+    "score": 0.10872193786381426
   },
   {
-    "src": "A01245",
-    "dst": "A00832",
+    "src": "A01249",
+    "dst": "A00467",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.5581,
-    "resource_allocation": 0.1667,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.0003,
+    "resource_allocation": 0.2714,
+    "jaccard": 0.0909,
+    "common_neighbors_count": 2,
     "shared_neighbors": [
-      "A00017"
+      "A00706",
+      "A00866"
     ],
     "shared_neighbor_labels": [
-      "Account(A00017)"
+      "Account(A00706)",
+      "Account(A00866)"
     ],
     "connecting_paths": [
       [
-        "A01245",
-        "A00219",
-        "A00962",
-        "A00733",
-        "A00832"
+        "A01249",
+        "A00536",
+        "A00414",
+        "A00467"
       ],
       [
-        "A01245",
-        "A01167",
-        "A00286",
-        "A00498",
-        "A00832"
+        "A01249",
+        "A00706",
+        "A00467"
       ],
       [
-        "A01245",
-        "A01256",
-        "A00138",
-        "A01176",
-        "A00832"
+        "A01249",
+        "A00691",
+        "A00090",
+        "A00110",
+        "A00467"
       ]
     ],
     "path_count": 3,
     "rank": 45,
-    "score": 0.30778178743813805
+    "score": 0.10872193786381426
   },
   {
-    "src": "A01175",
-    "dst": "A01025",
+    "src": "A01253",
+    "dst": "A01099",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.3693,
-    "resource_allocation": 0.0667,
-    "jaccard": 0.0385,
+    "adamic_adar": 0.346,
+    "resource_allocation": 0.0556,
+    "jaccard": 0.037,
     "common_neighbors_count": 1,
     "shared_neighbors": [
-      "A00808"
+      "A00013"
     ],
     "shared_neighbor_labels": [
-      "Account(A00808)"
+      "Account(A00013)"
     ],
     "connecting_paths": [
       [
-        "A01175",
-        "A00713",
-        "A01157",
-        "A01188",
-        "A01025"
+        "A01253",
+        "A00884",
+        "A00532",
+        "A00194",
+        "A01099"
       ],
       [
-        "A01175",
-        "A00730",
-        "A00915",
-        "A01268",
-        "A01025"
+        "A01253",
+        "A00767",
+        "A00781",
+        "A00527",
+        "A01099"
       ],
       [
-        "A01175",
-        "A00730",
-        "A01089",
-        "A01025"
+        "A01253",
+        "A00471",
+        "A00011",
+        "A01099"
       ]
     ],
     "path_count": 3,
     "rank": 46,
-    "score": 0.30747311829488516
+    "score": 0.1082099382099382
   },
   {
-    "src": "A01113",
-    "dst": "A01164",
+    "src": "A01157",
+    "dst": "A00013",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.04,
+    "adamic_adar": 0.346,
+    "resource_allocation": 0.0556,
+    "jaccard": 0.037,
     "common_neighbors_count": 1,
     "shared_neighbors": [
-      "A00159"
+      "A00006"
     ],
     "shared_neighbor_labels": [
-      "Account(A00159)"
+      "Account(A00006)"
     ],
     "connecting_paths": [
       [
-        "A01113",
-        "A00064",
-        "A01247",
-        "A00799",
-        "A01164"
+        "A01157",
+        "A01090",
+        "A00735",
+        "A00013"
       ],
       [
-        "A01113",
-        "A00745",
-        "A00235",
-        "A00558",
-        "A01164"
+        "A01157",
+        "A00763",
+        "A01284",
+        "A00007",
+        "A00013"
       ],
       [
-        "A01113",
-        "A00745",
-        "A00386",
-        "A00515",
-        "A01164"
+        "A01157",
+        "A00006",
+        "A00013"
       ]
     ],
     "path_count": 3,
     "rank": 47,
-    "score": 0.3074695001604925
+    "score": 0.1082099382099382
   },
   {
-    "src": "A01037",
-    "dst": "A00681",
+    "src": "A00344",
+    "dst": "A00760",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.3789,
-    "resource_allocation": 0.0714,
-    "jaccard": 0.037,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.1238,
+    "resource_allocation": 0.3333,
+    "jaccard": 0.1,
+    "common_neighbors_count": 2,
     "shared_neighbors": [
-      "A00774"
+      "A00323",
+      "A01255"
     ],
     "shared_neighbor_labels": [
-      "Account(A00774)"
+      "Account(A00323)",
+      "Account(A01255)"
     ],
     "connecting_paths": [
       [
-        "A01037",
-        "A00160",
-        "A00228",
-        "A00373",
-        "A00681"
+        "A00344",
+        "A00257",
+        "A00406",
+        "A01038",
+        "A00760"
       ],
       [
-        "A01037",
-        "A00774",
-        "A00681"
+        "A00344",
+        "A01009",
+        "A00267",
+        "A01038",
+        "A00760"
       ],
       [
-        "A01037",
-        "A01166",
-        "A00555",
-        "A00221",
-        "A00681"
+        "A00344",
+        "A01009",
+        "A01033",
+        "A01184",
+        "A00760"
       ]
     ],
     "path_count": 3,
     "rank": 48,
-    "score": 0.30744796513478995
+    "score": 0.10816638230825872
   },
   {
-    "src": "A01113",
-    "dst": "A00681",
+    "src": "A01186",
+    "dst": "A01029",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4551,
-    "resource_allocation": 0.1111,
-    "jaccard": 0.0333,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.3208,
+    "resource_allocation": 0.3107,
+    "jaccard": 0.1765,
+    "common_neighbors_count": 3,
     "shared_neighbors": [
-      "A00389"
+      "A00178",
+      "A00293",
+      "A00440"
     ],
     "shared_neighbor_labels": [
-      "Account(A00389)"
+      "Account(A00178)",
+      "Account(A00293)",
+      "Account(A00440)"
     ],
     "connecting_paths": [
       [
-        "A01113",
-        "A00064",
-        "A00221",
-        "A00681"
+        "A01186",
+        "A00953",
+        "A00178",
+        "A01029"
       ],
       [
-        "A01113",
-        "A00064",
-        "A00594",
-        "A00373",
-        "A00681"
+        "A01186",
+        "A00440",
+        "A01029"
       ],
       [
-        "A01113",
-        "A00745",
-        "A00144",
-        "A00787",
-        "A00681"
+        "A01186",
+        "A00319",
+        "A01096",
+        "A00951",
+        "A01029"
       ]
     ],
     "path_count": 3,
     "rank": 49,
-    "score": 0.3073373046083024
+    "score": 0.10816638230825872
   },
   {
-    "src": "A01025",
-    "dst": "A00872",
+    "src": "A00762",
+    "dst": "A00375",
     "is_predicted": true,
     "confidence_tier": "PREDICTED",
-    "adamic_adar": 0.4343,
-    "resource_allocation": 0.1,
-    "jaccard": 0.04,
-    "common_neighbors_count": 1,
+    "adamic_adar": 1.0112,
+    "resource_allocation": 0.2769,
+    "jaccard": 0.1053,
+    "common_neighbors_count": 2,
     "shared_neighbors": [
-      "A01188"
+      "A00456",
+      "A00259"
     ],
     "shared_neighbor_labels": [
-      "Account(A01188)"
+      "Account(A00456)",
+      "Account(A00259)"
     ],
     "connecting_paths": [
       [
-        "A01025",
-        "A01188",
-        "A00872"
+        "A00762",
+        "A00456",
+        "A00375"
       ],
       [
-        "A01025",
-        "A01089",
-        "A00266",
-        "A01188",
-        "A00872"
+        "A00762",
+        "A00259",
+        "A00375"
       ],
       [
-        "A01025",
-        "A00054",
-        "A00411",
-        "A00086",
-        "A00872"
+        "A00762",
+        "A00259",
+        "A00716",
+        "A00375"
       ]
     ],
     "path_count": 3,
     "rank": 50,
-    "score": 0.30726305947331295
+    "score": 0.10816638230825872
   }
 ]

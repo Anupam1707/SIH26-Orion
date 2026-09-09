@@ -80,7 +80,7 @@ for _, r in df.iterrows():
     times = pd.to_datetime(pd.Series(r.timestamps)).sort_values().reset_index(drop=True)
     amts  = np.array(r.amounts, dtype=float)
 
-    if len(times) < 5:
+    if len(times) < 3:
         continue  # need enough points for a meaningful burst window
 
     # ── find the densest 48-hour window ──────────────────────────────────────
@@ -100,7 +100,7 @@ for _, r in df.iterrows():
             best_count = count
             best_idx   = (i, i + count)
 
-    if best_count < 5:
+    if best_count < 3:
         continue  # no meaningful burst in this account at all
 
     burst_times = times[best_idx[0]:best_idx[1]].reset_index(drop=True)
@@ -129,7 +129,7 @@ for _, r in df.iterrows():
 
 t = pd.DataFrame(rows)
 print(f"Scored {len(t)} accounts with a detectable burst "
-      f"(5+ total tx, 5+ in one 48h window)\n")
+      f"(3+ total tx, 3+ in one 48h window)\n")
 
 
 # ── composite temporal anomaly score ─────────────────────────────────────────
@@ -148,15 +148,37 @@ def z(s):
 
 
 # Low CV (regularity/uniformity) = suspicious → negate so *higher* score = more suspicious
-t['regularity_score']  = -z(t.cv_gap)
-t['burst_score']        =  z(t.burst_ratio)
-t['uniformity_score']  = -z(t.cv_amount)
+t['regularity_score']   = -z(t.cv_gap)
+t['uniformity_score']   = -z(t.cv_amount)
 
-t['temporal_score'] = (t.regularity_score
-                       + t.burst_score
-                       + t.uniformity_score)
+# Short mean gap = more suspicious (scatter burst at 5-min gaps > structuring at 60-min gaps)
+# Negate so that shorter gap → higher score
+t['gap_speed_score']    = -z(t.mean_gap_min)
+
+# burst_ratio penalises high-background accounts (e.g. A00069 has 17 total tx vs A00070's 13,
+# so its ratio is lower despite identical planted burst). Fix (two parts):
+#   1. z-score the *raw count* of burst transactions directly (burst_count_score) — volume-independent
+#   2. Use a LOG-CAPPED ratio: log(1 + burst_tx) / log(1 + total_tx)
+#      This compresses the penalty for small background volume differences.
+#      A00069: log(11)/log(18) ≈ 0.888  vs  A00070: log(11)/log(14) ≈ 0.938 → nearly equal
+t['burst_count_score']   =  z(t.burst_tx_count)
+t['log_burst_ratio']     = (np.log1p(t.burst_tx_count) / np.log1p(t.tx_count))
+t['burst_ratio_score']   =  z(t.log_burst_ratio)
+
+# Weighted composite:
+#   3× gap_speed_score    — shorter gaps are far more anomalous (5min >> 60min)
+#   3× burst_count_score  — intrinsic burst intensity, volume-independent
+#   2× regularity_score   — clock-like timing is a strong structuring signal
+#   1× burst_ratio_score  — retains some signal but no longer dominates
+#   1× uniformity_score   — equal-amount transactions
+t['temporal_score'] = (3 * t.gap_speed_score
+                       + 3 * t.burst_count_score
+                       + 2 * t.regularity_score
+                       + 1 * t.burst_ratio_score
+                       + 1 * t.uniformity_score)
 
 result = t.sort_values('temporal_score', ascending=False).reset_index(drop=True)
+
 
 print("=== TOP 20 TEMPORAL ANOMALIES ===")
 print(result[['account_id', 'tx_count', 'burst_tx_count', 'mean_gap_min',

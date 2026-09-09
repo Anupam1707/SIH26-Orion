@@ -1,7 +1,7 @@
 Ground Truth Recall @ top-50  [financial]
 =======================================================
-  MULE_01_feeder                 A00001 ↔ A00013  →  ❌ rank=11181
-  MULE_01_feeder                 A00012 ↔ A00013  →  ❌ rank=6307
-  MULE_01_collector              A00013 ↔ A00014  →  ❌ rank=4367
-  LAYERING_01_chain              A00043 ↔ A00047  →  ❌ rank=11227
-  STRUCTURING_01                 A00069 ↔ A00070  →  ❌ rank=5486
+  MULE_01_feeder                 A00001 ↔ A00013  →  ❌ rank=10161
+  MULE_01_feeder                 A00012 ↔ A00013  →  ❌ rank=10827
+  MULE_01_collector              A00013 ↔ A00014  →  ❌ rank=10544
+  LAYERING_01_chain              A00043 ↔ A00047  →  ❌ rank=10422
+  STRUCTURING_01                 A00069 ↔ A00070  →  ❌ rank=10345

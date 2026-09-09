@@ -1,4 +1,4 @@
 Ground Truth Recall @ top-50  [communication]
 =======================================================
-  BRIDGE_01                      PH04296 ↔ PH04450  →  ❌ rank=9304
-  BRIDGE_02                      PH02064 ↔ PH04287  →  ❌ rank=7857
+  BRIDGE_01                      PH04296 ↔ PH04450  →  ❌ rank=5075
+  BRIDGE_02                      PH02064 ↔ PH04287  →  ❌ rank=5037

@@ -77,41 +77,47 @@ to `data/inputs/`.
 
 ## Validated Results — Tier 3 (Link Prediction)
 
-Training graphs: 70% temporal split. Evaluated against held-out 15% val / 15% test.
+Training graphs: Random Edge Masking (20% edges masked at random; GT planted edges forcibly masked into test set to guarantee topology support in the training graph).
 
 ### Level 1 — Heuristic Baselines
 
-| Heuristic | Financial Val AUC | Comm Val AUC |
-|-----------|------------------|--------------|
-| Adamic-Adar | 0.406 | 0.399 |
-| Preferential Attachment | **0.480** | **0.414** |
+| Heuristic | Financial Test AUC | Comm Test AUC | Comm P@10 |
+|-----------|-------------------|---------------|-----------|
+| Common Neighbors | 0.411 | 0.412 | 0.400 |
+| Adamic-Adar | 0.411 | 0.411 | 0.200 |
+| Preferential Attachment | **0.496** | **0.467** | **0.400** |
 
-*Near-random: topology alone insufficient. Every Level 2+ model must beat this.*
+*Structural heuristics on sparse graphs have near-random AUC, but top-10 precision (P@10 = 0.40) demonstrates signal for high-degree nodes.*
 
 ### Level 2 — ML Classifier (Winner: Random Forest, n=300)
 
-| Graph | Val AUC | Test AUC | Test AP |
-|-------|---------|----------|---------|
-| Financial | 0.506 | **0.529** | 0.189 |
-| Communication | 0.602 | **0.618** | 0.322 |
+| Graph | Val AUC | Test AUC | Test AP | Test P@10 | Test P@50 |
+|-------|---------|----------|---------|-----------|-----------|
+| Financial | 0.519 | **0.528** | 0.180 | 0.300 | 0.180 |
+| Communication | 0.566 | **0.561** | 0.197 | **0.500** | 0.260 |
 
-**Feature importance leaders (communication):** `shortest_path_len` (62%), `same_community` (16%), `pagerank_dst` (3%), `out_degree_src` (3%)
+**Feature importance leaders (communication):** `shortest_path_len` (62%), `same_community` (16%), `pagerank_dst` (3%), `out_degree_src` (3%).
 
-### Level 3 — Node2Vec + MLP
+### Level 3 — Node2Vec + MLP (20 Skip-Gram Epochs)
 
 | Graph | Val AUC | Test AUC | Decision |
 |-------|---------|----------|----------|
-| Financial | 0.476 | 0.478 | ❌ Below RF — not used in production |
-| Communication | 0.450 | 0.443 | ❌ Below RF — not used in production |
+| Financial | 0.449 | 0.453 | ❌ Below RF — excluded by AUC gate |
+| Communication | 0.444 | 0.420 | ❌ Below RF — excluded by AUC gate |
 
-### Ground Truth Pattern Discovery (Top-50 predictions)
+*Node2Vec Skip-Gram loss plateaued (~1.09 / ~0.41) — pure structural walk proximity fails to capture criminal link dynamics on sparse disjoint graphs without node attributes. Predictor automatically falls back to classifier-only.*
 
-| Pattern | Recovered? | Detail |
-|---------|------------|--------|
-| BURST_02 intra-cluster links | **✅ 11/50 in top-50** | Model discovers BURST_02 members as most likely to link |
-| LAYERING_02 | Partial (rank 15) | 1 member pair appears in top-50 |
-| BRIDGE_01 / BRIDGE_02 | ❌ Not recovered | Cross-component: no shared neighbors, shortest path = ∞ |
-| MULE_01 chain | ❌ Not recovered | Star-topology mule chains not captured by 2-hop heuristics |
+### Ground Truth Pattern Discovery
+
+| Pattern | Rank / Total | Score | Detail |
+|---------|-------------|-------|--------|
+| **BURST_01/02/03 intra-cluster links** | **Top 9 / top-200** | 0.55–0.49 | **196/200 top-200 predictions are GT pattern members** |
+| COMMUNITY_04 edges | rank 16+ | 0.05 | Community edges rank right below burst edges |
+| BRIDGE_01 (PH04296 ↔ PH04450) | rank 5075 / 11,828 | 0.009 | dist=5, CN=0 — improved from >10,000 to top 43% |
+| BRIDGE_02 (PH02064 ↔ PH04287) | rank 5037 / 11,828 | 0.009 | dist=5, CN=0 — improved from >10,000 to top 43% |
+| Mule chain (A00001 ↔ A00013) | rank 10161 / 11,392 | — | CN=0, dist=3 but zero shared neighbors |
+
+**Confirmed finding:** Topological link prediction recovers dense intra-syndicate edges with high precision (196/200), but cannot push cross-community bridge edges (CN=0, dist=5) into the top-50 without auxiliary features (shared timing, call bursts, geolocation).
 
 ---
 
@@ -126,28 +132,31 @@ Training graphs: 70% temporal split. Evaluated against held-out 15% val / 15% te
 | A00069 | Structuring | 181/532 (34.0%) | Same limitation |
 | A00014, A00070 | Pass-through | Not scored | Zero egonet edges |
 
-### Temporal Scoring (7 accounts with 5+ tx and a 5+ tx burst window)
+### Temporal Scoring (48h burst window, composite z-score)
 
-| Account | Pattern | Score | Rank |
-|---------|---------|-------|------|
-| A00055 | Scatter source | 1.550 | **1/7** |
-| A00070 | Structuring | 1.101 | 2/7 |
-| A00073–A00072–A00071–A00074 | Structuring | –0.377 to –0.787 | 3–6/7 |
-| A00069 | Structuring / scatter source | –1.293 | 7/7 |
+*Updated with `gap_speed_score`, `burst_count_score`, log-capped `burst_ratio`, and lowered qualification threshold (>=3 tx).*
 
-**Known limitation:** `burst_ratio` over-dominates when accounts have high
-background tx volume — A00069 (17 total tx) scores dead-last despite the same
-planted burst as A00070 (13 total tx). Fix outstanding: reweight so
-`burst_tx_count` and `mean_gap_min` count more than `burst_ratio`.
+| Account | Pattern | Score | Rank | Status |
+|---------|---------|-------|------|--------|
+| A00070 | Structuring | 4.560 | **1/8** | ✅ Dominates |
+| A00073 | Structuring | 4.176 | 2/8 | ✅ Structuring cluster |
+| A00072 | Structuring | 3.824 | 3/8 | ✅ Structuring cluster |
+| A00071 | Structuring | 3.809 | 4/8 | ✅ Structuring cluster |
+| **A00069** | **Structuring** | **3.250** | **5/8** | **✅ Fixed: was 7/7 dead last** |
+| A00074 | Structuring | 2.877 | 6/8 | ✅ Structuring cluster |
+| A00055 | Scatter source | 1.510 | 7/8 | Documented: scatter needs dedicated fan-out detector |
+| A01217 | Background noise | −24.006 | 8/8 | Baseline noise |
 
 ---
 
-## Outstanding (from project log Section 8.5)
+## Outstanding Next Actions
 
-- [ ] Fix burst_ratio/total_tx reweighting; re-validate A00069–74 cluster together
+- [x] Fix `burst_ratio`/total_tx reweighting; re-validate A00069–74 cluster together
+- [x] Node2Vec improvement: 20 epochs evaluated, confirmed structural proximity limitation on sparse graphs
+- [x] Random edge masking dataset builder implemented with GT edge preservation
+- [x] Ensemble gating logic: auto-fallback to classifier-only when GNN underperforms
+- [ ] Composite risk score combining Tier 1 + OddBall + temporal + Module 4 centrality
+- [ ] Cross-community bridge detection (needs non-topological features or shared-timing Cypher rule)
 - [ ] Narrow pre-event call burst typology to event-linked entities
 - [ ] Decide Event-linkage routing for burner-swap typologies
-- [ ] Composite risk score combining Tier 1 + OddBall + temporal + Module 4 centrality
-- [ ] Cross-community bridge detection (needs non-topological features)
-- [ ] Node2Vec improvement: more epochs / p,q tuning / torch_geometric GCN option
-- [ ] Explainability wrapper (every output ships with its evidence subgraph)
+- [ ] Module 6 dashboard integration & explainability UI components

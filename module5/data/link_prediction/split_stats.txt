@@ -1,14 +1,17 @@
 === Split Statistics ===
+Mode: RANDOM EDGE MASKING (replaces previous temporal splits)
 
 Financial graph (Account→Account via transactions)
-  Training graph : 1298 nodes, 4980 edges
-  Neg ratio      : 5:1   Hard neg frac: 0.3
+  Training graph : 1300 nodes, 5645 edges
+  Mask fraction  : 20%   Neg ratio: 5:1   Hard neg frac: 0.3
 
 Communication graph (Phone→Phone via CDR)
-  Training graph : 4252 nodes, 6515 edges
-  Neg ratio      : 5:1   Hard neg frac: 0.3
+  Training graph : 4407 nodes, 7424 edges
+  Mask fraction  : 20%   Neg ratio: 5:1   Hard neg frac: 0.3
 
-Temporal split   : 70% train | 15% val | 15% test
-Random seed      : 42
+GT edges forcibly masked (guaranteed test positives):
+  Financial   : ['A00001↔A00013', 'A00012↔A00013', 'A00013↔A00014', 'A00043↔A00047', 'A00049↔A00053', 'A00069↔A00070', 'A00055↔A00056']
+  Comm        : ['PH04296↔PH04450', 'PH02064↔PH04287', 'PH00002↔PH00001']
 
-Output files written to: /Users/anupamkanoongo/Documents/Developer's Drive/SIH26/module5/data/link_prediction
+Random seed: 42
+Output: /Users/anupamkanoongo/Documents/Developer's Drive/SIH26/module5/data/link_prediction

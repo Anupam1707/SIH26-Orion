@@ -341,12 +341,29 @@ def run_graph(graph_name: str, top_k: int = TOP_K_EVIDENCE) -> None:
     candidates = _generate_candidates(train_G, held_out, graph_name)
     print(f"  {len(candidates)} candidate pairs")
 
-    # score with both models
+    # score with both models; use ensemble only if GNN beats or matches RF
     clf_scores = _score_with_classifier(candidates, graph_name, U, None)
     gnn_scores = _score_with_gnn(candidates, graph_name)
 
-    # ensemble: average available scores (fall back to just one)
-    if clf_scores is not None and gnn_scores is not None:
+    # Read GNN and RF val AUCs to decide whether to ensemble
+    use_gnn = False
+    if gnn_scores is not None:
+        meta_path = LP_DIR / f"gnn_model_meta_{graph_name}.json"
+        clf_results_path = LP_DIR / f"clf_results_{graph_name}.csv"
+        try:
+            import json, pandas as _pd
+            gnn_meta = json.loads(meta_path.read_text())
+            gnn_val_auc = gnn_meta.get("val_auc", 0.0)
+            clf_df = _pd.read_csv(clf_results_path)
+            best_clf_val = clf_df[clf_df["split"] == "val"]["auc"].max()
+            use_gnn = gnn_val_auc >= best_clf_val
+            print(f"  GNN val_AUC={gnn_val_auc:.4f}  RF val_AUC={best_clf_val:.4f}  "
+                  f"  → {'ensemble' if use_gnn else 'classifier-only'}")
+        except Exception:
+            use_gnn = False
+
+    # ensemble: average available scores only if GNN is competitive
+    if clf_scores is not None and gnn_scores is not None and use_gnn:
         ensemble = (clf_scores + gnn_scores) / 2.0
         model_tag = "ensemble"
     elif clf_scores is not None:
