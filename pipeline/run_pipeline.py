@@ -69,8 +69,8 @@ def run_input_to_leads_pipeline(raw_input: Dict[str, Any], verbose: bool = True)
 
     if verbose:
         print(f"\n{BOLD}{CYAN}================================================================================{RESET}")
-        print(f"{BOLD}{CYAN}      SIH PS 189 · AI-POWERED CRIMINAL NETWORK DISCOVERY PIPELINE{RESET}")
-        print(f"{DIM}      Governing Principle: 'The system produces leads, not proof' (Sec 63 BSA){RESET}")
+        print(f"{BOLD}{CYAN}      ORION · CRIMINAL NETWORK DISCOVERY & LEAD GENERATION SYSTEM{RESET}")
+        print(f"{DIM}      I4C / Ministry of Home Affairs · Section 63 BSA Mandate: Leads, Not Proof{RESET}")
         print(f"{BOLD}{CYAN}================================================================================{RESET}\n")
         print(f"{BOLD}[PIPELINE INITIALIZED]{RESET}")
         print(f"  • Source Document/Feed ID : {YELLOW}{doc_id}{RESET}")
@@ -310,7 +310,7 @@ def run_input_to_leads_pipeline(raw_input: Dict[str, Any], verbose: bool = True)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="End-to-End Input-to-Leads Investigative Pipeline (SIH PS 189)")
+    parser = argparse.ArgumentParser(description="ORION — End-to-End Input-to-Leads Investigative Pipeline (I4C / MHA)")
     parser.add_argument("--sample", choices=["fir", "structuring", "cdr", "scatter"], default="fir",
                         help="Choose built-in test sample (default: fir)")
     parser.add_argument("--input", type=str, default=None,

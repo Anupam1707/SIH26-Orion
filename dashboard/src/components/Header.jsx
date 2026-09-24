@@ -9,7 +9,8 @@ import {
   FileText, 
   HelpCircle, 
   Printer, 
-  Workflow
+  Workflow,
+  Info
 } from 'lucide-react';
 
 export default function Header({ 
@@ -27,6 +28,7 @@ export default function Header({
     { id: 'link_prediction', label: 'Hidden Conspirators', icon: GitBranch },
     { id: 'entity_resolution', label: 'Alias Resolution', icon: Languages },
     { id: 'cases', label: 'Case Files', icon: FileText },
+    { id: 'about', label: 'About & Team', icon: Info },
   ];
 
   return (
@@ -42,8 +44,8 @@ export default function Header({
               <h1 className="text-sm font-bold text-slate-100 tracking-tight">
                 Indian Cyber Crime Coordination Centre (I4C)
               </h1>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
-                SIH PS 189
+              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-700/50">
+                ORION SYSTEM
               </span>
             </div>
             <p className="text-[11px] text-slate-400 flex items-center gap-1.5 mt-0.5">

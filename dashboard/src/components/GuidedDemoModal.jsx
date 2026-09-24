@@ -9,7 +9,8 @@ import {
   Split, 
   Flame, 
   FileCheck,
-  Play
+  Play,
+  Compass
 } from 'lucide-react';
 
 export default function GuidedDemoModal({ onClose, onSelectStep }) {
@@ -91,9 +92,9 @@ export default function GuidedDemoModal({ onClose, onSelectStep }) {
       <div className="bg-[#0e1629] border border-slate-700 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
         <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
-          <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
-            <Sparkles className="w-4 h-4" />
-            <span>SIH26 Hackathon Judge & Evaluator Demo Tour</span>
+          <div className="flex items-center gap-2 text-blue-400 font-bold text-xs uppercase tracking-wider">
+            <Compass className="w-4 h-4" />
+            <span>ORION · Operational Investigation Walkthrough</span>
           </div>
           <button onClick={onClose} className="p-1 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white">
             <X className="w-5 h-5" />

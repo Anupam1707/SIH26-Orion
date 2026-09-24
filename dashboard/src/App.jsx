@@ -8,6 +8,7 @@ import LinkPredictionStudio from './components/LinkPredictionStudio';
 import EntityResolutionWorkbench from './components/EntityResolutionWorkbench';
 import CasesView from './components/CasesView';
 import PipelineWorkbench from './components/PipelineWorkbench';
+import AboutView from './components/AboutView';
 import BSAReportModal from './components/BSAReportModal';
 import GuidedDemoModal from './components/GuidedDemoModal';
 
@@ -361,6 +362,10 @@ export default function App() {
               onSelectCase={handleSelectCase}
             />
           </div>
+        )}
+
+        {activeTab === 'about' && (
+          <AboutView />
         )}
       </main>
 
