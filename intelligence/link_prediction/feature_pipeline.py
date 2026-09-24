@@ -21,7 +21,7 @@ Feature groups
   Activity stats — communication graph:
     src/dst call_count, sms_count, mean_duration
 
-Outputs (module5/data/link_prediction/)
+Outputs (intelligence/data/link_prediction/)
 ----------------------------------------
     features_train_{graph}.parquet
     features_val_{graph}.parquet
@@ -29,8 +29,8 @@ Outputs (module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/feature_pipeline.py
-    python module5/link_prediction/feature_pipeline.py --graph financial
+    python intelligence/link_prediction/feature_pipeline.py
+    python intelligence/link_prediction/feature_pipeline.py --graph financial
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ import pandas as pd
 
 ROOT   = Path(__file__).resolve().parent.parent.parent
 DATA   = ROOT / "data" / "dataset" / "RELATIONSHIPS"
-LP_DIR = ROOT / "module5" / "data" / "link_prediction"
+LP_DIR = ROOT / "intelligence" / "data" / "link_prediction"
 
 GRAPHS = {
     "financial":     ("source_account_id", "target_account_id"),

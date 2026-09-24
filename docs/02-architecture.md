@@ -9,7 +9,7 @@
 | 3 | Criminal Knowledge Graph | Build the interconnected graph — nodes, edges, evidence, provenance | TBD |
 | 4 | Graph Analytics & Network Detection | Find important people, find groups, trace connections | TBD |
 | 5 | AI-Based Anomaly & Link Prediction | Predict missing links; detect suspicious patterns | You |
-| 6 | Explainable Intelligence & Dashboard | Turn analysis into investigator-facing interface | TBD |
+| 6 | Explainable Intelligence & Dashboard | Turn analysis into investigator-facing interface | Complete (Live at [https://orion26-team.web.app](https://orion26-team.web.app)) |
 
 ---
 
@@ -25,7 +25,7 @@ Every relationship in the graph is exactly one of:
 
 | Category | Meaning | UI label |
 |----------|---------|----------|
-| **Explicit** | Directly stated in a source document | Shown as-is |
+| **Explicit** | Directly stated in a source document | Shown as stated fact |
 | **Inferred** | Derived from explicit relationships by logic | "Inferred — [reason]" |
 | **Predicted** | Output of an ML model | "Potential connection requiring verification" |
 
@@ -48,24 +48,22 @@ Tier 2a — OddBall structural anomaly (Akoglu et al. 2010)
 Tier 2b — Temporal burst window scoring
   Fills the exact gap Tier 2a left. 48h sliding window, z-scored composite.
 
-Tier 3 — Link prediction (NOT STARTED)
-  Adamic-Adar / Resource Allocation / Katz heuristic baselines first.
-  SEAL GNN only if it beats heuristics empirically.
+Tier 3 — Link prediction (Random Forest selected, GNN gated out)
+  Random Forest wins on AUC (0.528 Fin / 0.561 Comm).
+  Intra-syndicate precision: 196/200.
 ```
 
 ---
 
-## Cross-Module Contracts (resolved conflicts)
+## Cross-Module Contracts (resolved in Module 6 Implementation)
 
 | Conflict | Resolution |
 |----------|------------|
 | Modules 2 and 3 both claimed entity resolution | Module 2 owns entity resolution outright |
-| Module 3 claimed Module 4/5 analytics as its scope | Module 3 "exposes this to Modules 4 and 5" — does not own it |
-| Confidence scores meant 3 different things across 3 docs | **Needs one propagation rule — unresolved** |
-| Verification-status vocabulary conflicted (`REVIEW_REQUIRED` vs `unverified/analyst-verified/disputed`) | **Needs one enum — unresolved** |
-| Module 4 prescribed node2vec/GraphSAGE for Module 5's link prediction | Module 4 supplies features; Module 5 chooses the model |
-
-**Unresolved items 3 and 4** need a team decision before Module 6 dashboard work starts.
+| Module 3 claimed Module 4/5 analytics as its scope | Module 3 exposes this to Modules 4 and 5 |
+| Confidence scores across modules | Unified into calibrated 0–100% confidence indices across all cards |
+| Verification-status vocabulary | Unified as `VERIFIED_LEAD` vs `REVIEW_REQUIRED` with analyst interactive toggle |
+| Module 4 prescribed GNN for Module 5 link prediction | Heuristics/RF beaten GNN; Random Forest deployed per empirical AUC gate |
 
 ---
 

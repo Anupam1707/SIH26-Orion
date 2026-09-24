@@ -14,4 +14,4 @@ GT edges forcibly masked (guaranteed test positives):
   Comm        : ['PH04296↔PH04450', 'PH02064↔PH04287', 'PH00002↔PH00001']
 
 Random seed: 42
-Output: /Users/anupamkanoongo/Documents/Developer's Drive/SIH26/module5/data/link_prediction
+Output: /Users/anupamkanoongo/Documents/Developer's Drive/SIH26/intelligence/data/link_prediction

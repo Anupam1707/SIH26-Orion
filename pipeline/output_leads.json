@@ -1,0 +1,1452 @@
+{
+  "metadata": {
+    "source_id": "STREAM-SCATTER-2026-0820",
+    "source_type": "TRANSACTION_STREAM",
+    "timestamp": "2026-09-24 05:33:04 UTC",
+    "total_execution_ms": 175.53,
+    "stages_timing_ms": {
+      "stage1_extraction": 0.01,
+      "stage2_resolution": 174.83,
+      "stage3_graph_ingest": 0.02,
+      "stage4_anomaly_detection": 0.1,
+      "stage5_lead_synthesis": 0.09
+    }
+  },
+  "extracted_entities": {
+    "persons": [],
+    "accounts": [
+      "A00055",
+      "A00056",
+      "A00057",
+      "A00058",
+      "A00059",
+      "A00064"
+    ],
+    "phones": [],
+    "vehicles": [],
+    "amounts": [
+      15000.0,
+      15000.0,
+      15000.0,
+      15000.0,
+      14850.0,
+      14800.0,
+      14900.0
+    ],
+    "timestamps": [
+      "2026-08-20 11:05:00",
+      "2026-08-20 11:15:00",
+      "2026-08-20 11:25:00",
+      "2026-08-20 11:35:00",
+      "2026-08-20 13:10:00",
+      "2026-08-20 13:20:00",
+      "2026-08-20 13:30:00"
+    ],
+    "inferred_transfers": [
+      {
+        "tx_id": "TX_SCT_01",
+        "source": "A00055",
+        "target": "A00056",
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:05:00",
+        "channel": "IMPS",
+        "evidence_id": "EVD_SCT_01"
+      },
+      {
+        "tx_id": "TX_SCT_02",
+        "source": "A00055",
+        "target": "A00057",
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:15:00",
+        "channel": "IMPS",
+        "evidence_id": "EVD_SCT_02"
+      },
+      {
+        "tx_id": "TX_SCT_03",
+        "source": "A00055",
+        "target": "A00058",
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:25:00",
+        "channel": "IMPS",
+        "evidence_id": "EVD_SCT_03"
+      },
+      {
+        "tx_id": "TX_SCT_04",
+        "source": "A00055",
+        "target": "A00059",
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:35:00",
+        "channel": "IMPS",
+        "evidence_id": "EVD_SCT_04"
+      },
+      {
+        "tx_id": "TX_SCT_05",
+        "source": "A00056",
+        "target": "A00064",
+        "amount": 14850.0,
+        "timestamp": "2026-08-20 13:10:00",
+        "channel": "RTGS",
+        "evidence_id": "EVD_SCT_05"
+      },
+      {
+        "tx_id": "TX_SCT_06",
+        "source": "A00057",
+        "target": "A00064",
+        "amount": 14800.0,
+        "timestamp": "2026-08-20 13:20:00",
+        "channel": "RTGS",
+        "evidence_id": "EVD_SCT_06"
+      },
+      {
+        "tx_id": "TX_SCT_07",
+        "source": "A00058",
+        "target": "A00064",
+        "amount": 14900.0,
+        "timestamp": "2026-08-20 13:30:00",
+        "channel": "RTGS",
+        "evidence_id": "EVD_SCT_07"
+      }
+    ],
+    "raw_mentions_count": 0
+  },
+  "resolved_entities": [],
+  "graph_state": {
+    "nodes": [
+      {
+        "id": "A00055",
+        "label": "A00055",
+        "entity_type": "Account",
+        "holder_id": "P02240",
+        "holder_name": "Mohit Sharma",
+        "bank": "Bank of Baroda"
+      },
+      {
+        "id": "A00056",
+        "label": "A00056",
+        "entity_type": "Account",
+        "holder_id": "P01055",
+        "holder_name": "Kavya Malhotra",
+        "bank": "Punjab National Bank"
+      },
+      {
+        "id": "A00057",
+        "label": "A00057",
+        "entity_type": "Account",
+        "holder_id": "P03906",
+        "holder_name": "Siddharth Tiwari",
+        "bank": "State Bank of India"
+      },
+      {
+        "id": "A00058",
+        "label": "A00058",
+        "entity_type": "Account",
+        "holder_id": "P00405",
+        "holder_name": "Kabir Saxena",
+        "bank": "ICICI Bank"
+      },
+      {
+        "id": "A00059",
+        "label": "A00059",
+        "entity_type": "Account",
+        "holder_id": "P00823",
+        "holder_name": "Rohan Rathore",
+        "bank": "HDFC Bank"
+      },
+      {
+        "id": "A00064",
+        "label": "A00064",
+        "entity_type": "Account",
+        "holder_id": "P00450",
+        "holder_name": "Sneha Yadav",
+        "bank": "Axis Bank"
+      }
+    ],
+    "edges": [
+      {
+        "id": "TX_SCT_01",
+        "source": "A00055",
+        "target": "A00056",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_01",
+        "confidence": 0.98,
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:05:00"
+      },
+      {
+        "id": "TX_SCT_02",
+        "source": "A00055",
+        "target": "A00057",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_02",
+        "confidence": 0.98,
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:15:00"
+      },
+      {
+        "id": "TX_SCT_03",
+        "source": "A00055",
+        "target": "A00058",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_03",
+        "confidence": 0.98,
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:25:00"
+      },
+      {
+        "id": "TX_SCT_04",
+        "source": "A00055",
+        "target": "A00059",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_04",
+        "confidence": 0.98,
+        "amount": 15000.0,
+        "timestamp": "2026-08-20 11:35:00"
+      },
+      {
+        "id": "TX_SCT_05",
+        "source": "A00056",
+        "target": "A00064",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_05",
+        "confidence": 0.98,
+        "amount": 14850.0,
+        "timestamp": "2026-08-20 13:10:00"
+      },
+      {
+        "id": "TX_SCT_06",
+        "source": "A00057",
+        "target": "A00064",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_06",
+        "confidence": 0.98,
+        "amount": 14800.0,
+        "timestamp": "2026-08-20 13:20:00"
+      },
+      {
+        "id": "TX_SCT_07",
+        "source": "A00058",
+        "target": "A00064",
+        "type": "TRANSACTED",
+        "taxonomy": "Explicit",
+        "evidence_id": "EVD_SCT_07",
+        "confidence": 0.98,
+        "amount": 14900.0,
+        "timestamp": "2026-08-20 13:30:00"
+      }
+    ],
+    "summary": {
+      "total_nodes": 6,
+      "total_edges": 7,
+      "node_breakdown": {
+        "Account": 6
+      },
+      "taxonomy_breakdown": {
+        "Explicit": 7,
+        "Inferred": 0,
+        "Predicted": 0
+      }
+    }
+  },
+  "detection_findings": [
+    {
+      "tier": "Tier 1: Rule-Based Typology",
+      "pattern_name": "STRUCTURING_SMURFING",
+      "confidence": 0.92,
+      "threat_level": "HIGH",
+      "focal_entities": [
+        "A00059",
+        "A00057",
+        "A00055",
+        "A00056",
+        "A00058",
+        "A00064"
+      ],
+      "rationale": "Identified 7 transactions tightly clustered between ₹5,000 and ₹50,000 (average ₹14,935.71), deliberately staying below the ₹50,000 mandatory PAN/CTR reporting ceiling under PMLA regulations.",
+      "metrics": {
+        "transaction_count": 7,
+        "mean_amount": 14935.71,
+        "total_structured_volume": 104550.0,
+        "threshold_ceiling": 50000.0
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          },
+          {
+            "id": "TX_SCT_05",
+            "source": "A00056",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_05",
+            "confidence": 0.98,
+            "amount": 14850.0,
+            "timestamp": "2026-08-20 13:10:00"
+          },
+          {
+            "id": "TX_SCT_06",
+            "source": "A00057",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_06",
+            "confidence": 0.98,
+            "amount": 14800.0,
+            "timestamp": "2026-08-20 13:20:00"
+          },
+          {
+            "id": "TX_SCT_07",
+            "source": "A00058",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_07",
+            "confidence": 0.98,
+            "amount": 14900.0,
+            "timestamp": "2026-08-20 13:30:00"
+          }
+        ]
+      }
+    },
+    {
+      "tier": "Tier 1: Rule-Based Typology",
+      "pattern_name": "SCATTER_GATHER_DISPERSION",
+      "confidence": 0.94,
+      "threat_level": "HIGH",
+      "focal_entities": [
+        "A00055",
+        "A00064"
+      ],
+      "rationale": "Scatter source account A00055 dispersed funds across 4 layering conduits, which rapidly reconverged at aggregator account A00064.",
+      "metrics": {
+        "scatter_source": "A00055",
+        "gather_sink": "A00064",
+        "intermediate_count": 4,
+        "convergence_ratio": 0.75
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          },
+          {
+            "id": "TX_SCT_06",
+            "source": "A00057",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_06",
+            "confidence": 0.98,
+            "amount": 14800.0,
+            "timestamp": "2026-08-20 13:20:00"
+          },
+          {
+            "id": "TX_SCT_05",
+            "source": "A00056",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_05",
+            "confidence": 0.98,
+            "amount": 14850.0,
+            "timestamp": "2026-08-20 13:10:00"
+          },
+          {
+            "id": "TX_SCT_07",
+            "source": "A00058",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_07",
+            "confidence": 0.98,
+            "amount": 14900.0,
+            "timestamp": "2026-08-20 13:30:00"
+          }
+        ]
+      }
+    },
+    {
+      "tier": "Tier 2: OddBall Structural Anomaly",
+      "pattern_name": "ODDBALL_STAR_HUB",
+      "confidence": 0.722,
+      "threat_level": "HIGH",
+      "focal_entities": [
+        "A00055"
+      ],
+      "rationale": "Account A00055 exhibits an anomalous STAR_HUB egonet structure. Actual internal edges (4) deviate strongly from expected power-law (4.7), producing an OddBall structural anomaly score of 0.27.",
+      "metrics": {
+        "egonet_nodes": 5,
+        "egonet_edges": 4,
+        "expected_edges": 4.7,
+        "oddball_score": 0.27,
+        "ego_shape": "STAR_HUB"
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          }
+        ]
+      }
+    },
+    {
+      "tier": "Tier 4: Link Prediction",
+      "pattern_name": "CONCEALED_ACCOMPLICE_PREDICTION",
+      "confidence": 0.816,
+      "threat_level": "MEDIUM",
+      "focal_entities": [
+        "A00056",
+        "A00057"
+      ],
+      "rationale": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00056 and A00057 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "metrics": {
+        "common_intermediaries": [
+          "A00064"
+        ],
+        "adamic_adar_score": 3.322,
+        "jaccard_similarity": 1.0,
+        "predicted_taxonomy": "Predicted"
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      }
+    },
+    {
+      "tier": "Tier 4: Link Prediction",
+      "pattern_name": "CONCEALED_ACCOMPLICE_PREDICTION",
+      "confidence": 0.816,
+      "threat_level": "MEDIUM",
+      "focal_entities": [
+        "A00056",
+        "A00058"
+      ],
+      "rationale": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00056 and A00058 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "metrics": {
+        "common_intermediaries": [
+          "A00064"
+        ],
+        "adamic_adar_score": 3.322,
+        "jaccard_similarity": 1.0,
+        "predicted_taxonomy": "Predicted"
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      }
+    },
+    {
+      "tier": "Tier 4: Link Prediction",
+      "pattern_name": "CONCEALED_ACCOMPLICE_PREDICTION",
+      "confidence": 0.816,
+      "threat_level": "MEDIUM",
+      "focal_entities": [
+        "A00057",
+        "A00058"
+      ],
+      "rationale": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00057 and A00058 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "metrics": {
+        "common_intermediaries": [
+          "A00064"
+        ],
+        "adamic_adar_score": 3.322,
+        "jaccard_similarity": 1.0,
+        "predicted_taxonomy": "Predicted"
+      },
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      }
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2026-0820-01",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Structuring Smurfing: HIGH Threat Detected",
+      "threat_level": "HIGH",
+      "confidence": 0.92,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00059"
+        },
+        {
+          "id": "A00057"
+        },
+        {
+          "id": "A00055"
+        },
+        {
+          "id": "A00056"
+        },
+        {
+          "id": "A00058"
+        },
+        {
+          "id": "A00064"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 1: Rule-Based Typology"
+      ],
+      "narrative_summary": "Identified 7 transactions tightly clustered between ₹5,000 and ₹50,000 (average ₹14,935.71), deliberately staying below the ₹50,000 mandatory PAN/CTR reporting ceiling under PMLA regulations.",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          },
+          {
+            "id": "TX_SCT_05",
+            "source": "A00056",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_05",
+            "confidence": 0.98,
+            "amount": 14850.0,
+            "timestamp": "2026-08-20 13:10:00"
+          },
+          {
+            "id": "TX_SCT_06",
+            "source": "A00057",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_06",
+            "confidence": 0.98,
+            "amount": 14800.0,
+            "timestamp": "2026-08-20 13:20:00"
+          },
+          {
+            "id": "TX_SCT_07",
+            "source": "A00058",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_07",
+            "confidence": 0.98,
+            "amount": 14900.0,
+            "timestamp": "2026-08-20 13:30:00"
+          }
+        ]
+      },
+      "actionable_recommendations": [
+        "Issue immediate CTR/STR inquiry to the Financial Intelligence Unit (FIU-IND) regarding sub-threshold smurfing transactions.",
+        "Requisition originating IP addresses and device MAC addresses from Unified Payments Interface (UPI) switch providers.",
+        "Trace beneficial ownership of sender accounts under Section 50 of the Prevention of Money Laundering Act (PMLA)."
+      ],
+      "section_63_bsa_custody_hash": "d9fb5a4281c75c3173f91f74214c5a6f08bdae5d97d2e7b58c0283e74886eac8",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    },
+    {
+      "lead_id": "LEAD-2026-0820-02",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Scatter Gather Dispersion: HIGH Threat Detected",
+      "threat_level": "HIGH",
+      "confidence": 0.94,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00055"
+        },
+        {
+          "id": "A00064"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 1: Rule-Based Typology"
+      ],
+      "narrative_summary": "Scatter source account A00055 dispersed funds across 4 layering conduits, which rapidly reconverged at aggregator account A00064.",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          },
+          {
+            "id": "TX_SCT_06",
+            "source": "A00057",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_06",
+            "confidence": 0.98,
+            "amount": 14800.0,
+            "timestamp": "2026-08-20 13:20:00"
+          },
+          {
+            "id": "TX_SCT_05",
+            "source": "A00056",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_05",
+            "confidence": 0.98,
+            "amount": 14850.0,
+            "timestamp": "2026-08-20 13:10:00"
+          },
+          {
+            "id": "TX_SCT_07",
+            "source": "A00058",
+            "target": "A00064",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_07",
+            "confidence": 0.98,
+            "amount": 14900.0,
+            "timestamp": "2026-08-20 13:30:00"
+          }
+        ]
+      },
+      "actionable_recommendations": [
+        "Submit urgent multi-bank freeze requests across all intermediate layering accounts to arrest dissipation of stolen funds.",
+        "Requisition high-speed RTGS/NEFT transaction logs from Reserve Bank of India settlement switch."
+      ],
+      "section_63_bsa_custody_hash": "22e19d7fda384499b253e72486634797bab94df7bec35e4577542b9a1907677b",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    },
+    {
+      "lead_id": "LEAD-2026-0820-03",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Oddball Star Hub: HIGH Threat Detected",
+      "threat_level": "HIGH",
+      "confidence": 0.722,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00055"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 2: OddBall Structural Anomaly"
+      ],
+      "narrative_summary": "Account A00055 exhibits an anomalous STAR_HUB egonet structure. Actual internal edges (4) deviate strongly from expected power-law (4.7), producing an OddBall structural anomaly score of 0.27.",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00059",
+            "label": "A00059",
+            "entity_type": "Account",
+            "holder_id": "P00823",
+            "holder_name": "Rohan Rathore",
+            "bank": "HDFC Bank"
+          },
+          {
+            "id": "A00055",
+            "label": "A00055",
+            "entity_type": "Account",
+            "holder_id": "P02240",
+            "holder_name": "Mohit Sharma",
+            "bank": "Bank of Baroda"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          }
+        ],
+        "edges": [
+          {
+            "id": "TX_SCT_01",
+            "source": "A00055",
+            "target": "A00056",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_01",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:05:00"
+          },
+          {
+            "id": "TX_SCT_02",
+            "source": "A00055",
+            "target": "A00057",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_02",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:15:00"
+          },
+          {
+            "id": "TX_SCT_03",
+            "source": "A00055",
+            "target": "A00058",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_03",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:25:00"
+          },
+          {
+            "id": "TX_SCT_04",
+            "source": "A00055",
+            "target": "A00059",
+            "type": "TRANSACTED",
+            "taxonomy": "Explicit",
+            "evidence_id": "EVD_SCT_04",
+            "confidence": 0.98,
+            "amount": 15000.0,
+            "timestamp": "2026-08-20 11:35:00"
+          }
+        ]
+      },
+      "actionable_recommendations": [
+        "Conduct field inquiry and subpoena registered account holders for Section 161 Cr.P.C. examination.",
+        "Inspect inter-account fund flows on Indian Cyber Crime Coordination Centre (I4C) coordination platform."
+      ],
+      "section_63_bsa_custody_hash": "16781cf2354561279100fc2c0d37438842352cc131068bf0bcdf63b4c8b7cdcd",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    },
+    {
+      "lead_id": "LEAD-2026-0820-04",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Concealed Accomplice Prediction: MEDIUM Threat Detected",
+      "threat_level": "MEDIUM",
+      "confidence": 0.816,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00056"
+        },
+        {
+          "id": "A00057"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 4: Link Prediction"
+      ],
+      "narrative_summary": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00056 and A00057 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      },
+      "actionable_recommendations": [
+        "Conduct field inquiry and subpoena registered account holders for Section 161 Cr.P.C. examination.",
+        "Inspect inter-account fund flows on Indian Cyber Crime Coordination Centre (I4C) coordination platform."
+      ],
+      "section_63_bsa_custody_hash": "c766a2c190af78a61f7967d1aa3873aa541bf99d1af9f4ef469b265ca72474b6",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    },
+    {
+      "lead_id": "LEAD-2026-0820-05",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Concealed Accomplice Prediction: MEDIUM Threat Detected",
+      "threat_level": "MEDIUM",
+      "confidence": 0.816,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00056"
+        },
+        {
+          "id": "A00058"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 4: Link Prediction"
+      ],
+      "narrative_summary": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00056 and A00058 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00056",
+            "label": "A00056",
+            "entity_type": "Account",
+            "holder_id": "P01055",
+            "holder_name": "Kavya Malhotra",
+            "bank": "Punjab National Bank"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      },
+      "actionable_recommendations": [
+        "Conduct field inquiry and subpoena registered account holders for Section 161 Cr.P.C. examination.",
+        "Inspect inter-account fund flows on Indian Cyber Crime Coordination Centre (I4C) coordination platform."
+      ],
+      "section_63_bsa_custody_hash": "a1ebcac360d5f35acb0298a5c677b3125918ea9c7a9cabf16088e704743ce2ba",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    },
+    {
+      "lead_id": "LEAD-2026-0820-06",
+      "generated_at": "2026-09-24 05:33:04 UTC",
+      "title": "Concealed Accomplice Prediction: MEDIUM Threat Detected",
+      "threat_level": "MEDIUM",
+      "confidence": 0.816,
+      "governing_principle": "LEADS, NOT PROOF: This automated output is an investigative intelligence lead generated under Section 63 of the Bharatiya Sakshya Adhiniyam (BSA), 2023. It assists human investigators in identifying suspicious patterns, freezing proceeds of crime, and issuing statutory notices. It does not constitute conclusive legal evidence of guilt without independent corroboration.",
+      "primary_suspect": {
+        "canonical_id": "UNIDENTIFIED",
+        "canonical_name": "Unidentified Suspect",
+        "resolved_aliases": [],
+        "match_confidence": 0.5
+      },
+      "involved_entities": [
+        {
+          "id": "A00057"
+        },
+        {
+          "id": "A00058"
+        }
+      ],
+      "detection_tiers": [
+        "Tier 4: Link Prediction"
+      ],
+      "narrative_summary": "Machine learning link prediction scores identify a high probability of a concealed co-conspirator tie between A00057 and A00058 based on shared network topology (1 common intermediary nodes, Adamic-Adar score: 3.32).",
+      "evidence_subgraph": {
+        "nodes": [
+          {
+            "id": "A00057",
+            "label": "A00057",
+            "entity_type": "Account",
+            "holder_id": "P03906",
+            "holder_name": "Siddharth Tiwari",
+            "bank": "State Bank of India"
+          },
+          {
+            "id": "A00058",
+            "label": "A00058",
+            "entity_type": "Account",
+            "holder_id": "P00405",
+            "holder_name": "Kabir Saxena",
+            "bank": "ICICI Bank"
+          },
+          {
+            "id": "A00064",
+            "label": "A00064",
+            "entity_type": "Account",
+            "holder_id": "P00450",
+            "holder_name": "Sneha Yadav",
+            "bank": "Axis Bank"
+          }
+        ],
+        "edges": []
+      },
+      "actionable_recommendations": [
+        "Conduct field inquiry and subpoena registered account holders for Section 161 Cr.P.C. examination.",
+        "Inspect inter-account fund flows on Indian Cyber Crime Coordination Centre (I4C) coordination platform."
+      ],
+      "section_63_bsa_custody_hash": "2d97c1d8575f0c401c25feec4caa9914c066e77f268d968fef6c8a0d09a087b2",
+      "legal_status": "INVESTIGATIVE_LEAD_ONLY_NOT_PROOF"
+    }
+  ]
+}

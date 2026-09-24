@@ -16,7 +16,7 @@ Evaluation
   * Feature importance table (Random Forest)
   * Best model saved to best_model.pkl
 
-Outputs (module5/data/link_prediction/)
+Outputs (intelligence/data/link_prediction/)
 ----------------------------------------
     clf_results_{graph}.csv       — per-model val + test metrics
     feature_importance_{graph}.csv
@@ -24,8 +24,8 @@ Outputs (module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/train_classifier.py
-    python module5/link_prediction/train_classifier.py --graph financial
+    python intelligence/link_prediction/train_classifier.py
+    python intelligence/link_prediction/train_classifier.py --graph financial
 """
 
 from __future__ import annotations
@@ -50,7 +50,7 @@ from sklearn.preprocessing import StandardScaler
 warnings.filterwarnings("ignore")
 
 ROOT   = Path(__file__).resolve().parent.parent.parent
-LP_DIR = ROOT / "module5" / "data" / "link_prediction"
+LP_DIR = ROOT / "intelligence" / "data" / "link_prediction"
 
 GRAPHS = {
     "financial":     ("source_account_id", "target_account_id"),

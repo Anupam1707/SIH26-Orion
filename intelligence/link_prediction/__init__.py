@@ -5,17 +5,17 @@ Package init. Exposes a run_all() convenience wrapper that runs
 the full pipeline end-to-end for a given graph.
 
 Usage:
-    from module5.link_prediction import run_all
+    from intelligence.link_prediction import run_all
     run_all("financial")
     run_all("communication")
 
 Or from CLI (running each script individually gives more control):
-    python module5/link_prediction/dataset_builder.py
-    python module5/link_prediction/heuristics.py
-    python module5/link_prediction/feature_pipeline.py
-    python module5/link_prediction/train_classifier.py
-    python module5/link_prediction/gnn_embedder.py
-    python module5/link_prediction/predict_and_explain.py
+    python intelligence/link_prediction/dataset_builder.py
+    python intelligence/link_prediction/heuristics.py
+    python intelligence/link_prediction/feature_pipeline.py
+    python intelligence/link_prediction/train_classifier.py
+    python intelligence/link_prediction/gnn_embedder.py
+    python intelligence/link_prediction/predict_and_explain.py
 """
 
 from __future__ import annotations

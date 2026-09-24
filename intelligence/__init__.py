@@ -1,5 +1,5 @@
 """
-module5 — AI-Based Anomaly Detection & Link Prediction
+intelligence — AI-Based Anomaly Detection & Link Prediction
 =======================================================
 Module 5 of SIH PS 189: Criminal Network Discovery.
 

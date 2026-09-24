@@ -44,8 +44,8 @@ The system is structured into six modular subsystems designed according to stric
 |      |-- Tier 2b: Temporal Burst Window Scoring (Z-Scored Multi-Metric Composite) |
 |      `-- Tier 3: Link Prediction Engine (Heuristics -> RF -> Node2Vec -> Gating)  |
 |      ↓                                                                            |
-|  [Module 6] Explainable Intelligence & Dashboard (Spec Complete)                  |
-|      (Evidence Subgraph Export, BSA s.63 Audit Dossiers, UI Prototyping)          |
+|  [Module 6] Explainable Intelligence & Dashboard (Complete & Live)                  |
+|      (Evidence Subgraph Export, BSA s.63 Dossiers, Deployed: orion26-team.web.app) |
 +-----------------------------------------------------------------------------------+
 ```
 
@@ -301,10 +301,12 @@ A distinguishing feature of this implementation is that technical boundaries are
 ## 8. Immediate Roadmap & Next Milestones
 
 1. **Unified Risk Scoring Model:** Fuse Tier 1 typology flags, Tier 2a OddBall scores, Tier 2b temporal composite z-scores, and Module 4 PageRank/Betweenness metrics into a single weighted per-entity composite risk index.
-2. **Module 6 Interactive Dashboard Development:**
-   * Build investigator-facing visualization displaying node dossiers with explicit/inferred/predicted color encoding.
-   * Direct visual rendering of the generated evidence subgraphs (`evidence_subgraphs_*.json`).
-   * One-click PDF export of Section 63 BSA-compliant evidentiary lead reports.
+2. **Module 6 Interactive Dashboard Development (COMPLETE & LIVE):**
+   * Built full investigator-facing visualization displaying node dossiers with explicit/inferred/predicted tri-color encoding.
+   * Direct visual rendering of the generated evidence subgraphs (`evidence_subgraphs_*.json`) with multi-hop connecting paths.
+   * Court-admissible Section 63 BSA electronic record lead certificates with real-time SHA-256 digital signature hashes and 1-click PDF/JSON export.
+   * 1-Click Guided Demo Tour for hackathon evaluators stepping through the 5-point presentation narrative.
+   * **Production Deployment:** Live on Firebase Hosting at [https://orion26-team.web.app](https://orion26-team.web.app).
 3. **Module 2 NLP & Entity Resolution Pipeline:**
    * Implement MuRIL transformer fine-tuning for Devanagari, Hindi-English transliterated aliases, and phonetic OCR corruptions.
 4. **Module 1 Ingestion Pipeline Automation:**

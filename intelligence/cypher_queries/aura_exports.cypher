@@ -10,7 +10,7 @@
 
 
 -- =============================================================================
--- 1. EGONET DATA  →  module5/data/inputs/egonet_data.csv
+-- 1. EGONET DATA  →  intelligence/data/inputs/egonet_data.csv
 --    Used by: anomaly_detection/oddball.py (OddBall structural scoring)
 -- =============================================================================
 -- For each Account, measure its egonet:
@@ -40,7 +40,7 @@ ORDER BY account_id
 
 
 -- =============================================================================
--- 2. TEMPORAL DATA  →  module5/data/inputs/temporal_data.csv
+-- 2. TEMPORAL DATA  →  intelligence/data/inputs/temporal_data.csv
 --    Used by: anomaly_detection/temporal.py (temporal burst scoring)
 -- =============================================================================
 -- Collect all transaction timestamps and amounts per account.

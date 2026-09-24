@@ -34,11 +34,13 @@
 
 ## Definition of Done Per Module
 
-| Module | Done When |
-|--------|-----------|
-| 1 | Reload from scratch in one command; validation report passes clean |
-| 2 | Precision/recall reported on hard entity-resolution cases (Devanagari, transliteration, OCR, same-name-different-person) |
-| 3 | Every edge traceable to a source document in one query; ontology validated at ingest |
-| 4 | Centrality/community done and validated; shortest path done with non-chronological caveat documented; robustness plot exists |
-| 5 | All 8 typologies fire correctly; unsupervised detection validated; link prediction built and honestly benchmarked; every output explainable |
-| 6 | Full demo narrative runs end-to-end without touching a terminal |
+| Module | Done When | Current Status |
+|--------|-----------|----------------|
+| 1 | Reload from scratch in one command; validation report passes clean | Spec written |
+| 2 | Precision/recall reported on hard entity-resolution cases (Devanagari, transliteration, OCR, same-name-different-person) | Spec written |
+| 3 | Every edge traceable to a source document in one query; ontology validated at ingest | **Complete** |
+| 4 | Centrality/community done and validated; shortest path done with non-chronological caveat documented; robustness plot exists | **Complete** |
+| 5 | All 8 typologies fire correctly; unsupervised detection validated; link prediction built and honestly benchmarked; every output explainable | **Complete** |
+| 6 | Full demo narrative runs end-to-end without touching a terminal | **COMPLETE & LIVE** · [https://orion26-team.web.app](https://orion26-team.web.app) |
+
+> **Live Demo Execution:** Evaluators can click the **"Guided Demo (Judges Tour)"** button directly in the web dashboard navigation bar to step through this exact 5-point sequence interactively without touching a terminal.

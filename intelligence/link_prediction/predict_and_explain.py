@@ -19,7 +19,7 @@ Ground truth recall check
   * Communication graph: checks whether BRIDGE_01 (PH04296↔PH04450) and
     BRIDGE_02 (PH02064↔PH04287) are recovered in top-50.
 
-Outputs (module5/data/link_prediction/)
+Outputs (intelligence/data/link_prediction/)
 ----------------------------------------
     predictions_{graph}.csv           — full ranked prediction list
     evidence_subgraphs_{graph}.json   — evidence for top-50 predictions
@@ -27,9 +27,9 @@ Outputs (module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/predict_and_explain.py
-    python module5/link_prediction/predict_and_explain.py --graph communication
-    python module5/link_prediction/predict_and_explain.py --topk 100
+    python intelligence/link_prediction/predict_and_explain.py
+    python intelligence/link_prediction/predict_and_explain.py --graph communication
+    python intelligence/link_prediction/predict_and_explain.py --topk 100
 """
 
 from __future__ import annotations
@@ -45,7 +45,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-LP_DIR = Path(__file__).resolve().parent.parent.parent / "module5" / "data" / "link_prediction"
+LP_DIR = Path(__file__).resolve().parent.parent.parent / "intelligence" / "data" / "link_prediction"
 DATA   = Path(__file__).resolve().parent.parent.parent / "data" / "dataset"
 
 GRAPHS = {

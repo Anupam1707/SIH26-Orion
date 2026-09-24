@@ -18,7 +18,7 @@ Metrics
   * Average Precision (PR-AUC)
   * Precision@K  (K = 10, 50)
 
-Outputs (module5/data/link_prediction/)
+Outputs (intelligence/data/link_prediction/)
 ----------------------------------------
     heuristics_val_{graph}.csv
     heuristics_test_{graph}.csv
@@ -26,9 +26,9 @@ Outputs (module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/heuristics.py
-    python module5/link_prediction/heuristics.py --graph financial
-    python module5/link_prediction/heuristics.py --graph communication
+    python intelligence/link_prediction/heuristics.py
+    python intelligence/link_prediction/heuristics.py --graph financial
+    python intelligence/link_prediction/heuristics.py --graph communication
 """
 
 from __future__ import annotations
@@ -45,7 +45,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 
 # ── paths ──────────────────────────────────────────────────────────────────────
 ROOT    = Path(__file__).resolve().parent.parent.parent
-LP_DIR  = ROOT / "module5" / "data" / "link_prediction"
+LP_DIR  = ROOT / "intelligence" / "data" / "link_prediction"
 
 GRAPHS = {
     "financial":     ("source_account_id", "target_account_id"),

@@ -96,7 +96,7 @@ python graph/analytics/run_pagerank.py --limit 20 --write-back
 | A00069 | Structuring | 181/532 (34.0%) | Same limitation |
 | A00014, A00070 | Pass-through | Not scored | Zero egonet edges |
 
-**Code:** `module5/anomaly_detection/oddball.py`
+**Code:** `intelligence/anomaly_detection/oddball.py`
 
 #### Tier 2b — Temporal Anomaly (48h burst window)
 
@@ -120,7 +120,7 @@ structuring because burst_count (8 tx) < structuring burst_count (10 tx) in the 
 this is a documented limitation of single-account scoring — scatter needs a dedicated
 fan-out detector.
 
-**Code:** `module5/anomaly_detection/temporal.py`
+**Code:** `intelligence/anomaly_detection/temporal.py`
 
 #### Tier 3 — Link Prediction
 **COMPLETE — All three fixes applied**
@@ -161,23 +161,29 @@ fan-out detector.
 
 **Confirmed finding:** Topological link prediction cannot recover cross-community bridge edges (CN=0, long path) without non-graph features. The model *does* correctly discover intra-syndicate edges at 196/200 precision in the top-200.
 
-**Code:** `module5/link_prediction/` (6 files)
+**Code:** `intelligence/link_prediction/` (6 files)
 
 ---
 
 ### Module 6 — Explainable Intelligence & Dashboard
-**Status: Spec written, not implemented**
-- Explainability requirement: every output ships with the specific subgraph/evidence responsible — never a bare number
-- The explicit/inferred/predicted taxonomy (from Module 3 spec) governs all UI labels
-- No dashboard code written yet
+**Status: COMPLETE & DEPLOYED (Live)**
+- **Deployment URL:** [https://orion26-team.web.app](https://orion26-team.web.app) (Firebase Hosting, project `orion26-team`)
+- **Code:** `dashboard/` (Vite + React + D3 + Tailwind CSS + Lucide)
+- **Data Layer:** Bundled high-fidelity intelligence store (`intelligence_data.json`, 267 KB) compiled from raw CKG datasets, ground truth typologies, OddBall/temporal rankings, and link prediction evidence subgraphs for zero-latency, 100% offline-resilient execution.
+- **Key Capabilities Implemented:**
+  1. *Interactive Knowledge Graph Explorer*: D3 force-directed interactive canvas with smooth zoom, pan, drag, and taxonomy filtering.
+  2. *Strict Evidentiary Taxonomy*: Explicit (solid green, document-verified), Inferred (dashed amber, topological/shortest path), Predicted (dotted purple, ML hypothesis).
+  3. *Typology & Anomaly Center*: Dedicated views for all 8 Ground Truth typologies (`MULE_01`, `SCATTER_GATHER_01`, `STRUCTURING_01`, `BURST_01-03`, `BURNER_01-02`, and the topological reachability bridge between `A00013` and `A00055` with non-chronological warning flag).
+  4. *Evidence Subgraph Studio*: Inspects 2-4 hop connecting chains, shared neighbors, Adamic-Adar, and Jaccard metrics for predicted links; displays three-level benchmark comparison table.
+  5. *Cross-Lingual Entity Resolution Workbench*: Demonstrates Devanagari script, Hindi-English transliterations, and phonetic OCR corruptions with match confidence and analyst verification.
+  6. *Section 63 BSA Evidentiary Lead Export*: Real-time SHA-256 digital signature hash, chain-of-custody tracking, JSON export, and print stylesheet for court-admissible PDF generation.
+  7. *1-Click Guided Demo Tour for Judges*: Full 5-step presentation narrative executable with keyboard shortcuts without touching a terminal.
 
 ---
 
 ## Immediate Next Actions
 
-1. **Composite risk score** — combine Tier 1 typology flags + OddBall + temporal + Module 4 centrality/community into one per-account score
-2. **Cross-community bridge detection** — confirmed by Tier 3: topology alone cannot detect bridge pairs (CN=0, dist=5). Needs shared-timing Cypher rule or geolocation overlap.
-3. **Scatter-source temporal detection** — A00055 currently ranks 7/8 in temporal (below structuring ring); needs dedicated fan-out detector or multi-account window.
-4. **Mule chain link prediction** — CN=0 for mule edges even with random masking; needs multi-hop path feature or dedicated Tier 1 rule feeding the link predictor.
-5. **Explainability wrapper** — every Module 5 output carries its evidence subgraph before Module 6 starts
-6. **Team sync** — align on Modules 1, 2, 6 status; resolve the 5 cross-module conflicts
+1. **Module 1 Ingestion Automation**: Implement automated ingest CLI for raw external FIR/CDR datasets.
+2. **Module 2 NLP MuRIL Fine-Tuning**: Train fine-tuned transformer weights on Devanagari transliteration pairs.
+3. **Cross-Community Bridge Detection Auxiliaries**: Supplement pure topological link prediction with cell tower geolocation and timestamp synchrony features.
+4. **Judge Presentation Practice**: Rehearse the 5-step live walkthrough using the Guided Demo button at [https://orion26-team.web.app](https://orion26-team.web.app).

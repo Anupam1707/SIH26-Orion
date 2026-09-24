@@ -12,7 +12,7 @@ Architecture
   4. Training: BCEWithLogitsLoss on train positives + negatives.
   5. Early stopping on val AUC-ROC.
 
-Outputs (module5/data/link_prediction/)
+Outputs (intelligence/data/link_prediction/)
 ----------------------------------------
     node_embeddings_{graph}.npy      — float32 array [n_nodes × dim]
     node_index_{graph}.json          — {node_id: row_index}
@@ -20,8 +20,8 @@ Outputs (module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/gnn_embedder.py
-    python module5/link_prediction/gnn_embedder.py --graph financial --epochs 30
+    python intelligence/link_prediction/gnn_embedder.py
+    python intelligence/link_prediction/gnn_embedder.py --graph financial --epochs 30
 """
 
 from __future__ import annotations
@@ -42,7 +42,7 @@ import torch.optim as optim
 from sklearn.metrics import average_precision_score, roc_auc_score
 
 ROOT   = Path(__file__).resolve().parent.parent.parent
-LP_DIR = ROOT / "module5" / "data" / "link_prediction"
+LP_DIR = ROOT / "intelligence" / "data" / "link_prediction"
 
 GRAPHS = {
     "financial":     ("source_account_id", "target_account_id"),

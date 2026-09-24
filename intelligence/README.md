@@ -21,7 +21,7 @@
 ## Directory Layout
 
 ```
-module5/
+intelligence/
 ├── anomaly_detection/
 │   ├── oddball.py          # Tier 2a — structural anomaly detection
 │   └── temporal.py         # Tier 2b — temporal anomaly detection
@@ -60,11 +60,11 @@ from any working directory:
 
 ```bash
 # From project root:
-python module5/anomaly_detection/oddball.py
-python module5/anomaly_detection/temporal.py
+python intelligence/anomaly_detection/oddball.py
+python intelligence/anomaly_detection/temporal.py
 
 # Or from the anomaly_detection directory:
-cd module5/anomaly_detection
+cd intelligence/anomaly_detection
 python oddball.py
 python temporal.py
 ```

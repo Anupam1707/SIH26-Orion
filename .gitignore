@@ -59,6 +59,13 @@ logs/
 ehthumbs.db
 Thumbs.db
 
+# ── Node.js & Frontend ────────────────────────────────────────────────────────
+node_modules/
+dashboard/node_modules/
+.firebase/
+dashboard/dist/
+
+
 # ── IDEs and Editors ──────────────────────────────────────────────────────────
 .idea/
 .vscode/

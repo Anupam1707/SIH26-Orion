@@ -98,3 +98,21 @@ RETURN a.account_id, a.pagerank_score, a.community_id
 ORDER BY a.pagerank_score DESC
 LIMIT 20
 ```
+
+---
+
+## Module 6 Frontend Infrastructure — Firebase Hosting
+
+- **Hosting Platform:** Firebase Hosting (Google Cloud Global CDN)
+- **Firebase Project:** `orion26-team`
+- **Live URL:** [https://orion26-team.web.app](https://orion26-team.web.app)
+- **Build Pipeline:** Vite 5 + React 18 + D3 + Tailwind CSS 3.4
+- **Deployment Artifact:** `dashboard/dist`
+- **Offline High-Availability Strategy:** High-fidelity bundled data cache (`intelligence_data.json`) provides zero-latency rendering of all 117k-dataset typologies, OddBall scores, and link prediction evidence subgraphs, immunizing demo evaluations from external cloud database network pauses.
+- **CLI Commands:**
+  ```bash
+  cd dashboard
+  npm run build
+  cd ..
+  firebase deploy --only hosting
+  ```

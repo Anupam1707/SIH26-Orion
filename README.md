@@ -13,8 +13,8 @@
 | 2 | NLP & Entity Resolution | Spec written | `docs/` |
 | 3 | Criminal Knowledge Graph | Complete | `graph/`, `main_graph_loader.py` |
 | 4 | Graph Analytics & Network Detection | Complete | `graph/analytics/` |
-| 5 | AI-Based Anomaly & Link Prediction | Phase 2 done | `module5/` |
-| 6 | Explainable Intelligence & Dashboard | Spec written | `docs/` |
+| 5 | AI-Based Anomaly & Link Prediction | Complete | `intelligence/` |
+| 6 | Explainable Intelligence & Dashboard | **Complete (Live)** | `dashboard/`, [https://orion26-team.web.app](https://orion26-team.web.app) |
 
 ---
 
@@ -22,10 +22,17 @@
 
 ```text
 SIH26/
+|-- dashboard/                     <- Module 6: Live Investigator Dashboard (Vite + React + D3)
+|   |-- src/                       <- Components, D3 Force Graph, Dossier, Typology Viewer
+|   |-- package.json
+|   `-- dist/                      <- Production build deployed to Firebase
+|
 |-- main_graph_loader.py           <- Module 3: full Neo4j load orchestrator
 |-- verify_graph.py                <- Post-load sanity checks
 |-- requirements.txt
 |-- .env.example
+|-- .firebaserc                    <- Firebase project: orion26-team
+|-- firebase.json                  <- Hosting configuration pointing to dashboard/dist
 |
 |-- graph/                         <- Module 3 & 4 code
 |   |-- config.py                  <- Neo4j connection (.env)
@@ -41,21 +48,44 @@ SIH26/
 |       |-- pagerank.py            <- PageRank implementation
 |       `-- run_pagerank.py        <- CLI entry point
 |
-|-- module5/                       <- Module 5: Anomaly Detection & Link Prediction
-|   |-- README.md                  <- Module 5 detail, results, outstanding items
+|-- pipeline/                      <- End-to-End Input-to-Leads Processing Pipeline
+|   |-- README.md                  <- Pipeline documentation & execution instructions
+|   |-- samples.py                 <- Multi-source test samples (FIR, Banking, CDR)
+|   |-- extractor.py               <- Multilingual entity & flow extractor
+|   |-- entity_resolver.py         <- Devanagari, initials & OCR alias resolution
+|   |-- graph_updater.py           <- Tri-partite knowledge graph manager
+|   |-- detector.py                <- 4-Tier Anomaly Engine (Typology, OddBall, Burst, LP)
+|   |-- lead_generator.py          <- Section 63 BSA certified lead synthesis
+|   `-- run_pipeline.py            <- CLI & programmatic pipeline orchestrator
+|
+|-- intelligence/                  <- Module 5: Intelligence, Anomaly Detection & Link Prediction
+|   |-- README.md                  <- Architecture, validated results, honest scientific benchmarks
 |   |-- anomaly_detection/
 |   |   |-- oddball.py             <- Tier 2a: structural anomaly (OddBall)
 |   |   `-- temporal.py            <- Tier 2b: temporal burst anomaly
 |   |-- cypher_queries/
 |   |   `-- aura_exports.cypher    <- Aura export + validation Cypher
 |   |-- data/
-|   |   |-- inputs/                <- egonet_data.csv, temporal_data.csv (from Aura)
-|   |   `-- results/               <- oddball_results.csv, temporal_results.csv
-|   `-- link_prediction/           <- Tier 3 (not yet started)
+|   |   |-- inputs/                <- egonet_data.csv, temporal_data.csv
+|   |   |-- results/               <- oddball_results.csv, temporal_results.csv
+|   |   `-- link_prediction/       <- Trained models, predictions, and evidence subgraphs
+|   `-- link_prediction/           <- Tier 3 Link Prediction models & evidence subgraphs
 |
 |-- data/dataset/                  <- CKG_FINAL_REPAIRED_DATASET (117 K rows)
 |-- CKG_FINAL_REPAIRED_DATASET/    <- Original repaired dataset + GROUND_TRUTH.csv
 `-- docs/                          <- Research specs for all 6 modules
+```
+
+### Core System: Input-to-Leads Pipeline Quickstart
+```bash
+# Run pipeline on sample Cyber Fraud FIR (extracts Devanagari suspect, stitches aliases, outputs BSA leads)
+python3 pipeline/run_pipeline.py --sample fir
+
+# Run pipeline on bank smurfing transaction stream (detects sub-threshold structuring)
+python3 pipeline/run_pipeline.py --sample structuring
+
+# Run pipeline on CDR telecommunications stream (detects 48h pre-event coordination bursts)
+python3 pipeline/run_pipeline.py --sample cdr
 ```
 
 ---
@@ -118,23 +148,48 @@ Three-tier architecture — simple methods proven first, complexity added only w
 - Louvain fragments the structuring ring (A00069-74) across 6 communities — citable limitation
 
 ```bash
-python module5/anomaly_detection/oddball.py
-python module5/anomaly_detection/temporal.py
+python intelligence/anomaly_detection/oddball.py
+python intelligence/anomaly_detection/temporal.py
 ```
 
-See [`module5/README.md`](module5/README.md) for full validated results, honest limitations,
+See [`intelligence/README.md`](intelligence/README.md) for full validated results, honest limitations,
 and outstanding items.
+
+---
+
+## Module 6 — Explainable Intelligence & Dashboard  (Complete & Live)
+
+**Production Web App:** [https://orion26-team.web.app](https://orion26-team.web.app) (Firebase Hosting)
+
+| Feature | Implementation | Live Status |
+|---------|----------------|-------------|
+| Knowledge Graph Explorer | D3 force simulation, smooth zoom/pan/drag, entity badging | ✅ Active |
+| Evidentiary Taxonomy | Strict Explicit (solid green) / Inferred (dashed amber) / Predicted (dotted purple) | ✅ Active |
+| Typology & Anomaly Center | 8 Ground Truth Typologies + A00013-A00055 topological bridge | ✅ Active |
+| Link Prediction Studio | Evidence subgraphs, multi-hop paths, RF vs GNN benchmarks | ✅ Active |
+| Entity Resolution Workbench | Devanagari (`नेहा`), transliterations (`Arjd.`), OCR corruptions (`Nikhi1`) | ✅ Active |
+| Section 63 BSA Lead Export | Real-time SHA-256 digital signature hash, JSON download, 1-click print PDF | ✅ Active |
+| Guided Demo Tour for Judges | 5-step evaluator tour executable via UI or keyboard shortcuts | ✅ Active |
+
+```bash
+# Run locally
+cd dashboard
+npm install
+npm run dev     # dev server at http://localhost:5173
+
+# Deploy to Firebase Hosting
+npm run build
+cd ..
+firebase deploy --only hosting
+```
 
 ---
 
 ## Immediate Next Actions
 
-1. Fix `burst_ratio` reweighting in `temporal.py`; re-validate A00069-74 cluster together
-2. Confirm A00069 scatter receivers include A00071-74 (full structuring ring structure)
-3. Decide Event-linkage routing for burner-swap and pre-event-burst typologies
-4. Begin Tier 3 link prediction: Adamic-Adar / Resource Allocation / Katz baselines first
-5. Build composite per-account risk score (Phase 1 + OddBall + temporal + Module 4 signals)
-6. Explainability wrapper: every output ships with its specific evidence subgraph
-7. Align with rest of team on Modules 1, 2, 6 status and cross-module conflicts (Section 4 of project log)
+1. Module 1 Ingestion Pipeline: Build unified CSV/JSON automated CLI importer for heterogeneous police FIRs.
+2. Module 2 NLP Fine-Tuning: MuRIL transformer model adaptation on Devanagari transliteration pairs.
+3. Cross-Community Telecom Bridge Prediction: Incorporate auxiliary cell tower coordinates and timing synchrony.
+4. Practice Live Judge Demo using the **"Guided Demo (Judges Tour)"** feature on [https://orion26-team.web.app](https://orion26-team.web.app).
 
 See `docs/` for full research documentation and module specs.

@@ -32,7 +32,7 @@ Result: GT edges are held out but the training graph still contains the
 adjacent edges, giving non-zero common neighbors, finite shortest paths,
 and meaningful heuristic scores.
 
-Outputs (written to module5/data/link_prediction/)
+Outputs (written to intelligence/data/link_prediction/)
 ---------------------------------------------------
     train_pos_{graph}.csv, train_neg_{graph}.csv
     val_pos._{graph}.csv,  val_neg_{graph}.csv
@@ -42,7 +42,7 @@ Outputs (written to module5/data/link_prediction/)
 
 Run
 ---
-    python module5/link_prediction/dataset_builder.py
+    python intelligence/link_prediction/dataset_builder.py
 """
 
 from __future__ import annotations
@@ -60,7 +60,7 @@ import pandas as pd
 # ── paths ─────────────────────────────────────────────────────────────────────
 ROOT    = Path(__file__).resolve().parent.parent.parent
 DATA_REL = ROOT / "data" / "dataset" / "RELATIONSHIPS"
-OUT_DIR  = ROOT / "module5" / "data" / "link_prediction"
+OUT_DIR  = ROOT / "intelligence" / "data" / "link_prediction"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 RANDOM_SEED = 42
