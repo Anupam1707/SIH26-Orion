@@ -277,9 +277,6 @@ export default function App() {
         setSearchQuery={setSearchQuery}
       />
 
-      {/* KPI Stats Strip */}
-      <KPICards metadata={intelligenceData.system_metadata} />
-
       {/* Main Content Workspace */}
       <main className="flex-1 flex overflow-hidden relative">
         {activeTab === 'pipeline' && (

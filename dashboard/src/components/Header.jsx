@@ -21,12 +21,12 @@ export default function Header({
   setSearchQuery
 }) {
   const tabs = [
-    { id: 'pipeline', label: 'Input-to-Leads Pipeline', icon: Workflow },
-    { id: 'network', label: 'Network Graph Explorer', icon: Network },
-    { id: 'typologies', label: 'Typologies & Anomalies', icon: Flame },
-    { id: 'link_prediction', label: 'AI Link Prediction', icon: GitBranch },
-    { id: 'entity_resolution', label: 'Entity Resolution', icon: Languages },
-    { id: 'cases', label: 'Active FIRs & Cases', icon: FileText },
+    { id: 'pipeline', label: 'Investigation Pipeline', icon: Workflow },
+    { id: 'network', label: 'Network Map', icon: Network },
+    { id: 'typologies', label: 'Fraud Patterns', icon: Flame },
+    { id: 'link_prediction', label: 'Hidden Conspirators', icon: GitBranch },
+    { id: 'entity_resolution', label: 'Alias Resolution', icon: Languages },
+    { id: 'cases', label: 'Case Files', icon: FileText },
   ];
 
   return (
