@@ -3,23 +3,18 @@ import {
   Play, 
   CheckCircle2, 
   AlertTriangle, 
-  ShieldAlert, 
-  Workflow, 
+  Shield, 
   Database, 
-  Cpu, 
   FileText, 
   ArrowRight, 
-  Lock, 
-  Sparkles, 
-  Layers, 
   RefreshCw,
   Search,
   ExternalLink,
-  ChevronRight,
-  TrendingUp,
-  FileCheck2,
   Clock,
-  Fingerprint
+  Fingerprint,
+  Layers,
+  ChevronRight,
+  Printer
 } from 'lucide-react';
 import pipelineData from '../data/pipeline_data.json';
 
@@ -29,25 +24,26 @@ export default function PipelineWorkbench({
 }) {
   const [selectedSampleKey, setSelectedSampleKey] = useState('fir');
   const [customText, setCustomText] = useState('');
+  const [isCustomMode, setIsCustomMode] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
-  const [activeStageIndex, setActiveStageIndex] = useState(5); // Default to completed view
+  const [activeStageIndex, setActiveStageIndex] = useState(5);
   const [pipelineResult, setPipelineResult] = useState(null);
   const [selectedLeadIndex, setSelectedLeadIndex] = useState(0);
 
-  // Initialize with precomputed run for the default sample
+  // Initialize with precomputed run for the selected sample
   useEffect(() => {
-    if (pipelineData?.precomputed_runs?.[selectedSampleKey]) {
+    if (!isCustomMode && pipelineData?.precomputed_runs?.[selectedSampleKey]) {
       setPipelineResult(pipelineData.precomputed_runs[selectedSampleKey]);
       setSelectedLeadIndex(0);
     }
-  }, [selectedSampleKey]);
+  }, [selectedSampleKey, isCustomMode]);
 
-  // Execute Pipeline with live step animation
+  // Execute Pipeline with step progression
   const handleExecutePipeline = () => {
     setIsRunning(true);
     setActiveStageIndex(0);
 
-    const stepInterval = 400; // ms per stage
+    const stepInterval = 300;
     let currentStep = 0;
 
     const timer = setInterval(() => {
@@ -57,7 +53,6 @@ export default function PipelineWorkbench({
       } else {
         clearInterval(timer);
         setIsRunning(false);
-        // Load the run results
         const runData = pipelineData?.precomputed_runs?.[selectedSampleKey];
         if (runData) {
           setPipelineResult(runData);
@@ -69,35 +64,31 @@ export default function PipelineWorkbench({
   const samplePresets = [
     {
       key: 'fir',
-      name: 'Cyber Fraud FIR (Mule Hub)',
-      tag: 'Unstructured Text',
-      desc: 'FIR narrative referencing suspect Rahul Joshi (राहुल जोशी / P00231), collector A00013, and 12 feeder accounts.',
-      badge: 'Tier 1 & OddBall',
-      badgeColor: 'border-red-500/30 text-red-400 bg-red-500/10'
+      name: 'FIR: Cyber Mule Network',
+      type: 'Unstructured Police FIR',
+      desc: 'Case complaint in English with Devanagari suspect name (राहुल जोशी / P00231), 12 feeder accounts, and collector A00013.',
+      badge: 'Mule Fan-In'
     },
     {
       key: 'structuring',
       name: 'Bank Transaction Stream',
-      tag: 'Structured Feed',
-      desc: 'Batch of 6 transactions tightly clustered at ₹9,200 - ₹9,900 to evade ₹50,000 PMLA reporting threshold.',
-      badge: 'Structuring / Smurfing',
-      badgeColor: 'border-amber-500/30 text-amber-400 bg-amber-500/10'
+      type: 'Financial CSV Stream',
+      desc: 'Batch of 6 transfers under ₹10,000 threshold across accounts A00069-A00074 to avoid regulatory CTR reporting.',
+      badge: 'Structuring'
     },
     {
       key: 'cdr',
-      name: 'CDR Telecommunications Log',
-      tag: 'Telecom Feed',
-      desc: 'High-frequency coordination burst between suspect phone PH04296 and accomplices within 48h window.',
-      badge: 'Temporal Burst Z=3.8',
-      badgeColor: 'border-purple-500/30 text-purple-400 bg-purple-500/10'
+      name: 'CDR Call Detail Records',
+      type: 'Telecommunications Feed',
+      desc: 'Pre-incident 48-hour call frequency burst between suspect mobile PH04296 and coordination ring.',
+      badge: 'Call Burst'
     },
     {
       key: 'scatter',
-      name: 'Scatter-Gather Transaction Flow',
-      tag: 'Layering Stream',
-      desc: 'Rapid dispersion from source A00055 through 4 layering conduits, reconverging into aggregator A00064.',
-      badge: 'Scatter-Gather',
-      badgeColor: 'border-blue-500/30 text-blue-400 bg-blue-500/10'
+      name: 'Scatter-Gather Flow',
+      type: 'Layering Stream',
+      desc: 'Single source A00055 rapidly dispersing ₹60,000 across 4 intermediary accounts, reconverging at A00064.',
+      badge: 'Layering'
     }
   ];
 
@@ -105,135 +96,125 @@ export default function PipelineWorkbench({
   const activeLead = pipelineResult?.leads?.[selectedLeadIndex] || pipelineResult?.leads?.[0];
 
   const stages = [
-    { id: 1, name: 'Raw Input Ingestion', icon: FileText, desc: 'Extracts tokens, amounts, entities' },
-    { id: 2, name: 'Multilingual Resolution', icon: RefreshCw, desc: 'Devanagari, initials & OCR repair' },
-    { id: 3, name: 'Graph Tri-Partite Ingestion', icon: Database, desc: 'Classifies Explicit / Inferred / Predicted' },
-    { id: 4, name: 'Multi-Tier Anomaly Engine', icon: Cpu, desc: 'Typologies, OddBall, Bursts, Link Prediction' },
-    { id: 5, name: 'Court-Admissible Leads', icon: FileCheck2, desc: 'Section 63 BSA certified dossiers' }
+    { id: 1, name: '1. Ingestion', desc: 'Parse tokens & records' },
+    { id: 2, name: '2. Resolution', desc: 'Stitch aliases & KYC' },
+    { id: 3, name: '3. Graph Update', desc: 'Tag explicit/inferred edges' },
+    { id: 4, name: '4. Detection', desc: 'Rules, OddBall, bursts' },
+    { id: 5, name: '5. Lead Output', desc: 'Section 63 BSA dossiers' }
   ];
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner: Core Mission Statement */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/70 to-slate-900 border border-indigo-500/20 p-6 shadow-xl">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+    <div className="space-y-4 max-w-7xl mx-auto pb-10">
+      {/* Control Banner */}
+      <div className="bg-slate-900 border border-slate-800 rounded-lg p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center gap-1.5">
-                <Workflow className="w-3 h-3" /> Core System Architecture · SIH PS 189
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono">
+                Pipeline Control
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                Section 63 BSA Compliant
+              <span className="text-slate-600">•</span>
+              <span className="text-xs text-slate-400">
+                Automated Input-to-Leads Processing
               </span>
             </div>
-            <h2 className="text-2xl font-bold text-slate-100 tracking-tight flex items-center gap-2">
-              End-to-End Input-to-Leads Investigative Pipeline
+            <h2 className="text-base font-bold text-slate-100">
+              Evidence Ingestion & Investigative Lead Synthesis
             </h2>
-            <p className="text-xs text-slate-400 mt-1 max-w-3xl leading-relaxed">
-              Automated transformation pipeline taking raw, noisy, multilingual multi-source intelligence
-              (FIR complaints, bank feeds, CDR streams) and running it through entity resolution, 
-              knowledge graph ingestion with tri-partite taxonomy, and multi-tier anomaly detection to synthesize 
-              court-admissible investigative leads.
-            </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={handleExecutePipeline}
               disabled={isRunning}
-              className={`flex items-center gap-2.5 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5 ${
-                isRunning 
-                  ? 'bg-slate-700 text-slate-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white shadow-indigo-500/25'
+              className={`flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold transition-colors ${
+                isRunning
+                  ? 'bg-slate-800 text-slate-400 cursor-not-allowed border border-slate-700'
+                  : 'bg-blue-600 hover:bg-blue-500 text-white'
               }`}
             >
               {isRunning ? (
                 <>
-                  <RefreshCw className="w-4 h-4 animate-spin text-white" />
-                  <span>Executing Pipeline ({activeStageIndex}/5)...</span>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>Processing Stage {activeStageIndex}/5...</span>
                 </>
               ) : (
                 <>
-                  <Play className="w-4 h-4 fill-current text-white" />
-                  <span>Execute Full Pipeline</span>
+                  <Play className="w-3.5 h-3.5 fill-current" />
+                  <span>Run Pipeline</span>
                 </>
               )}
             </button>
           </div>
         </div>
 
-        {/* 5-Stage Visual Stepper */}
-        <div className="mt-6 pt-5 border-t border-slate-800/80">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            {stages.map((stage) => {
-              const Icon = stage.icon;
-              const isPast = activeStageIndex >= stage.id;
-              const isCurrent = activeStageIndex === stage.id && isRunning;
-              return (
-                <div 
-                  key={stage.id}
-                  onClick={() => !isRunning && setActiveStageIndex(stage.id)}
-                  className={`cursor-pointer rounded-xl p-3 border transition-all ${
-                    isCurrent 
-                      ? 'bg-indigo-500/20 border-indigo-400 shadow-md shadow-indigo-500/20 ring-1 ring-indigo-400' 
-                      : isPast
-                        ? 'bg-slate-800/70 border-emerald-500/30'
-                        : 'bg-slate-900/40 border-slate-800 opacity-60'
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[10px] font-mono text-slate-400">STAGE {stage.id}</span>
-                    {isCurrent ? (
-                      <RefreshCw className="w-3.5 h-3.5 text-indigo-400 animate-spin" />
-                    ) : isPast ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    ) : (
-                      <div className="w-2 h-2 rounded-full bg-slate-700" />
-                    )}
-                  </div>
-                  <div className="flex items-center gap-1.5 font-semibold text-xs text-slate-200">
-                    <Icon className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
-                    <span className="truncate">{stage.name}</span>
-                  </div>
-                  <p className="text-[10px] text-slate-400 mt-1 line-clamp-1">{stage.desc}</p>
+        {/* Linear Stepper */}
+        <div className="mt-4 pt-3 border-t border-slate-800 grid grid-cols-2 md:grid-cols-5 gap-2">
+          {stages.map((st) => {
+            const isDone = activeStageIndex >= st.id;
+            const isCurrent = activeStageIndex === st.id && isRunning;
+            return (
+              <div 
+                key={st.id}
+                onClick={() => !isRunning && setActiveStageIndex(st.id)}
+                className={`p-2.5 rounded border transition-colors cursor-pointer text-left ${
+                  isCurrent
+                    ? 'bg-blue-950/40 border-blue-500/80'
+                    : isDone
+                      ? 'bg-slate-800/60 border-slate-700 text-slate-200'
+                      : 'bg-slate-900/40 border-slate-800 text-slate-500'
+                }`}
+              >
+                <div className="flex items-center justify-between text-[11px] font-semibold mb-0.5">
+                  <span className={isDone ? 'text-slate-200' : 'text-slate-500'}>{st.name}</span>
+                  {isDone ? (
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                  ) : (
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+                  )}
                 </div>
-              );
-            })}
-          </div>
+                <div className="text-[10px] text-slate-400 truncate">{st.desc}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Main Grid: Sample Selector & Input Preview (Left) vs Pipeline Output & Leads (Right) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      {/* Main Grid: Input Column & Output Column */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         
-        {/* Left Column: Input Preset Selector & Raw Ingestion */}
+        {/* Left Column: Input Feed & Preview */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2 mb-3">
-              <Database className="w-4 h-4 text-indigo-400" />
-              <span>Select Sample Input Feed</span>
-            </h3>
+          
+          {/* Sample Preset Selector */}
+          <div className="bg-slate-900 border border-slate-800 rounded-lg p-3.5 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+                <Database className="w-3.5 h-3.5 text-slate-400" /> Input Feed Source
+              </span>
+              <span className="text-[10px] font-mono text-slate-500">4 Presets</span>
+            </div>
 
-            <div className="space-y-2.5">
+            <div className="space-y-1.5">
               {samplePresets.map((preset) => {
-                const isSelected = selectedSampleKey === preset.key;
+                const isSelected = selectedSampleKey === preset.key && !isCustomMode;
                 return (
                   <button
                     key={preset.key}
                     onClick={() => {
+                      setIsCustomMode(false);
                       setSelectedSampleKey(preset.key);
                       setActiveStageIndex(5);
                     }}
-                    className={`w-full text-left p-3 rounded-lg border transition-all ${
+                    className={`w-full text-left p-2.5 rounded border transition-colors ${
                       isSelected
-                        ? 'bg-indigo-950/40 border-indigo-500 shadow-sm shadow-indigo-500/10'
-                        : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900'
+                        ? 'bg-slate-800 border-blue-500/80 text-slate-100'
+                        : 'bg-slate-950/60 border-slate-800/80 text-slate-300 hover:bg-slate-800/50 hover:border-slate-700'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-bold text-slate-200">{preset.name}</span>
-                      <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded border ${preset.badgeColor}`}>
+                      <span className="text-xs font-semibold">{preset.name}</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 border border-slate-700">
                         {preset.badge}
                       </span>
                     </div>
@@ -246,263 +227,245 @@ export default function PipelineWorkbench({
             </div>
           </div>
 
-          {/* Raw Input Content Viewer */}
-          <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                <FileText className="w-3.5 h-3.5 text-sky-400" /> Raw Ingestion Payload
+          {/* Raw Payload Inspector */}
+          <div className="bg-slate-900 border border-slate-800 rounded-lg p-3.5 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-slate-400" /> Ingestion Text / Data
               </span>
-              <span className="text-[10px] font-mono text-slate-400">
+              <span className="text-[10px] font-mono text-slate-500">
                 {currentSample?.source_type}
               </span>
             </div>
 
-            <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 font-mono text-[11px] text-slate-300 max-h-64 overflow-y-auto leading-relaxed">
-              {currentSample?.raw_text ? (
-                <pre className="whitespace-pre-wrap">{currentSample.raw_text.trim()}</pre>
-              ) : (
-                <pre className="whitespace-pre-wrap">{JSON.stringify(currentSample?.records || currentSample, null, 2)}</pre>
-              )}
+            <div className="bg-slate-950 border border-slate-800 rounded p-2.5 font-mono text-[11px] text-slate-300 max-h-56 overflow-y-auto leading-relaxed whitespace-pre-wrap select-text">
+              {currentSample?.raw_text ? currentSample.raw_text.trim() : JSON.stringify(currentSample?.records || currentSample, null, 2)}
             </div>
           </div>
         </div>
 
-        {/* Right Column: Execution Results & Lead Dossiers */}
+        {/* Right Column: Pipeline Execution & Generated Leads */}
         <div className="lg:col-span-8 space-y-4">
           
-          {/* Stage Details Tabs / Status Counters */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-3">
-              <span className="text-[10px] uppercase font-mono text-slate-400">Extracted Entities</span>
-              <div className="text-lg font-bold text-sky-400 mt-0.5">
+          {/* Key Pipeline Stats Strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
+              <div className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Extracted Entities</div>
+              <div className="text-base font-bold text-slate-100 font-mono mt-0.5">
                 {(pipelineResult?.extracted_entities?.accounts?.length || 0) + 
                  (pipelineResult?.extracted_entities?.phones?.length || 0) + 
                  (pipelineResult?.extracted_entities?.persons?.length || 0)}
               </div>
-              <span className="text-[10px] text-slate-500">
+              <div className="text-[10px] text-slate-500 truncate mt-0.5">
                 {pipelineResult?.extracted_entities?.accounts?.length || 0} Accounts · {pipelineResult?.extracted_entities?.persons?.length || 0} Persons
-              </span>
+              </div>
             </div>
 
-            <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-3">
-              <span className="text-[10px] uppercase font-mono text-slate-400">Resolved Aliases</span>
-              <div className="text-lg font-bold text-emerald-400 mt-0.5">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
+              <div className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Resolved Aliases</div>
+              <div className="text-base font-bold text-slate-100 font-mono mt-0.5">
                 {pipelineResult?.resolved_entities?.length || 0}
               </div>
-              <span className="text-[10px] text-slate-500">
-                Devanagari & Initials Stitched
-              </span>
+              <div className="text-[10px] text-slate-500 truncate mt-0.5">
+                Devanagari & Initials
+              </div>
             </div>
 
-            <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-3">
-              <span className="text-[10px] uppercase font-mono text-slate-400">Graph Tri-Partite Edges</span>
-              <div className="text-lg font-bold text-indigo-400 mt-0.5">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
+              <div className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Graph Edges Added</div>
+              <div className="text-base font-bold text-slate-100 font-mono mt-0.5">
                 {pipelineResult?.graph_state?.summary?.total_edges || 0}
               </div>
-              <span className="text-[10px] text-slate-500">
-                Explicit: {pipelineResult?.graph_state?.summary?.taxonomy_breakdown?.Explicit || 0} · Inferred: {pipelineResult?.graph_state?.summary?.taxonomy_breakdown?.Inferred || 0}
-              </span>
+              <div className="text-[10px] text-slate-500 truncate mt-0.5">
+                Explicit: {pipelineResult?.graph_state?.summary?.taxonomy_breakdown?.Explicit || 0}
+              </div>
             </div>
 
-            <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-3">
-              <span className="text-[10px] uppercase font-mono text-slate-400">Generated Leads</span>
-              <div className="text-lg font-bold text-amber-400 mt-0.5">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
+              <div className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Generated Leads</div>
+              <div className="text-base font-bold text-amber-400 font-mono mt-0.5">
                 {pipelineResult?.leads?.length || 0}
               </div>
-              <span className="text-[10px] text-slate-500">
+              <div className="text-[10px] text-slate-500 truncate mt-0.5">
                 Section 63 BSA Certified
-              </span>
+              </div>
             </div>
           </div>
 
-          {/* Multilingual Entity Resolution Showcase Bar */}
+          {/* Multilingual Match Indicator Bar */}
           {pipelineResult?.resolved_entities && pipelineResult.resolved_entities.length > 0 && (
-            <div className="rounded-xl bg-slate-900/60 border border-slate-800 p-3 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-bold text-slate-400 flex items-center gap-1 mr-2">
-                <RefreshCw className="w-3 h-3 text-emerald-400" /> Resolution Links:
-              </span>
-              {pipelineResult.resolved_entities.map((rp, idx) => (
-                <div 
-                  key={idx}
-                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700 text-xs"
-                >
-                  <span className="font-hindi text-amber-300 font-medium">{rp.raw_mention}</span>
-                  <ArrowRight className="w-3 h-3 text-slate-500" />
-                  <span className="font-semibold text-emerald-400">{rp.canonical_name}</span>
-                  <span className="text-[10px] font-mono text-slate-400">({rp.canonical_id})</span>
-                  <span className="text-[9px] px-1 rounded bg-slate-700 text-slate-300">
-                    {Math.round(rp.confidence * 100)}%
-                  </span>
-                </div>
-              ))}
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-3">
+              <div className="text-xs font-semibold text-slate-400 mb-2 flex items-center gap-1.5">
+                <span>Resolved Entity Mapping (Cross-Lingual)</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {pipelineResult.resolved_entities.map((rp, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-xs font-mono"
+                  >
+                    <span className="text-amber-300 font-sans font-medium">{rp.raw_mention}</span>
+                    <ArrowRight className="w-3 h-3 text-slate-600" />
+                    <span className="text-slate-100 font-sans font-medium">{rp.canonical_name}</span>
+                    <span className="text-[10px] text-slate-400">({rp.canonical_id})</span>
+                    <span className="text-[10px] px-1 rounded bg-slate-800 text-slate-300">
+                      {Math.round(rp.confidence * 100)}%
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Leads Carousel / List */}
-          <div className="rounded-xl bg-[#0e1626] border border-slate-800 p-5 space-y-4">
+          {/* Leads Section */}
+          <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <ShieldAlert className="w-4 h-4 text-amber-400" />
-                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                  Prioritized Investigative Leads ({pipelineResult?.leads?.length || 0})
-                </h3>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                  Actionable Investigative Leads ({pipelineResult?.leads?.length || 0})
+                </span>
               </div>
-              
-              <div className="flex items-center gap-1.5">
+
+              <div className="flex items-center gap-1">
                 {pipelineResult?.leads?.map((lead, idx) => (
                   <button
                     key={lead.lead_id}
                     onClick={() => setSelectedLeadIndex(idx)}
-                    className={`px-2.5 py-1 rounded text-xs font-mono font-semibold transition-all ${
+                    className={`px-2 py-0.5 rounded text-xs font-mono font-medium transition-colors ${
                       selectedLeadIndex === idx
-                        ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
-                        : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    #{idx + 1}
+                    Lead #{idx + 1}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Active Lead Inspection Card */}
+            {/* Active Lead Inspection Dossier */}
             {activeLead ? (
-              <div className="rounded-xl border border-slate-700/80 bg-slate-900/90 p-5 space-y-5">
-                {/* Lead Header */}
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 border-b border-slate-800 pb-4">
+              <div className="border border-slate-800 bg-slate-950 rounded-lg p-4 space-y-4">
+                
+                {/* Header Info */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-800 pb-3">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                      <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-mono ${
                         activeLead.threat_level === 'CRITICAL'
-                          ? 'bg-red-500/20 text-red-400 border border-red-500/40'
+                          ? 'bg-rose-950/80 text-rose-400 border border-rose-800'
                           : activeLead.threat_level === 'HIGH'
-                            ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
-                            : 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
+                            ? 'bg-amber-950/80 text-amber-400 border border-amber-800'
+                            : 'bg-slate-800 text-slate-300 border border-slate-700'
                       }`}>
                         {activeLead.threat_level} Priority
                       </span>
-                      <span className="text-[11px] font-mono text-slate-400">
+                      <span className="text-xs font-mono text-slate-400">
                         {activeLead.lead_id}
                       </span>
-                      <span className="text-[10px] text-slate-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> {activeLead.generated_at}
-                      </span>
                     </div>
-                    <h4 className="text-base font-bold text-slate-100">
+                    <h3 className="text-sm font-bold text-slate-100">
                       {activeLead.title}
-                    </h4>
+                    </h3>
                   </div>
 
-                  {/* Quick Action Buttons */}
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => onInspectLeadSubgraph && onInspectLeadSubgraph(activeLead)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 text-xs font-semibold transition-all"
-                      title="Load this lead's evidence subgraph into D3 interactive graph"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-medium transition-colors"
+                      title="Inspect evidence subgraph in the D3 graph explorer"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span>Inspect in Graph Studio</span>
+                      <span>Inspect Subgraph</span>
                     </button>
 
                     <button
                       onClick={() => onOpenBSACertificate && onOpenBSACertificate(activeLead)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-md shadow-emerald-600/20 transition-all"
-                      title="Generate court-ready Section 63 BSA certificate"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium transition-colors"
+                      title="Open Section 63 BSA Certificate for this lead"
                     >
-                      <FileCheck2 className="w-3.5 h-3.5" />
+                      <Printer className="w-3.5 h-3.5" />
                       <span>Export BSA Certificate</span>
                     </button>
                   </div>
                 </div>
 
-                {/* Evidentiary Narrative */}
+                {/* Narrative Summary */}
                 <div>
-                  <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
-                    Evidentiary Narrative & Analytical Rationale
-                  </h5>
-                  <p className="text-xs text-slate-200 leading-relaxed bg-slate-950/60 p-3 rounded-lg border border-slate-800/80">
+                  <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+                    Evidentiary Findings
+                  </div>
+                  <div className="text-xs text-slate-200 leading-relaxed bg-slate-900 p-3 rounded border border-slate-800 font-sans">
                     {activeLead.narrative_summary}
-                  </p>
+                  </div>
                 </div>
 
-                {/* Target Suspect & Evidence Subgraph Details */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-3.5 rounded-lg bg-slate-950/60 border border-slate-800/80 space-y-2">
-                    <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                      <Search className="w-3 h-3 text-sky-400" /> Primary Identified Suspect
-                    </h5>
-                    <div className="space-y-1">
-                      <div className="text-xs font-bold text-slate-100 flex items-center gap-2">
-                        <span>{activeLead.primary_suspect?.canonical_name || 'Unidentified'}</span>
-                        <span className="text-[10px] font-mono text-slate-400">
-                          ({activeLead.primary_suspect?.canonical_id})
-                        </span>
-                      </div>
-                      {activeLead.primary_suspect?.resolved_aliases?.length > 0 && (
-                        <div className="text-[11px] text-amber-300">
-                          Aliases: {activeLead.primary_suspect.resolved_aliases.join(', ')}
-                        </div>
-                      )}
-                      <div className="text-[10px] text-slate-400">
-                        Resolution Confidence: {Math.round((activeLead.primary_suspect?.match_confidence || 0.8) * 100)}%
-                      </div>
+                {/* Primary Suspect & Subgraph Overview */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="p-3 bg-slate-900 border border-slate-800 rounded">
+                    <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+                      Primary Suspect Record
                     </div>
+                    <div className="text-slate-100 font-semibold flex items-center gap-1.5">
+                      <span>{activeLead.primary_suspect?.canonical_name || 'Unidentified'}</span>
+                      <span className="text-[10px] font-mono text-slate-400">
+                        ({activeLead.primary_suspect?.canonical_id})
+                      </span>
+                    </div>
+                    {activeLead.primary_suspect?.resolved_aliases?.length > 0 && (
+                      <div className="text-[11px] text-amber-300 mt-1 font-sans">
+                        Aliases: {activeLead.primary_suspect.resolved_aliases.join(', ')}
+                      </div>
+                    )}
                   </div>
 
-                  <div className="p-3.5 rounded-lg bg-slate-950/60 border border-slate-800/80 space-y-2">
-                    <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                      <Layers className="w-3 h-3 text-indigo-400" /> Evidence Subgraph Composition
-                    </h5>
-                    <div className="text-xs text-slate-300 space-y-1">
-                      <div>
-                        Nodes Flagged: <strong className="text-indigo-400">{activeLead.evidence_subgraph?.nodes?.length || 0}</strong> entities
-                      </div>
-                      <div>
-                        Edges Linked: <strong className="text-indigo-400">{activeLead.evidence_subgraph?.edges?.length || 0}</strong> transactions / events
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono">
-                        Classification: Explicit / Tri-Partite
-                      </div>
+                  <div className="p-3 bg-slate-900 border border-slate-800 rounded">
+                    <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+                      Evidence Subgraph Metrics
+                    </div>
+                    <div className="text-slate-200 font-mono text-xs">
+                      Nodes: {activeLead.evidence_subgraph?.nodes?.length || 0} · Edges: {activeLead.evidence_subgraph?.edges?.length || 0}
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-1">
+                      Taxonomy: Explicit Transacted / Document Provenance
                     </div>
                   </div>
                 </div>
 
-                {/* Statutory Actionable Recommendations (CrPC) */}
+                {/* Statutory Recommendations */}
                 <div>
-                  <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
-                    <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-                    Actionable Statutory Next Steps (Human Investigator Review)
-                  </h5>
-                  <div className="space-y-1.5">
+                  <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
+                    Recommended Statutory Actions (Investigator Review)
+                  </div>
+                  <div className="space-y-1">
                     {activeLead.actionable_recommendations?.map((rec, rIdx) => (
                       <div 
                         key={rIdx}
-                        className="flex items-start gap-2 text-xs text-slate-200 bg-amber-500/5 border border-amber-500/20 p-2.5 rounded-lg"
+                        className="text-xs text-slate-300 bg-slate-900 border border-slate-800/80 p-2 rounded flex items-start gap-2"
                       >
-                        <span className="text-amber-400 font-bold mt-0.5">•</span>
+                        <span className="text-blue-400 font-mono font-bold mt-0.5">•</span>
                         <span>{rec}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Section 63 BSA Digital Custody Seal */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
-                  <div className="flex items-center gap-2">
-                    <Fingerprint className="w-4 h-4 text-emerald-400" />
-                    <span>Section 63 BSA SHA-256 Custody Hash:</span>
-                    <span className="font-mono text-emerald-400 font-medium">
-                      {activeLead.section_63_bsa_custody_hash || activeLead.custody_hash}
-                    </span>
+                {/* Section 63 BSA Digital Hash */}
+                <div className="pt-2 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-slate-400">
+                  <div className="flex items-center gap-1.5 font-mono">
+                    <Fingerprint className="w-3.5 h-3.5 text-slate-500" />
+                    <span className="text-slate-500">SHA-256 Custody Seal:</span>
+                    <span className="text-slate-300">{activeLead.section_63_bsa_custody_hash || activeLead.custody_hash}</span>
                   </div>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider">
-                    Tamper-Evident Forensic Record
+                  <span className="text-[10px] text-slate-500 font-mono uppercase">
+                    Sec. 63 BSA Admissible
                   </span>
                 </div>
+
               </div>
             ) : (
-              <div className="p-8 text-center text-slate-500">
-                Click "Execute Full Pipeline" to generate and inspect court-admissible leads.
+              <div className="p-6 text-center text-slate-500 text-xs">
+                Select a lead to inspect details.
               </div>
             )}
           </div>
