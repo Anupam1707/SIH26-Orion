@@ -11,7 +11,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 
-from app.api import alerts, blocking, districts, health, investigation, predictions
+from app.api import adversary, alerts, blocking, districts, health, investigation, predictions
 from app.data import Public
 from app.graph.builder import build_graph
 from app.sim.scenario import Scenario
@@ -44,10 +44,16 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="MuleTrail", version="0.1.0", lifespan=lifespan)
+app = FastAPI(
+    title="ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations",
+    description="Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance (SIH PS 26184 | Ministry of Home Affairs / I4C)",
+    version="1.0.0",
+    lifespan=lifespan,
+)
 app.include_router(health.router)
 app.include_router(districts.router)
 app.include_router(investigation.router)
 app.include_router(predictions.router)
 app.include_router(alerts.router)
 app.include_router(blocking.router)
+app.include_router(adversary.router)

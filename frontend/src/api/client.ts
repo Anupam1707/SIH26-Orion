@@ -36,6 +36,17 @@ export const api = {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ accounts }),
     }).then(res => { if (!res.ok) throw new Error(`POST failed: ${res.status}`); return res.json() as Promise<FreezeSimulation>; }),
+  // Phase 5: Adversary Lab
+  adversaryCurves: () => get<AdversaryCurvesResponse>('/adversary/curves'),
+  adversaryRun: (complaintId?: string, hardened?: boolean) =>
+    fetch('/api/adversary/run', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ complaint_id: complaintId, hardened: hardened ?? false }),
+    }).then(res => {
+      if (!res.ok) throw new Error(`POST /adversary/run failed: ${res.status}`);
+      return res.json() as Promise<AdversaryRunResult>;
+    }),
 };
 
 export interface Summary {
@@ -122,4 +133,44 @@ export interface FreezeSimulation {
   accounts_frozen: string[]; complaint_id: string; demo_clock: string;
   money_reachable_before_inr: number; money_reachable_after_inr: number;
   prevented_inr: number; prevented_pct: number;
+}
+
+// Phase 5: Adversary Lab
+export interface AdversaryMove {
+  step: number;
+  move: 'switch_atm' | 'delay' | 'add_mule_hop' | 'split_amount';
+  description: string;
+  cost: number;
+  cumulative_cost: number;
+  target_atms: string[];
+  top5_atms: string[];
+  detection_prob: number;
+  detected: boolean;
+}
+
+export interface AdversaryRunResult {
+  complaint_id: string;
+  hardened: boolean;
+  initial_detected: boolean;
+  final_detected: boolean;
+  total_cost: number;
+  initial_probability: number;
+  final_probability: number;
+  moves_count: number;
+  moves: AdversaryMove[];
+}
+
+export interface CurvePoint {
+  budget: number;
+  detection_rate: number;
+  detected_count: number;
+}
+
+export interface AdversaryCurvesResponse {
+  budgets: number[];
+  baseline_curve: CurvePoint[];
+  hardened_curve: CurvePoint[];
+  test_cases_count: number;
+  target_window: string;
+  summary: string;
 }

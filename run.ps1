@@ -29,7 +29,7 @@ $web = Start-Process -FilePath "npm.cmd" -WorkingDirectory $frontend `
     -PassThru -NoNewWindow
 
 Write-Host ""
-Write-Host "MuleTrail is starting:  http://127.0.0.1:5173   (API: http://127.0.0.1:8000/health)"
+Write-Host "ORION is starting:  http://127.0.0.1:5173   (API: http://127.0.0.1:8000/health)"
 Write-Host "Press Ctrl+C to stop both."
 
 try {

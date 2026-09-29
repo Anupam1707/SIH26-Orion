@@ -20,9 +20,9 @@ export function TopBar({ backendOk, alertCount }: { backendOk: boolean | null; a
 
   return (
     <header className="flex items-center gap-4 border-b border-line bg-ink-900 px-5 py-3">
-      <div className="flex items-baseline gap-2">
-        <h1 className="text-lg font-semibold tracking-wide">
-          Mule<span className="text-accent">Trail</span>
+      <div className="flex items-baseline gap-2.5" title="ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations">
+        <h1 className="text-lg font-bold tracking-wider">
+          ORI<span className="text-accent">ON</span>
         </h1>
         <span className="text-xs text-fg-dim font-mono hidden md:inline">PS 26184 · MHA / I4C</span>
       </div>

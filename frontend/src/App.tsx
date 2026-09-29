@@ -11,6 +11,7 @@ import { CaseView } from './screens/CaseView';
 import { RiskHeatmap } from './screens/RiskHeatmap';
 import { Alerts } from './screens/Alerts';
 import { FundBlocking } from './screens/FundBlocking';
+import { AdversaryLab } from './screens/AdversaryLab';
 
 function Shell() {
   const { persona } = usePersona();
@@ -52,7 +53,19 @@ function Shell() {
           <Routes>
             <Route path="/" element={<Navigate to={PERSONA_HOME[persona]} replace />} />
             {SCREENS.map((s) => (
-              <Route key={s.path} path={s.path} element={s.path === '/command-center' ? <CommandCenter /> : s.path === '/case' ? <CaseView /> : s.path === '/heatmap' ? <RiskHeatmap /> : s.path === '/alerts' ? <Alerts /> : s.path === '/blocking' ? <FundBlocking /> : <ScreenStub screen={s} />} />
+              <Route
+                key={s.path}
+                path={s.path}
+                element={
+                  s.path === '/command-center' ? <CommandCenter /> :
+                  s.path === '/case' ? <CaseView /> :
+                  s.path === '/heatmap' ? <RiskHeatmap /> :
+                  s.path === '/alerts' ? <Alerts /> :
+                  s.path === '/blocking' ? <FundBlocking /> :
+                  s.path === '/adversary' ? <AdversaryLab /> :
+                  <ScreenStub screen={s} />
+                }
+              />
             ))}
             <Route path="*" element={<Navigate to={PERSONA_HOME[persona]} replace />} />
           </Routes>

@@ -19,6 +19,7 @@
 | [phase-2.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-2.md) | Phase 2 implementation summary: Graph engine, Typology detection, Case View, Command Center. | Historical Build Traceability |
 | [phase-3.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-3.md) | Phase 3 implementation summary: Prediction models (Baseline, KDE, XGBoost), Holdout evaluation, Risk Heatmap. | Historical Build Traceability |
 | [phase-4.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-4.md) | Phase 4 implementation summary: Multi-channel Alerts, Min-Cut Fund Blocking workbench. | Historical Build Traceability |
+| [phase-5.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-5.md) | Phase 5 implementation summary: Adversary Lab, Evasion Cost Curves, Greedy Search, Model Hardening. | Historical Build Traceability |
 | [spec-v1.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/spec-v1.md) | Original design specification and engineering constraints. | Reference Spec |
 
 ---

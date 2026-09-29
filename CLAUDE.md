@@ -336,9 +336,9 @@ Every move is logged for the Adversary Lab screen.
 
 ## 12. Build phases
 
-**Current status:** Phases 2, 3, and 4 implemented; see `docs/phase-2.md`,
-`docs/phase-3.md`, and `docs/phase-4.md` for checks, limitations, and results.
-The next phase is Phase 5, after review.
+**Current status:** Phases 2, 3, 4, and 5 implemented; see `docs/phase-2.md`,
+`docs/phase-3.md`, `docs/phase-4.md`, and `docs/phase-5.md` for checks, limitations, and results.
+The next phase is Phase 6 (Demo Polish).
 
 Build in order. Each phase ends with its checks passing and a short summary. **Stop after each phase.**
 

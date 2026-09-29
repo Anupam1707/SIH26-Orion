@@ -7,7 +7,7 @@
 **Development of a Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance, Enabling Generation of Actionable Intelligence for Timely and Proactive Cybercrime Intervention**
 
 ### **PROJECT ACRONYM / SYSTEM NAME:**
-**MuleTrail: Predictive Cybercrime Intervention Platform**
+**ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations**
 
 ### **ORGANIZATION / NODAL AGENCY:**
 **Ministry of Home Affairs (MHA) | Indian Cybercrime Coordination Centre (I4C)**
