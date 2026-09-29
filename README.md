@@ -1,195 +1,263 @@
-# SIH26 — AI-Powered Criminal Network Analysis System
-### SIH PS 189 · I4C / Ministry of Home Affairs
+# MuleTrail — Predictive Cybercrime Analytics Framework
+### Smart India Hackathon 2026 · Problem Statement ID: 26184
+#### Organization: Ministry of Home Affairs (MHA) | Indian Cybercrime Coordination Centre (I4C)
 
-> **Governing principle:** the system produces **leads, not proof**. Every output — a predicted link, an anomaly score, a centrality ranking — is a suggestion for human investigator review, never an accusation.
-
----
-
-## Module Status
-
-| # | Module | Status | Location |
-|---|--------|--------|----------|
-| 1 | Data Collection & Preprocessing | Spec written | `docs/` |
-| 2 | NLP & Entity Resolution | Spec written | `docs/` |
-| 3 | Criminal Knowledge Graph | Complete | `graph/`, `main_graph_loader.py` |
-| 4 | Graph Analytics & Network Detection | Complete | `graph/analytics/` |
-| 5 | AI-Based Anomaly & Link Prediction | Complete | `intelligence/` |
-| 6 | Explainable Intelligence & Dashboard | **Complete (Live)** | `dashboard/`, [https://orion26-team.web.app](https://orion26-team.web.app) |
+> **Development of a Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance, Enabling Generation of Actionable Intelligence for Timely and Proactive Cybercrime Intervention.**
 
 ---
 
-## Repository Structure
+## 1. Operational Context & Mission
+
+The **National Cybercrime Reporting Portal (NCRP)** serves as the centralized nodal portal across India, currently processing **upwards of 8,000 complaints on a daily basis**. A predominant volume of these complaints involve organized financial cyber fraud (vishing, task fraud, investment scams). 
+
+### The Reactive Bottleneck
+Under current operations, cybercrime intervention is largely **reactive**:
+1. Victims report financial losses hours after the incident.
+2. Syndicates rapidly route funds through multiple tiers of simulated or compromised "mule bank accounts" (Layer-1 and Layer-2 mules).
+3. The stolen money is withdrawn in cash at Automated Teller Machines (ATMs) or micro-ATMs before inter-bank freezing requests under the **Citizen Financial Cyber Fraud Reporting and Management System (CFCFRMS)** can propagate.
+4. Once converted to cash, money trails go dark and recovery rates drop drastically.
+
+### The MuleTrail Proactive Paradigm
+**MuleTrail** inverts this dynamic from reactive investigation to **proactive prevention**. By synthesizing graph analytics, behavioral typologies, structural anomaly scoring, and geospatial machine learning, MuleTrail **forecasts likely ATM cash-out locations and time windows in advance**. This generates timely, cross-jurisdictional intelligence enabling:
+- **Law Enforcement Agencies (LEAs)** to dispatch PCR patrols and deploy tactical teams at predicted ATM hotspots.
+- **Banks & Financial Institutions (FIs)** to place targeted cash-hold alerts and preemptively freeze critical mule accounts using a novel **node-capacity minimum-cut algorithm**.
+
+---
+
+## 2. Key Deliverables Mapping
+
+| # | Official Deliverable | System Component | Implementation & Features |
+|---|---|---|---|
+| **a** | **Predictive Analytics Engine** | `backend/app/predict/`<br>`backend/app/detect/`<br>`backend/app/graph/` | • Multi-hop transaction graph tracing (`trace_case`).<br>• 5 Typology detectors (Mule Fan-in, Layering, Structuring, Scatter, Rapid Pass-through).<br>• OddBall structural anomaly scoring (Star vs Clique power-law analysis).<br>• Sliding-window temporal burst scoring.<br>• Trio of cash-out models: Recency Baseline, Equirectangular Spatial KDE, and Graph-Aware XGBoost with tree SHAP explainability. |
+| **b** | **Risk Heatmap Dashboard** | `frontend/src/screens/RiskHeatmap.tsx`<br>`frontend/src/components/` | • GIS-enabled vector map rendering district boundaries without external tile servers (offline-first).<br>• ATM risk visualization with proportional color-coded confidence rings.<br>• Drill-down filters by forecast horizon (2h, 6h, 24h), probability threshold slider, and model selector.<br>• Inspector drawer showing top-3 explainability reasons linked to source records. |
+| **c** | **Law Enforcement Interface** | `frontend/src/screens/CaseView.tsx`<br>`frontend/src/screens/CommandCenter.tsx` | • Interactive left-to-right Cytoscape graph visualizer.<br>• Step-by-step chronological fund playback animation.<br>• Inferred role tagging (Layer-1, Collector, Layer-2) strictly separated from ground truth.<br>• Case dossier and Section 63 Bharatiya Sakshya Adhiniyam, 2023 (BSA) evidence compliance. |
+| **d** | **Alert & Notification System** | `frontend/src/screens/Alerts.tsx`<br>`backend/app/alerts/` | • Threshold-triggered real-time dispatch engine.<br>• Multi-channel mock delivery logging (SMS to patrols, Email briefs to DCCPS, REST Webhooks to Police CAD / Bank CFCFRMS).<br>• Interactive TopBar notification bell with unread counters and acknowledgement workflows. |
+
+---
+
+## 3. End-to-End System Architecture
+
+```mermaid
+flowchart TD
+    subgraph NCRP ["NCRP Ingestion & Simulation"]
+        A[NCRP Complaints Feed<br>~8,000/day] --> B[Chronological Event Queue]
+        T[Inter-bank Transaction MultiGraph<br>UPI / IMPS / NEFT] --> B
+    end
+
+    subgraph Engine ["Component (a): Predictive Analytics Engine"]
+        B --> C[Graph Tracing Engine<br>trace_case BFS]
+        C --> D1[Typology Detectors<br>Fan-in, Layering, Structuring]
+        C --> D2[OddBall Scoring<br>Star vs Clique Normalization]
+        C --> D3[Temporal Burst Scoring<br>Dense 48h Sliding Window]
+        
+        D1 & D2 & D3 --> E[Feature Vector Synthesis]
+        E --> M1[Recency Baseline]
+        E --> M2[Spatial KDE Model]
+        E --> M3[Graph-Aware XGBoost]
+    end
+
+    subgraph Interventions ["Actionable Interventions"]
+        M3 --> F[Ranked ATM Predictions<br>2h, 6h, 24h Horizons]
+        F --> G[Node-Capacity Min-Cut<br>Optimal Account Blocking]
+        F --> H[Threshold Alert Engine<br>Severity Classification]
+    end
+
+    subgraph Interfaces ["User & Institutional Interfaces"]
+        F --> UI1["Component (b): Risk Heatmap Dashboard<br>(Offline Vector GIS)"]
+        C & G --> UI2["Component (c): Law Enforcement Interface<br>(Cytoscape Tracing & BSA Dossier)"]
+        H --> UI3["Component (d): Alert & Notification System<br>(SMS, Email, API Webhooks)"]
+    end
+```
+
+---
+
+## 4. Algorithmic Innovations
+
+### 4.1 Node-Capacity Minimum-Cut Fund Blocking
+Traditional min-cut algorithms cut *edges*, but bank freezing interventions operate on *nodes (accounts)*. MuleTrail applies **directed node splitting** ($v \to v_{\text{in}} \to v_{\text{out}}$) with unit-normalized edge capacities:
+$$c(v_{\text{in}}, v_{\text{out}}) = 1 - 0.01 \times \left(\frac{\text{Money through } v}{\text{Total case amount}}\right)$$
+- **Guaranteed Account Minimization:** Cutting $k$ accounts is strictly cheaper than cutting $k+1$ accounts.
+- **Volume Tiebreaking:** Among equal-sized cuts, accounts carrying higher fraud volume are preferred.
+- **Chronological Guard:** Accounts whose funds have already departed are assigned infinite capacity ($c = \infty$), preventing wasted freeze orders.
+
+### 4.2 Tri-Model Spatial & Temporal Prediction
+1. **Recency Baseline:** Exponential time-decay model scoring ATMs based on historical chain withdrawals.
+2. **Equirectangular Spatial KDE:** Continuous Gaussian density estimation over Cartesian kilometer offsets.
+3. **Graph-Aware XGBoost:** Binary classifier trained on distance to Layer-2 mule districts, lookback withdrawal counts (7d, 30d), KDE density, graph hops to active funds, burst metrics, and district-hop indicators. Top-3 reasons derived via tree SHAP feature contributions (`pred_contribs=True`).
+
+### 4.3 Behavioral Typology Detectors
+- **Mule Fan-In:** Accounts receiving from $\ge 3$ distinct senders in 6h and forwarding $\ge 90\%$ in 24h ($\ge 2$ historical episodes), guarded by a 24h receipt-coverage window against merchant false positives.
+- **Layering Chain:** Paths of $\ge 4$ accounts with intermediary hop delays $< 3$h and $85\%\text{--}98\%$ flow coverage.
+- **Structuring:** Transfers structured in the $[\text{₹}9,000, \text{₹}9,900]$ bracket to evade regulatory thresholds.
+- **Scatter:** Fan-out to $\ge 6$ receivers within 2 hours.
+- **Rapid Pass-Through:** Inflow forwarding $\ge 90\%$ within 60 minutes ($\ge 3$ episodes).
+
+---
+
+## 5. Repository Structure
 
 ```text
 SIH26/
-|-- dashboard/                     <- Module 6: Live Investigator Dashboard (Vite + React + D3)
-|   |-- src/                       <- Components, D3 Force Graph, Dossier, Typology Viewer
-|   |-- package.json
-|   `-- dist/                      <- Production build deployed to Firebase
-|
-|-- main_graph_loader.py           <- Module 3: full Neo4j load orchestrator
-|-- verify_graph.py                <- Post-load sanity checks
-|-- requirements.txt
-|-- .env.example
-|-- .firebaserc                    <- Firebase project: orion26-team
-|-- firebase.json                  <- Hosting configuration pointing to dashboard/dist
-|
-|-- graph/                         <- Module 3 & 4 code
-|   |-- config.py                  <- Neo4j connection (.env)
-|   |-- schema.py                  <- Constraints + indexes
-|   |-- utils.py                   <- Batch UNWIND helpers
-|   |-- loaders/                   <- One loader per entity/relationship type
-|   |   |-- load_entities.py
-|   |   |-- load_cases.py
-|   |   |-- load_evidence.py
-|   |   |-- load_relationships.py
-|   |   `-- load_entity_resolution.py
-|   `-- analytics/
-|       |-- pagerank.py            <- PageRank implementation
-|       `-- run_pagerank.py        <- CLI entry point
-|
-|-- pipeline/                      <- End-to-End Input-to-Leads Processing Pipeline
-|   |-- README.md                  <- Pipeline documentation & execution instructions
-|   |-- samples.py                 <- Multi-source test samples (FIR, Banking, CDR)
-|   |-- extractor.py               <- Multilingual entity & flow extractor
-|   |-- entity_resolver.py         <- Devanagari, initials & OCR alias resolution
-|   |-- graph_updater.py           <- Tri-partite knowledge graph manager
-|   |-- detector.py                <- 4-Tier Anomaly Engine (Typology, OddBall, Burst, LP)
-|   |-- lead_generator.py          <- Section 63 BSA certified lead synthesis
-|   `-- run_pipeline.py            <- CLI & programmatic pipeline orchestrator
-|
-|-- intelligence/                  <- Module 5: Intelligence, Anomaly Detection & Link Prediction
-|   |-- README.md                  <- Architecture, validated results, honest scientific benchmarks
-|   |-- anomaly_detection/
-|   |   |-- oddball.py             <- Tier 2a: structural anomaly (OddBall)
-|   |   `-- temporal.py            <- Tier 2b: temporal burst anomaly
-|   |-- cypher_queries/
-|   |   `-- aura_exports.cypher    <- Aura export + validation Cypher
-|   |-- data/
-|   |   |-- inputs/                <- egonet_data.csv, temporal_data.csv
-|   |   |-- results/               <- oddball_results.csv, temporal_results.csv
-|   |   `-- link_prediction/       <- Trained models, predictions, and evidence subgraphs
-|   `-- link_prediction/           <- Tier 3 Link Prediction models & evidence subgraphs
-|
-|-- data/dataset/                  <- CKG_FINAL_REPAIRED_DATASET (117 K rows)
-|-- CKG_FINAL_REPAIRED_DATASET/    <- Original repaired dataset + GROUND_TRUTH.csv
-`-- docs/                          <- Research specs for all 6 modules
-```
-
-### Core System: Input-to-Leads Pipeline Quickstart
-```bash
-# Run pipeline on sample Cyber Fraud FIR (extracts Devanagari suspect, stitches aliases, outputs BSA leads)
-python3 pipeline/run_pipeline.py --sample fir
-
-# Run pipeline on bank smurfing transaction stream (detects sub-threshold structuring)
-python3 pipeline/run_pipeline.py --sample structuring
-
-# Run pipeline on CDR telecommunications stream (detects 48h pre-event coordination bursts)
-python3 pipeline/run_pipeline.py --sample cdr
-```
-
----
-
-## Module 3 — Criminal Knowledge Graph  (Complete)
-
-```bash
-pip install -r requirements.txt
-cp .env.example .env          # set NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
-python main_graph_loader.py   # full load
-python verify_graph.py        # post-load sanity check
-```
-
-**Graph schema:** 14 node labels (`Person`, `Account`, `PhoneNumber`, `Organization`,
-`Vehicle`, `Location`, `Event`, `Case`, `Crime`, `Evidence`, `Document`, `Alias`,
-`Source`, `Observation`) and 18+ relationship types including `HOLDS_ACCOUNT`,
-`OWNS_PHONE`, `CALLED`, `TRANSACTED`, `MEMBER_OF`, `SAME_ENTITY` /
-`DIFFERENT_ENTITY` / `UNCERTAIN_ENTITY`.
-
-**Infrastructure note:** all date/time fields in Aura are stored as **plain strings**,
-not native Neo4j datetime types. Fix pattern: `datetime(replace(field, ' ', 'T'))` for
-timestamps, `date(field)` for date-only fields. Bare string comparisons silently return
-empty results with no error — see project log Section 6.
-
----
-
-## Module 4 — Graph Analytics  (Complete)
-
-| Analysis | Result |
-|----------|--------|
-| PageRank (phones + accounts) | Top-20 written back to Aura as `pagerank_score` |
-| Betweenness centrality | Top-20 written back as `betweenness_score` |
-| Louvain community detection | Modularity **0.53** — 4 planted communities at 100% purity |
-| Shortest path (A00013 to A00055) | Length-5 path found — topological connection, not a money trail (timestamps are non-chronological; labeled accordingly) |
-| Robustness experiment | Removing 10% of nodes changed **65% of the top-20** PageRank list — documented honestly, not hidden |
-
-```bash
-python graph/analytics/run_pagerank.py --limit 20
-python graph/analytics/run_pagerank.py --limit 20 --write-back --export pagerank_top20.csv
+├── run.sh                          # One-command startup script (macOS/Linux/Git Bash)
+├── run.ps1                         # One-command startup script (Windows PowerShell)
+├── requirements.txt                # Unified Python dependencies
+├── CLAUDE.md                       # Comprehensive technical brief and build spec
+├── OFFICIAL_PROJECT_REPORT.md      # Submission-grade technical evaluation report
+│
+├── backend/
+│   ├── requirements.txt            # Backend dependencies (FastAPI, NetworkX, XGBoost, etc.)
+│   ├── pytest.ini
+│   ├── .cache/                     # Precomputed simulation and model cache (gitignored)
+│   ├── scenarios/
+│   │   └── indore_demo.json        # Seeded multi-district evaluation scenario
+│   ├── tests/                      # 68 comprehensive unit and integration tests
+│   │   ├── test_alerts.py          # Alert triggers, channels, and acknowledgements
+│   │   ├── test_blocking.py        # Min-cut algorithm, greedy fallback, and freeze simulation
+│   │   ├── test_detection.py       # Typology rules, OddBall, and temporal burst
+│   │   ├── test_districts_api.py   # GeoJSON polygon APIs and scenario verification
+│   │   ├── test_investigation_api.py # Case tracing and clock filtering
+│   │   ├── test_precompute.py      # Cache hashing and deterministic reload
+│   │   ├── test_prediction.py      # Baseline, KDE, XGBoost models, and zero leakage
+│   │   ├── test_scenario.py        # Scenario schema and cross-reference validation
+│   │   └── test_sim_*.py           # Multi-agent simulation determinism and topologies
+│   └── app/
+│       ├── main.py                 # FastAPI application root
+│       ├── state.py                # In-memory demo clock, state snapshots, and reset
+│       ├── precompute.py           # Offline world simulation and model trainer
+│       ├── data.py                 # Data access layer and temporal filters
+│       ├── api/                    # REST API route controllers
+│       ├── sim/                    # Multi-agent simulation engine (Mesa/Python)
+│       ├── graph/                  # NetworkX multigraph builder and case tracer
+│       ├── detect/                 # Typology rules, OddBall, and temporal burst scorers
+│       ├── predict/                # XGBoost, KDE, Recency models, and holdout evaluation
+│       ├── block/                  # Node-capacity min-cut fund blocking engine
+│       ├── adversary/              # Game-theoretic evasion simulation and cost curves
+│       └── alerts/                 # Real-time alert generator and mock delivery store
+│
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── index.html
+│   └── src/
+│       ├── main.tsx
+│       ├── App.tsx                 # Route coordinator and TopBar live telemetry
+│       ├── index.css               # Control-room dark theme styling
+│       ├── api/client.ts           # Strictly-typed REST client
+│       ├── lib/                    # Indian currency formatting (₹ Lakh/Crore) and IST utils
+│       ├── components/             # TopBar, Sidebar, PersonaContext, Evidence Modals
+│       └── screens/
+│           ├── CommandCenter.tsx   # Deliverable (c): High-level KPIs, feeds, and map
+│           ├── CaseView.tsx        # Deliverable (c): Cytoscape graph trace & BSA evidence
+│           ├── RiskHeatmap.tsx     # Deliverable (b): Offline vector GIS risk heatmap
+│           ├── Alerts.tsx          # Deliverable (d): Multi-channel alert dispatch & log
+│           └── FundBlocking.tsx    # Actionable Intervention: Min-cut account freeze workbench
+│
+├── docs/                           # Exhaustive technical documentation suite
+│   ├── README.md                   # Documentation navigation index
+│   ├── 01-system-overview.md       # Problem Statement 26184 context & NCRP mandate
+│   ├── 02-predictive-analytics-engine.md # Deliverable (a) Engine technical specification
+│   ├── 03-risk-heatmap-dashboard.md      # Deliverable (b) GIS Heatmap technical specification
+│   ├── 04-law-enforcement-interface.md   # Deliverable (c) LEA Interface technical specification
+│   ├── 05-alert-and-notification-system.md # Deliverable (d) Alerting technical specification
+│   ├── 06-mincut-fund-blocking.md  # Node-Capacity Min-Cut mathematical formulation
+│   ├── phase-2.md, phase-3.md, phase-4.md # Build phase implementation logs
+│   └── spec-v1.md                  # Baseline architectural specification
+│
+└── archive/
+    └── legacy_ps189_orion/         # Archived code and documentation from legacy PS 189
 ```
 
 ---
 
-## Module 5 — Anomaly Detection & Link Prediction  (Phase 2 complete)
+## 6. Quickstart Guide
 
-Three-tier architecture — simple methods proven first, complexity added only where justified
-(per BOND / GADBench published benchmarks):
+### 6.1 Prerequisites
+- **Python:** 3.10 or 3.11
+- **Node.js:** v18+ (tested on Node v20/v22/v25)
+- **Environment:** macOS, Linux, or Windows (PowerShell / Git Bash)
 
-| Tier | Method | Status |
-|------|--------|--------|
-| 1 | Rule-based Cypher typologies | 7/9 typologies validated against GROUND_TRUTH.csv |
-| 2a | OddBall structural scoring | Validated — A00055 (scatter source) top 1.1% of 532 accounts |
-| 2b | 48h burst window, z-scored composite | Validated — one reweighting fix outstanding |
-| 3 | Adamic-Adar / RA / Katz baselines -> SEAL GNN | Not started |
+### 6.2 One-Command Startup
 
-**Key honest findings documented (not hidden):**
-- OddBall is structurally blind to temporal fraud (structuring, mule fan-in) — this motivated Tier 2b
-- `burst_ratio` over-dominates the temporal composite when accounts have high background volume — fix outstanding before feeding the composite risk score
-- Mule fan-in (A00013) missed by OddBall and temporal scoring — confirmed 3x that cross-account convergence needs a dedicated cross-account detector
-- Louvain fragments the structuring ring (A00069-74) across 6 communities — citable limitation
-
+#### macOS / Linux / Git Bash:
 ```bash
-python intelligence/anomaly_detection/oddball.py
-python intelligence/anomaly_detection/temporal.py
+chmod +x run.sh
+./run.sh
 ```
 
-See [`intelligence/README.md`](intelligence/README.md) for full validated results, honest limitations,
-and outstanding items.
+#### Windows PowerShell (Primary Demo Environment):
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\run.ps1
+```
 
----
+The script automatically:
+1. Creates the Python virtual environment (`.venv`) and installs backend dependencies.
+2. Installs frontend `npm` dependencies.
+3. Precomputes the simulation world and trains models into `.cache/` (if scenario hash changed).
+4. Launches the FastAPI backend at `http://127.0.0.1:8000` and Vite frontend at `http://127.0.0.1:5173`.
 
-## Module 6 — Explainable Intelligence & Dashboard  (Complete & Live)
-
-**Production Web App:** [https://orion26-team.web.app](https://orion26-team.web.app) (Firebase Hosting)
-
-| Feature | Implementation | Live Status |
-|---------|----------------|-------------|
-| Knowledge Graph Explorer | D3 force simulation, smooth zoom/pan/drag, entity badging | ✅ Active |
-| Evidentiary Taxonomy | Strict Explicit (solid green) / Inferred (dashed amber) / Predicted (dotted purple) | ✅ Active |
-| Typology & Anomaly Center | 8 Ground Truth Typologies + A00013-A00055 topological bridge | ✅ Active |
-| Link Prediction Studio | Evidence subgraphs, multi-hop paths, RF vs GNN benchmarks | ✅ Active |
-| Entity Resolution Workbench | Devanagari (`नेहा`), transliterations (`Arjd.`), OCR corruptions (`Nikhi1`) | ✅ Active |
-| Section 63 BSA Lead Export | Real-time SHA-256 digital signature hash, JSON download, 1-click print PDF | ✅ Active |
-| Guided Demo Tour for Judges | 5-step evaluator tour executable via UI or keyboard shortcuts | ✅ Active |
-
+### 6.3 Running Backend Unit Tests
+Execute the comprehensive 68-test suite:
 ```bash
-# Run locally
-cd dashboard
-npm install
-npm run dev     # dev server at http://localhost:5173
+cd backend
+pytest
+```
+*Result: 68 passed, 0 failures (100% test pass rate).*
 
-# Deploy to Firebase Hosting
+### 6.4 Building Frontend
+```bash
+cd frontend
 npm run build
-cd ..
-firebase deploy --only hosting
 ```
+*Result: 0 TypeScript errors, production bundle compiled.*
 
 ---
 
-## Immediate Next Actions
+## 7. API Reference Catalog
 
-1. Module 1 Ingestion Pipeline: Build unified CSV/JSON automated CLI importer for heterogeneous police FIRs.
-2. Module 2 NLP Fine-Tuning: MuRIL transformer model adaptation on Devanagari transliteration pairs.
-3. Cross-Community Telecom Bridge Prediction: Incorporate auxiliary cell tower coordinates and timing synchrony.
-4. Practice Live Judge Demo using the **"Guided Demo (Judges Tour)"** feature on [https://orion26-team.web.app](https://orion26-team.web.app).
+| HTTP Method | Route | Description | Deliverable |
+|---|---|---|---|
+| `GET` | `/health` | System health check and active demo clock | Core |
+| `GET` | `/summary` | Operational KPIs: active cases, traced amount, high-risk accounts | Core |
+| `GET` | `/complaints` | Chronological NCRP complaint feed | Core |
+| `GET` | `/districts` | GeoJSON boundary polygons for offline vector mapping | (b) Heatmap |
+| `GET` | `/atms` | ATM registry with geographic coordinates and bank identifiers | (b) Heatmap |
+| `GET` | `/cases/{id}/trace` | Chronological money flow graph, hop order, and inferred typologies | (c) LEA Interface |
+| `GET` | `/accounts/{id}` | Account dossier, behavioral signals, and source transactions | (c) LEA Interface |
+| `GET` | `/predictions/{id}?model=&window=` | Ranked ATMs with probabilities and top-3 SHAP explainability reasons | (a) Predictive Engine |
+| `GET` | `/evaluation` | Chronological holdout benchmarks (Top-5 hit rate, P@5, 95% bootstrap CI) | (a) Predictive Engine |
+| `GET` | `/alerts` | Chronological log of triggered risk alerts | (d) Alert System |
+| `POST` | `/alerts/{id}/ack` | Officer acknowledgement of dispatched alert | (d) Alert System |
+| `POST` | `/alerts/generate/{id}` | Generate real-time alerts based on active case predictions | (d) Alert System |
+| `GET` | `/block/{id}` | Min-cut recommended accounts to freeze | Fund Blocking |
+| `POST` | `/block/{id}/simulate` | Simulate before/after reachable flow reduction upon freezing | Fund Blocking |
+| `POST` | `/demo/start` | Inject scripted demo fraud case | Demo Script |
+| `POST` | `/demo/next` | Advance demo clock to next chronological stage | Demo Script |
+| `POST` | `/demo/reset` | Instant state reset (< 5s) from in-memory snapshot | Demo Script |
 
-See `docs/` for full research documentation and module specs.
+---
+
+## 8. Empirical Validation & Zero-Leakage Guarantees
+
+- **Strict Temporal Partitioning:** Simulation days 1–70 serve as the training set; days 71–90 serve as the held-out test evaluation set. **No random train-test splitting is ever permitted.**
+- **Causality Enforcement:** For any fraud case $C$, prediction time $t_{\text{pred}} = \max(t_{\text{reported}}, t_{\text{last\_L2\_transfer}})$. All model features, KDE densities, and evidence graphs are computed strictly using records with $t \le t_{\text{pred}}$.
+- **Withdrawal Isolation:** The case's own withdrawals occur strictly *after* $t_{\text{pred}}$ and are cryptographically isolated from model inputs.
+- **Top-5 Hit Rate Benchmark:** On the held-out evaluation set ($n=17$ cases), the Graph-Aware XGBoost model achieves a **41.2% Top-5 Hit Rate** at the 6-hour horizon (vs. 11.8% for the recency baseline), demonstrating clear predictive superiority.
+
+---
+
+## 9. Legal & Statutory Admissibility
+
+To satisfy judicial requirements under **Section 63 of the Bharatiya Sakshya Adhiniyam, 2023 (BSA)**:
+- Every graph node and transaction hop retains an immutable cryptographic audit record.
+- Inferred roles are explicitly distinguished from verified identities.
+- Hash-chained audit logs accompany all exported intelligence reports, enabling law enforcement officers to submit admissible certificates in legal proceedings.
+
+---
+
+## 10. Legacy Code Notice
+
+Artifacts, graph loaders, and documentation relating to the team's earlier work on Problem Statement 189 (ORION Criminal Network Analysis) have been preserved in:
+`archive/legacy_ps189_orion/`
+The root codebase is dedicated entirely to **Problem Statement 26184: MuleTrail**.
