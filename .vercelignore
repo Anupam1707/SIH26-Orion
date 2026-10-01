@@ -1,0 +1,6 @@
+backend/
+requirements.txt
+run.sh
+run.ps1
+archive/
+docs/
