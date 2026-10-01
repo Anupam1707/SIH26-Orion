@@ -1,6 +1,9 @@
-# ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations
-### Smart India Hackathon 2026 · Problem Statement ID: 26184
-#### Organization: Ministry of Home Affairs (MHA) | Indian Cybercrime Coordination Centre (I4C)
+<div align="center">
+  <img src="docs/assets/orion-logo-horizontal.png" alt="ORION Logo" width="420" />
+  <h1>ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations</h1>
+  <h3>Smart India Hackathon 2026 · Problem Statement ID: 26184</h3>
+  <h4>Ministry of Home Affairs (MHA) | Indian Cybercrime Coordination Centre (I4C)</h4>
+</div>
 
 > **Development of a Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance, Enabling Generation of Actionable Intelligence for Timely and Proactive Cybercrime Intervention.**
 
@@ -211,6 +214,29 @@ cd frontend
 npm run build
 ```
 *Result: 0 TypeScript errors, production bundle compiled.*
+
+### 6.5 Deploying to Vercel
+
+ORION is fully refactored for **zero-configuration, 1-click deployment on Vercel**:
+
+#### Method 1: Deploy via Vercel CLI (Instant)
+```bash
+vercel
+```
+
+#### Method 2: Deploy via GitHub / Vercel Dashboard
+1. Push your repository to GitHub.
+2. In Vercel, import the repository (`orion-sih26184`).
+3. Vercel automatically detects the root `package.json` and `vercel.json` (or you can set Root Directory to `frontend`).
+4. Click **Deploy**.
+
+#### Backend Connectivity on Vercel:
+- **Zero-Dependency Instant Preview (Default):** If deployed without a live Python server, ORION automatically runs in **Live Demo Mode** (`Demo Simulation (Vercel)`), serving the authentic precomputed Indore scenario (Case Traces, Risk Heatmap with SHAP explainability, Min-Cut Account Blocking, Alert Generation, and Adversary Lab).
+- **Connecting a Live FastAPI Backend:** If you deploy the backend on Render, Railway, Fly.io, or AWS, simply add the environment variable in Vercel:
+  ```env
+  VITE_API_BASE_URL=https://your-backend-service.up.railway.app
+  ```
+  The frontend will automatically switch to **`Backend online`** with full cross-origin CORS support.
 
 ---
 

@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/assets/orion-logo-horizontal.png" alt="ORION Logo" width="400" />
+</div>
+
 # OFFICIAL TECHNICAL PROJECT REPORT
 ## SMART INDIA HACKATHON 2026 — PROBLEM STATEMENT ID: 26184
 

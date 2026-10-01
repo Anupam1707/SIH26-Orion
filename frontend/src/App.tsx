@@ -6,16 +6,17 @@ import { ScreenStub } from "./components/ScreenStub";
 import { Sidebar } from "./components/Sidebar";
 import { TopBar } from "./components/TopBar";
 import { PERSONA_HOME, SCREENS } from "./lib/screens";
-import { CommandCenter } from './screens/CommandCenter';
-import { CaseView } from './screens/CaseView';
-import { RiskHeatmap } from './screens/RiskHeatmap';
-import { Alerts } from './screens/Alerts';
-import { FundBlocking } from './screens/FundBlocking';
-import { AdversaryLab } from './screens/AdversaryLab';
+import { CommandCenter } from "./screens/CommandCenter";
+import { CaseView } from "./screens/CaseView";
+import { RiskHeatmap } from "./screens/RiskHeatmap";
+import { Alerts } from "./screens/Alerts";
+import { FundBlocking } from "./screens/FundBlocking";
+import { AdversaryLab } from "./screens/AdversaryLab";
 
 function Shell() {
   const { persona } = usePersona();
   const [backendOk, setBackendOk] = useState<boolean | null>(null);
+  const [connectionMode, setConnectionMode] = useState<"live" | "simulated" | null>(null);
   const [alertCount, setAlertCount] = useState(0);
 
   useEffect(() => {
@@ -23,8 +24,18 @@ function Shell() {
     const check = () =>
       api
         .health()
-        .then(() => alive && setBackendOk(true))
-        .catch(() => alive && setBackendOk(false));
+        .then((res) => {
+          if (alive) {
+            setBackendOk(true);
+            setConnectionMode(res.mode || "live");
+          }
+        })
+        .catch(() => {
+          if (alive) {
+            setBackendOk(false);
+            setConnectionMode(null);
+          }
+        });
     void check();
     const t = setInterval(check, 5000);
     return () => {
@@ -36,17 +47,24 @@ function Shell() {
   // Poll alert count for the notification bell.
   useEffect(() => {
     let alive = true;
-    const poll = () => api.alerts().then(a => {
-      if (alive) setAlertCount(a.filter(x => x.status === 'triggered').length);
-    }).catch(() => {});
+    const poll = () =>
+      api
+        .alerts()
+        .then((a) => {
+          if (alive) setAlertCount(a.filter((x) => x.status === "triggered").length);
+        })
+        .catch(() => {});
     void poll();
     const t = setInterval(poll, 5000);
-    return () => { alive = false; clearInterval(t); };
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
   }, []);
 
   return (
     <div className="flex h-full flex-col">
-      <TopBar backendOk={backendOk} alertCount={alertCount} />
+      <TopBar backendOk={backendOk} alertCount={alertCount} mode={connectionMode} />
       <div className="shell-body flex min-h-0 flex-1">
         <Sidebar />
         <main className="min-w-0 flex-1 overflow-auto p-6">
@@ -57,13 +75,21 @@ function Shell() {
                 key={s.path}
                 path={s.path}
                 element={
-                  s.path === '/command-center' ? <CommandCenter /> :
-                  s.path === '/case' ? <CaseView /> :
-                  s.path === '/heatmap' ? <RiskHeatmap /> :
-                  s.path === '/alerts' ? <Alerts /> :
-                  s.path === '/blocking' ? <FundBlocking /> :
-                  s.path === '/adversary' ? <AdversaryLab /> :
-                  <ScreenStub screen={s} />
+                  s.path === "/command-center" ? (
+                    <CommandCenter />
+                  ) : s.path === "/case" ? (
+                    <CaseView />
+                  ) : s.path === "/heatmap" ? (
+                    <RiskHeatmap />
+                  ) : s.path === "/alerts" ? (
+                    <Alerts />
+                  ) : s.path === "/blocking" ? (
+                    <FundBlocking />
+                  ) : s.path === "/adversary" ? (
+                    <AdversaryLab />
+                  ) : (
+                    <ScreenStub screen={s} />
+                  )
                 }
               />
             ))}

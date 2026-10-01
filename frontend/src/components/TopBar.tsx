@@ -2,7 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { PERSONAS, PERSONA_HOME, type Persona } from "../lib/screens";
 import { usePersona } from "./PersonaContext";
 
-export function TopBar({ backendOk, alertCount }: { backendOk: boolean | null; alertCount: number }) {
+export function TopBar({
+  backendOk,
+  alertCount,
+  mode,
+}: {
+  backendOk: boolean | null;
+  alertCount: number;
+  mode?: "live" | "simulated" | null;
+}) {
   const { persona, setPersona } = usePersona();
   const navigate = useNavigate();
 
@@ -11,20 +19,48 @@ export function TopBar({ backendOk, alertCount }: { backendOk: boolean | null; a
     navigate(PERSONA_HOME[p]); // persona switch changes the default screen (spec §14)
   };
 
-  const status =
-    backendOk === null
-      ? { text: "Connecting…", cls: "text-fg-dim" }
-      : backendOk
-        ? { text: "Backend online", cls: "text-ok" }
-        : { text: "Backend offline", cls: "text-danger" };
+  const getStatus = () => {
+    if (backendOk === null) {
+      return { text: "Connecting…", cls: "text-fg-dim", title: "Checking backend connection..." };
+    }
+    if (backendOk) {
+      if (mode === "simulated") {
+        return {
+          text: "Demo Simulation (Vercel)",
+          cls: "text-accent font-medium",
+          title: "Running authenticated precomputed scenario. Fully interactive without external server.",
+        };
+      }
+      return {
+        text: "Backend online",
+        cls: "text-ok",
+        title: "Connected to live FastAPI backend.",
+      };
+    }
+    return {
+      text: "Backend offline",
+      cls: "text-danger",
+      title: "Backend unreachable.",
+    };
+  };
+
+  const status = getStatus();
 
   return (
     <header className="flex items-center gap-4 border-b border-line bg-ink-900 px-5 py-3">
-      <div className="flex items-baseline gap-2.5" title="ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations">
-        <h1 className="text-lg font-bold tracking-wider">
-          ORI<span className="text-accent">ON</span>
-        </h1>
-        <span className="text-xs text-fg-dim font-mono hidden md:inline">PS 26184 · MHA / I4C</span>
+      <div
+        className="flex items-center gap-3 cursor-pointer select-none"
+        onClick={() => navigate(PERSONA_HOME[persona])}
+        title="ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations"
+      >
+        <img
+          src="/orion-logo-horizontal.png"
+          alt="ORION"
+          className="h-7 w-auto object-contain transition-opacity hover:opacity-90"
+        />
+        <span className="text-xs text-fg-dim font-mono hidden md:inline border-l border-line pl-3">
+          PS 26184 · MHA / I4C
+        </span>
       </div>
 
       {/* Persistent on every screen: nothing here is real data (spec §2). */}
@@ -35,7 +71,12 @@ export function TopBar({ backendOk, alertCount }: { backendOk: boolean | null; a
         Simulated data
       </span>
 
-      <span className={`text-sm ${status.cls}`} role="status">
+      <span
+        className={`text-sm flex items-center gap-1.5 ${status.cls}`}
+        role="status"
+        title={status.title}
+      >
+        <span className={`inline-block h-2 w-2 rounded-full ${backendOk ? (mode === "simulated" ? "bg-accent animate-pulse" : "bg-ok") : "bg-danger"}`} />
         {status.text}
       </span>
 

@@ -1,0 +1,12 @@
+{
+  "name": "orion-sih26184",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ORION: Graph-Aware Prediction of Cyber-Fraud Cash-Out Hotspots and Fund-Freezing Recommendations (SIH PS 26184 | Ministry of Home Affairs / I4C)",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "dev": "npm run dev --prefix frontend",
+    "lint": "npm run typecheck --prefix frontend",
+    "test": "npm run test --prefix frontend"
+  }
+}

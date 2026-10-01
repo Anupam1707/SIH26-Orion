@@ -1,7 +1,10 @@
-# MuleTrail Technical Documentation Suite
-## Problem Statement ID: 26184
-### Development of a Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance, Enabling Generation of Actionable Intelligence for Timely and Proactive Cybercrime Intervention
-#### Ministry of Home Affairs | Indian Cybercrime Coordination Centre (I4C)
+<div align="center">
+  <img src="assets/orion-logo-horizontal.png" alt="ORION Logo" width="340" />
+  <h2>ORION Technical Documentation Suite</h2>
+  <h4>Smart India Hackathon 2026 · Problem Statement ID: 26184</h4>
+  <p><strong>Ministry of Home Affairs | Indian Cybercrime Coordination Centre (I4C)</strong></p>
+  <p><em>Development of a Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance</em></p>
+</div>
 
 ---
 
@@ -16,6 +19,9 @@
 | [05-alert-and-notification-system.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/05-alert-and-notification-system.md) | Real-time threshold-based alerting engine, multi-channel dispatch (SMS, Email, REST API, In-app bell), and investigator acknowledgement lifecycle. | **Key Deliverable (d)** |
 | [06-mincut-fund-blocking.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/06-mincut-fund-blocking.md) | Mathematical modeling of node-capacity minimum cut on directed transaction graphs, greedy fallback, and before/after fund interception simulation. | Actionable Interventions & CFCFRMS |
 | [07-neo4j-demo-graph-guide.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/07-neo4j-demo-graph-guide.md) | Complete 39-node demo knowledge graph for Neo4j (Haryana/NCR cluster), visual color & size styling guide for slides, and presentation queries. | Visual Intelligence & Slides |
+| [PROTOTYPE_OVERVIEW_SCRIPT.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/PROTOTYPE_OVERVIEW_SCRIPT.md) | **Refined 2.5–3 min prototype walkthrough script** with exact mouse cues, screen transitions, and expanded voiceover text. | Quick Demo & Video Recording |
+| [DEMO_VIDEO_PLAN_AND_SCRIPT.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/DEMO_VIDEO_PLAN_AND_SCRIPT.md) | Full 5-minute deep-dive video demonstration blueprint, storyboard, and voiceover script. | Full Technical Presentation |
+| [SUBMISSION_METADATA.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/SUBMISSION_METADATA.md) | **Official video titles, YouTube description with timestamps, short abstract, tags, and hashtags.** | Video Upload & Portal Submission |
 | [phase-2.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-2.md) | Phase 2 implementation summary: Graph engine, Typology detection, Case View, Command Center. | Historical Build Traceability |
 | [phase-3.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-3.md) | Phase 3 implementation summary: Prediction models (Baseline, KDE, XGBoost), Holdout evaluation, Risk Heatmap. | Historical Build Traceability |
 | [phase-4.md](file:///Users/anupamkanoongo/Documents/Developer's%20Drive/SIH26/docs/phase-4.md) | Phase 4 implementation summary: Multi-channel Alerts, Min-Cut Fund Blocking workbench. | Historical Build Traceability |

@@ -10,6 +10,7 @@ from datetime import datetime
 from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import adversary, alerts, blocking, districts, health, investigation, predictions
 from app.data import Public
@@ -49,6 +50,14 @@ app = FastAPI(
     description="Predictive Analytics Framework for Cybercrime Complaints to Forecast Likely Cash Withdrawal Locations in Advance (SIH PS 26184 | Ministry of Home Affairs / I4C)",
     version="1.0.0",
     lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 app.include_router(health.router)
 app.include_router(districts.router)
